@@ -26,31 +26,31 @@ class CentrifugeViewController: UIViewController {
     var timer = StopWatch()
     var totalElapsedTime = 0.0
     var initTime: Double!
-    
-    @IBOutlet var animationView: UIView!
+
     var rpmCircle: CAShapeLayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
         desiredRPM = sharedSampleDataModel.getLastSample()?.RPM
         if desiredRPM != nil { desiredRPM! += 100.0 } // constant correction factor
-        /*
-        let screenSize: CGRect = UIScreen.mainScreen().bounds
-        self.rpmCircle = CAShapeLayer()//UIView(frame: CGRect(x: screenSize.width/2 - 40, y: screenSize.height/2 - 40, width: 80, height: 80))
+        
+        // Adding layer
+        let screenSize: CGRect = self.view.bounds
+        self.rpmCircle = CAShapeLayer()
         let radius = CGFloat(35)
         rpmCircle.path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: 2.0 * radius, height: 2.0 * radius)  , cornerRadius: radius).CGPath
-        rpmCircle.position = CGPoint(x: CGRectGetMidX(self.animationView.frame) - radius, y: CGRectGetMidY(self.animationView.frame) - radius)
+        rpmCircle.position = CGPoint(x: 0, y: 0)
         rpmCircle.fillColor = UIColor.whiteColor().CGColor
-        self.animationView.layer .addSublayer(rpmCircle)
+        
+        self.view.layer.addSublayer(rpmCircle)
         
         trackingIntialized = false
         var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         hud.labelText = "Begin Spinning Now";
         hud.detailsLabelText = "Averaging accerometer data"
-        */
+        
         self.startAccelerometerPollingWithInterval(0.008)
         
     }
@@ -131,49 +131,46 @@ class CentrifugeViewController: UIViewController {
         // NewRange = (NewMax - NewMin)
         // NewValue = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin
         
-        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        let screenSize: CGRect = self.view.bounds
         var screenRange = Double(screenSize.height) - 50
-        var rpmRange = ((self.desiredRPM + 300) - (self.desiredRPM - 300))
-        var rpmBallPosition = (((self.avgRPM - (self.desiredRPM - 300)) * screenRange) / rpmRange) - screenRange / 2
-        
+        var rpmRange = 600.0
+        var rpmBallPosition = (((self.avgRPM - (self.desiredRPM - 300)) * screenRange) / rpmRange)
+        var newframe = CGFloat(rpmBallPosition)
         // Move the ball
         if(avgRPM > 80 ) {
             dispatch_async(dispatch_get_main_queue(),{
-                
                 if !self.trackingIntialized {
                     self.trackingIntialized = true
                     MBProgressHUD.hideHUDForView(self.view, animated: true)
                 }
             })
             
-            CATransaction.begin()
-            CATransaction.setAnimationDuration(0.2)
-            
-            // position.y = center + (targetRPM - currentRPM)
-            //var rpmframe = self.rpmBar.frame
-            var newframe = CGFloat(screenRange) / 2 + CGFloat(rpmBallPosition)
             if newframe > screenSize.height {
                 newframe = screenSize.height - 50
             } else if newframe < 0 {
                 newframe = 50
+            } else {
+                
+                CATransaction.begin()
+                CATransaction.setAnimationDuration(0.6)
+                var newPoint = CGPoint(x: screenSize.width/2, y: newframe)
+                
+                rpmCircle.position = newPoint
+                
+                CATransaction.commit()
+                
             }
             
-            //rpmframe.origin.y = newframe
-            
-            //self.rpmBar.frame = rpmframe
-            
-            CATransaction.commit()
             
         } else {
-            var rpmframe = self.animationView.frame
+            var rpmframe = self.rpmCircle.frame
             var newframe = CGFloat(screenRange) / 2 - 40
             rpmframe.origin.y = newframe
             
             //self.rpmBar.frame = rpmframe
         }
-        
 
-        println("\(totalElapsedTime), \(avgRPM), \(direction)") // print data in csv format
+        println("\(totalElapsedTime), \(avgRPM), \(direction), \(newframe)") // print data in csv format
         
     }
 

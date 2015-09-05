@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01A9266C631BF33A3A0EB3F2 /* libPods-Draculapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE47FDC5CC6C986C2717B28 /* libPods-Draculapp.a */; };
 		22F5594B1B9AFE50008F961C /* SelectRPMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F559491B9AFE50008F961C /* SelectRPMViewController.xib */; };
 		22F5594C1B9AFE50008F961C /* CentrifugeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F5594A1B9AFE50008F961C /* CentrifugeViewController.xib */; };
 		22F5594F1B9AFE78008F961C /* StopWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F5594E1B9AFE78008F961C /* StopWatch.m */; };
@@ -98,6 +99,9 @@
 		4DCD6AF21B9B361A00D3F287 /* TakePictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TakePictureViewController.xib; sourceTree = "<group>"; };
 		4DCD6AF51B9B467100D3F287 /* ConfirmImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmImageViewController.swift; sourceTree = "<group>"; };
 		4DCD6AF61B9B467100D3F287 /* ConfirmImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmImageViewController.xib; sourceTree = "<group>"; };
+		5AE47FDC5CC6C986C2717B28 /* libPods-Draculapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Draculapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		87BAFA310A2E08408905D284 /* Pods-Draculapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Draculapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Draculapp/Pods-Draculapp.release.xcconfig"; sourceTree = "<group>"; };
+		B3E7E991688E3B298324075B /* Pods-Draculapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Draculapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Draculapp/Pods-Draculapp.debug.xcconfig"; sourceTree = "<group>"; };
 		BB46AA421B9AF63400AC765B /* BloodShapeStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodShapeStartViewController.swift; sourceTree = "<group>"; };
 		BBAD60551B9AA80B00662186 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		BBAD60571B9AA81000662186 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
@@ -137,6 +141,7 @@
 				BBAD605C1B9AA82200662186 /* AssetsLibrary.framework in Frameworks */,
 				BBAD60581B9AA81000662186 /* CoreAudio.framework in Frameworks */,
 				BBAD60561B9AA80B00662186 /* CoreVideo.framework in Frameworks */,
+				01A9266C631BF33A3A0EB3F2 /* libPods-Draculapp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +155,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0621B77024ECE3ACC4AFCBE4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3E7E991688E3B298324075B /* Pods-Draculapp.debug.xcconfig */,
+				87BAFA310A2E08408905D284 /* Pods-Draculapp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		22F559581B9B363E008F961C /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +206,8 @@
 				4D475E951B9A72420021B51B /* DraculappTests */,
 				4D475E7B1B9A72420021B51B /* Products */,
 				BBAD606F1B9AA8A000662186 /* Draculapp-Bridging-Header.h */,
+				0621B77024ECE3ACC4AFCBE4 /* Pods */,
+				8B59A6477B8D32DBCA2DB325 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -273,6 +289,14 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		8B59A6477B8D32DBCA2DB325 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5AE47FDC5CC6C986C2717B28 /* libPods-Draculapp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -280,9 +304,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D475E9C1B9A72420021B51B /* Build configuration list for PBXNativeTarget "Draculapp" */;
 			buildPhases = (
+				F61BB015E55E7FADCD16BDE2 /* Check Pods Manifest.lock */,
 				4D475E761B9A72420021B51B /* Sources */,
 				4D475E771B9A72420021B51B /* Frameworks */,
 				4D475E781B9A72420021B51B /* Resources */,
+				30CBDE135819BF8FAFDBC3ED /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -376,6 +402,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		30CBDE135819BF8FAFDBC3ED /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Draculapp/Pods-Draculapp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F61BB015E55E7FADCD16BDE2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4D475E761B9A72420021B51B /* Sources */ = {
@@ -517,6 +576,7 @@
 		};
 		4D475E9D1B9A72420021B51B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3E7E991688E3B298324075B /* Pods-Draculapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -537,6 +597,7 @@
 		};
 		4D475E9E1B9A72420021B51B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87BAFA310A2E08408905D284 /* Pods-Draculapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
