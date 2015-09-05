@@ -14,33 +14,51 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Select desired RPM:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdD-DY-anU">
-                    <rect key="frame" x="82" y="66" width="157" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yO3-E4-WU1">
-                    <rect key="frame" x="101" y="347" width="118" height="31"/>
-                    <color key="tintColor" red="0.15686274510000001" green="0.99215686270000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </slider>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdN-3U-Fjf">
-                    <rect key="frame" x="137" y="385" width="46" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdN-3U-Fjf">
+                    <rect key="frame" x="133" y="497" width="55" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
                     <state key="normal" title="Start">
                         <color key="titleColor" red="0.15686274509803921" green="0.99215686274509807" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RPM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpn-Dq-QDI">
-                    <rect key="frame" x="79" y="251" width="163" height="75"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="70"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6XG-Cv-RHp">
+                    <rect key="frame" x="8" y="216" width="304" height="136"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="250" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpn-Dq-QDI">
+                            <rect key="frame" x="71" y="0.0" width="163" height="75"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yO3-E4-WU1">
+                            <rect key="frame" x="28" y="83" width="249" height="31"/>
+                            <color key="tintColor" red="0.15686274510000001" green="0.99215686270000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </slider>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="136" id="0dd-rP-2UG"/>
+                        <constraint firstAttribute="bottom" secondItem="yO3-E4-WU1" secondAttribute="bottom" constant="23" id="YSw-Cm-3Zw"/>
+                        <constraint firstItem="cpn-Dq-QDI" firstAttribute="top" secondItem="6XG-Cv-RHp" secondAttribute="top" id="gL1-gt-0kA"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Select desired RPM:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdD-DY-anU">
+                    <rect key="frame" x="82" y="58" width="157" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="0.12941176469999999" green="0.18823529410000001" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="6XG-Cv-RHp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="BCc-Vv-YXG"/>
+                <constraint firstAttribute="bottom" secondItem="cdN-3U-Fjf" secondAttribute="bottom" constant="38" id="M2k-hM-63j"/>
+                <constraint firstAttribute="trailing" secondItem="6XG-Cv-RHp" secondAttribute="trailing" constant="8" id="Yn8-a1-SNP"/>
+                <constraint firstAttribute="centerX" secondItem="cdN-3U-Fjf" secondAttribute="centerX" constant="-0.5" id="cCm-Ot-mSr"/>
+                <constraint firstAttribute="centerY" secondItem="6XG-Cv-RHp" secondAttribute="centerY" id="dDR-4z-ene"/>
                 <constraint firstAttribute="centerX" secondItem="OdD-DY-anU" secondAttribute="centerX" constant="-2.5" id="dZ7-EF-ikS"/>
+                <constraint firstItem="OdD-DY-anU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="58" id="dkj-QT-4U4"/>
             </constraints>
             <point key="canvasLocation" x="325" y="406"/>
         </view>
