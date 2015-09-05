@@ -12,7 +12,7 @@
 @interface Wrapper : NSObject
 
 +(UIImage*)processImage:(UIImage*)image;
-+(UIImage*)isolateBlood:(UIImage *)image;
++(NSArray*)isolateBlood:(UIImage *)image;
 
 
 @end

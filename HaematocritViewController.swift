@@ -24,7 +24,9 @@ class HaematocritViewController: UIViewController {
         backButton.layer.borderColor = "#28FDFF".CGColor
         
        // pic1.image = sharedSampleDataModel.ratiosImage
-        pic2.image = Wrapper.isolateBlood(sharedSampleDataModel.ratiosImage)
+        let results = Wrapper.isolateBlood(sharedSampleDataModel.ratiosImage)
+        
+        pic2.image = results[0] as? UIImage
         // Do any additional setup after loading the view.
     }
 
