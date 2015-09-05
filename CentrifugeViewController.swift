@@ -20,8 +20,8 @@ class CentrifugeViewController: UIViewController {
     var prevZ: Double = 0
     var direction :String = "NONE"
     var avgRPM = 0.0 // Exponential moving average of centrifuge RPM
-    var EMA_Alpha = 0.25 // % significance of current sample compared to all past samples
-    var dirChangeThresh = 0.09 // force in G's needed to indicate the phone has changed direction
+    var EMA_Alpha = 0.33 // % significance of current sample compared to all past samples
+    var dirChangeThresh = 0.08 // force in G's needed to indicate the phone has changed direction
     
     var timer = StopWatch()
     var totalElapsedTime = 0.0
@@ -46,8 +46,9 @@ class CentrifugeViewController: UIViewController {
         
         trackingIntialized = false
         var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        hud.labelText = "Begin Spinning, Averaging RPM Data";
-        self.startAccelerometerPollingWithInterval(0.05)
+        hud.labelText = "Begin Spinning Now";
+        hud.detailsLabelText = "Averaging accerometer data"
+        self.startAccelerometerPollingWithInterval(0.008)
         
     }
 
@@ -94,13 +95,13 @@ class CentrifugeViewController: UIViewController {
         self.prevZ = event.acceleration.z
         
         if (zChange > dirChangeThresh){
-            if direction == "Start" {
+            if direction == "UP" {
                 self.directionChanged()
             }
             direction = "DOWN";
         }
         else if (zChange < -1 * dirChangeThresh){
-            if direction == "." {
+            if direction == "DOWN" {
                 self.directionChanged()
             }
             direction = "UP"
@@ -164,7 +165,6 @@ class CentrifugeViewController: UIViewController {
             
             self.rpmBar.frame = rpmframe
         }
-
 
         println("\(totalElapsedTime), \(avgRPM), \(direction)") // print data in csv format
         
