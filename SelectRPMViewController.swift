@@ -11,10 +11,13 @@ import UIKit
 class SelectRPMViewController: UIViewController {
 
     @IBOutlet var RPMSlider: UISlider!
+    var rpm: Float!
     @IBOutlet var RPMLabel: UILabel!
     @IBOutlet var RadiusSlider: UISlider!
+    var radius: Float!
     @IBOutlet var RadiusLabel: UILabel!
     
+    var RCF: Float!
     @IBOutlet var RCFLabel: UILabel!
     
     @IBOutlet var bloodUrineSegment: UISegmentedControl!
@@ -57,17 +60,22 @@ class SelectRPMViewController: UIViewController {
         // Example: If rotor radius is 102mm, speed is 3.4krpm (3400rpm), Then,
         // RCF = 1.12 x 102 x 3.4 x 3.4 = 1320g
         
-        self.RadiusLabel.text = "\(round(self.RadiusSlider.value * 100) / 100)";
-        self.RPMLabel.text = "\(Int(self.RPMSlider.value))";
-        var rcf = 1.12 * (self.RadiusSlider.value * 1000) * pow(self.RPMSlider.value / 1000, 2)
-        self.RCFLabel.text = "\(Int(rcf))"
+        radius = self.RadiusSlider.value
+        self.RadiusLabel.text = "\(round(radius * 100) / 100)";
         
-        if 300 <= rcf && rcf < 400 {
+        rpm = self.RPMSlider.value
+        self.RPMLabel.text = "\(Int(rpm))";
+        
+        RCF = 1.12 * (radius * 1000) * pow(self.RPMSlider.value / 1000, 2)
+        self.RCFLabel.text = "\(Int(RCF))"
+        
+        if 300 <= RCF && RCF < 400 {
             self.bloodUrineSegment.selectedSegmentIndex = 1
-        } else if rcf >= 400 {
+        } else if RCF >= 400 {
             self.bloodUrineSegment.selectedSegmentIndex = 0
+        } else {
+            self.bloodUrineSegment.selectedSegmentIndex = UISegmentedControlNoSegment
         }
-        
     }
     
     @IBAction func indexChanged(sender:UISegmentedControl) {
@@ -92,6 +100,12 @@ class SelectRPMViewController: UIViewController {
     
     // MARK: - Navigation
 
+    @IBAction func centrifugePush(sender: AnyObject) {
+        var newSample = Sample(fromRPM: Double(rpm), nRadius: Double(radius), nRCF: Double(RCF))
+        sharedSampleDataModel.addSample(newSample)
+        delegate?.goToPage(.Centrifuge)
+    }
+    
     class func generate(#delegate: Navigation) -> SelectRPMViewController {
         let viewController = SelectRPMViewController(nibName: "SelectRPMViewController", bundle: NSBundle.mainBundle())
         viewController.delegate = delegate

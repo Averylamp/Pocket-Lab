@@ -16,33 +16,42 @@ class CentrifugeViewController: UIViewController {
     
     let motionManager: CMMotionManager = CMMotionManager()
     
+    var trackingIntialized = false
     var prevZ: Double = 0
     var direction :String = "NONE"
     var avgRPM = 0.0 // Exponential moving average of centrifuge RPM
-    var EMA_Alpha = 0.2 // % significance of current sample compared to all past samples
+    var EMA_Alpha = 0.33 // % significance of current sample compared to all past samples
     var dirChangeThresh = 0.08 // force in G's needed to indicate the phone has changed direction
     
     var timer = StopWatch()
     var totalElapsedTime = 0.0
     var initTime: Double!
     
-    var rpmBar: UIView!
+    @IBOutlet var animationView: UIView!
+    var rpmCircle: CAShapeLayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        desiredRPM = 300
-        
+        desiredRPM = sharedSampleDataModel.getLastSample()?.RPM
+        if desiredRPM != nil { desiredRPM! += 100.0 } // constant correction factor
+        /*
         let screenSize: CGRect = UIScreen.mainScreen().bounds
-        self.rpmBar = UIView(frame: CGRect(x: screenSize.width/2 - 40, y: screenSize.height/2 - 40, width: 80, height: 80))
-        rpmBar.layer.cornerRadius = 35
-        rpmBar.layer.backgroundColor = UIColor.whiteColor().CGColor
+        self.rpmCircle = CAShapeLayer()//UIView(frame: CGRect(x: screenSize.width/2 - 40, y: screenSize.height/2 - 40, width: 80, height: 80))
+        let radius = CGFloat(35)
+        rpmCircle.path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: 2.0 * radius, height: 2.0 * radius)  , cornerRadius: radius).CGPath
+        rpmCircle.position = CGPoint(x: CGRectGetMidX(self.animationView.frame) - radius, y: CGRectGetMidY(self.animationView.frame) - radius)
+        rpmCircle.fillColor = UIColor.whiteColor().CGColor
+        self.animationView.layer .addSublayer(rpmCircle)
         
-        self.view.addSubview(rpmBar)
-        
-        self.startAccelerometerPollingWithInterval(0.01)
+        trackingIntialized = false
+        var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        hud.labelText = "Begin Spinning Now";
+        hud.detailsLabelText = "Averaging accerometer data"
+        */
+        self.startAccelerometerPollingWithInterval(0.008)
         
     }
 
@@ -128,24 +137,41 @@ class CentrifugeViewController: UIViewController {
         var rpmBallPosition = (((self.avgRPM - (self.desiredRPM - 300)) * screenRange) / rpmRange) - screenRange / 2
         
         // Move the ball
-        
-        dispatch_async(dispatch_get_main_queue(),{
-            UIView.animateWithDuration(0.3, delay: 0, options: .CurveEaseOut, animations: {
-                // position.y = center + (targetRPM - currentRPM)
-                var rpmframe = self.rpmBar.frame
-                var newframe = CGFloat(screenRange) / 2 + CGFloat(rpmBallPosition)
-                if newframe > screenSize.height {
-                    newframe = screenSize.height - 50
-                } else if newframe < 0 {
-                    newframe = 50
+        if(avgRPM > 80 ) {
+            dispatch_async(dispatch_get_main_queue(),{
+                
+                if !self.trackingIntialized {
+                    self.trackingIntialized = true
+                    MBProgressHUD.hideHUDForView(self.view, animated: true)
                 }
-                
-                rpmframe.origin.y = newframe
-                
-                self.rpmBar.frame = rpmframe
-                }, completion: { finished in
             })
-        })
+            
+            CATransaction.begin()
+            CATransaction.setAnimationDuration(0.2)
+            
+            // position.y = center + (targetRPM - currentRPM)
+            //var rpmframe = self.rpmBar.frame
+            var newframe = CGFloat(screenRange) / 2 + CGFloat(rpmBallPosition)
+            if newframe > screenSize.height {
+                newframe = screenSize.height - 50
+            } else if newframe < 0 {
+                newframe = 50
+            }
+            
+            //rpmframe.origin.y = newframe
+            
+            //self.rpmBar.frame = rpmframe
+            
+            CATransaction.commit()
+            
+        } else {
+            var rpmframe = self.animationView.frame
+            var newframe = CGFloat(screenRange) / 2 - 40
+            rpmframe.origin.y = newframe
+            
+            //self.rpmBar.frame = rpmframe
+        }
+        
 
         println("\(totalElapsedTime), \(avgRPM), \(direction)") // print data in csv format
         
