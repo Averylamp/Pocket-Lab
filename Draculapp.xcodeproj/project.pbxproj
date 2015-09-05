@@ -36,6 +36,15 @@
 		4DCD6AF41B9B361A00D3F287 /* TakePictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCD6AF21B9B361A00D3F287 /* TakePictureViewController.xib */; };
 		4DCD6AF71B9B467100D3F287 /* ConfirmImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD6AF51B9B467100D3F287 /* ConfirmImageViewController.swift */; };
 		4DCD6AF81B9B467100D3F287 /* ConfirmImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCD6AF61B9B467100D3F287 /* ConfirmImageViewController.xib */; };
+		BB2C5E531B9BAAB500EC60D4 /* Panton-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E4A1B9BAAB500EC60D4 /* Panton-Black.otf */; };
+		BB2C5E541B9BAAB500EC60D4 /* Panton-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E4B1B9BAAB500EC60D4 /* Panton-Bold.otf */; };
+		BB2C5E551B9BAAB500EC60D4 /* Panton-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E4C1B9BAAB500EC60D4 /* Panton-ExtraBold.otf */; };
+		BB2C5E561B9BAAB500EC60D4 /* Panton-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E4D1B9BAAB500EC60D4 /* Panton-ExtraLight.otf */; };
+		BB2C5E571B9BAAB500EC60D4 /* Panton-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E4E1B9BAAB500EC60D4 /* Panton-Heavy.otf */; };
+		BB2C5E581B9BAAB500EC60D4 /* Panton-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E4F1B9BAAB500EC60D4 /* Panton-Light.otf */; };
+		BB2C5E591B9BAAB500EC60D4 /* Panton-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E501B9BAAB500EC60D4 /* Panton-Regular.otf */; };
+		BB2C5E5A1B9BAAB500EC60D4 /* Panton-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E511B9BAAB500EC60D4 /* Panton-SemiBold.otf */; };
+		BB2C5E5B1B9BAAB500EC60D4 /* Panton-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E521B9BAAB500EC60D4 /* Panton-Thin.otf */; };
 		BB46AA431B9AF63400AC765B /* BloodShapeStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB46AA421B9AF63400AC765B /* BloodShapeStartViewController.swift */; };
 		BBAD60561B9AA80B00662186 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD60551B9AA80B00662186 /* CoreVideo.framework */; };
 		BBAD60581B9AA81000662186 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD60571B9AA81000662186 /* CoreAudio.framework */; };
@@ -102,6 +111,15 @@
 		5AE47FDC5CC6C986C2717B28 /* libPods-Draculapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Draculapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BAFA310A2E08408905D284 /* Pods-Draculapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Draculapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Draculapp/Pods-Draculapp.release.xcconfig"; sourceTree = "<group>"; };
 		B3E7E991688E3B298324075B /* Pods-Draculapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Draculapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Draculapp/Pods-Draculapp.debug.xcconfig"; sourceTree = "<group>"; };
+		BB2C5E4A1B9BAAB500EC60D4 /* Panton-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-Black.otf"; sourceTree = "<group>"; };
+		BB2C5E4B1B9BAAB500EC60D4 /* Panton-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-Bold.otf"; sourceTree = "<group>"; };
+		BB2C5E4C1B9BAAB500EC60D4 /* Panton-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-ExtraBold.otf"; sourceTree = "<group>"; };
+		BB2C5E4D1B9BAAB500EC60D4 /* Panton-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-ExtraLight.otf"; sourceTree = "<group>"; };
+		BB2C5E4E1B9BAAB500EC60D4 /* Panton-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-Heavy.otf"; sourceTree = "<group>"; };
+		BB2C5E4F1B9BAAB500EC60D4 /* Panton-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-Light.otf"; sourceTree = "<group>"; };
+		BB2C5E501B9BAAB500EC60D4 /* Panton-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-Regular.otf"; sourceTree = "<group>"; };
+		BB2C5E511B9BAAB500EC60D4 /* Panton-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-SemiBold.otf"; sourceTree = "<group>"; };
+		BB2C5E521B9BAAB500EC60D4 /* Panton-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-Thin.otf"; sourceTree = "<group>"; };
 		BB46AA421B9AF63400AC765B /* BloodShapeStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodShapeStartViewController.swift; sourceTree = "<group>"; };
 		BBAD60551B9AA80B00662186 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		BBAD60571B9AA81000662186 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
@@ -202,6 +220,7 @@
 				4D475E7C1B9A72420021B51B /* Draculapp */,
 				4D475EAB1B9A7A120021B51B /* Controllers */,
 				4D475EAA1B9A7A080021B51B /* Views */,
+				BB2C5E5C1B9BAABB00EC60D4 /* Panton */,
 				22F559581B9B363E008F961C /* Models */,
 				4D475E951B9A72420021B51B /* DraculappTests */,
 				4D475E7B1B9A72420021B51B /* Products */,
@@ -297,6 +316,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BB2C5E5C1B9BAABB00EC60D4 /* Panton */ = {
+			isa = PBXGroup;
+			children = (
+				BB2C5E4A1B9BAAB500EC60D4 /* Panton-Black.otf */,
+				BB2C5E4B1B9BAAB500EC60D4 /* Panton-Bold.otf */,
+				BB2C5E4C1B9BAAB500EC60D4 /* Panton-ExtraBold.otf */,
+				BB2C5E4D1B9BAAB500EC60D4 /* Panton-ExtraLight.otf */,
+				BB2C5E4E1B9BAAB500EC60D4 /* Panton-Heavy.otf */,
+				BB2C5E4F1B9BAAB500EC60D4 /* Panton-Light.otf */,
+				BB2C5E501B9BAAB500EC60D4 /* Panton-Regular.otf */,
+				BB2C5E511B9BAAB500EC60D4 /* Panton-SemiBold.otf */,
+				BB2C5E521B9BAAB500EC60D4 /* Panton-Thin.otf */,
+			);
+			name = Panton;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -380,7 +415,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB2C5E561B9BAAB500EC60D4 /* Panton-ExtraLight.otf in Resources */,
+				BB2C5E571B9BAAB500EC60D4 /* Panton-Heavy.otf in Resources */,
+				BB2C5E541B9BAAB500EC60D4 /* Panton-Bold.otf in Resources */,
 				4DCD6AF41B9B361A00D3F287 /* TakePictureViewController.xib in Resources */,
+				BB2C5E5A1B9BAAB500EC60D4 /* Panton-SemiBold.otf in Resources */,
+				BB2C5E531B9BAAB500EC60D4 /* Panton-Black.otf in Resources */,
 				22F5594C1B9AFE50008F961C /* CentrifugeViewController.xib in Resources */,
 				4D475E8D1B9A72420021B51B /* LaunchScreen.xib in Resources */,
 				4D475EB41B9A90370021B51B /* OptionsViewController.xib in Resources */,
@@ -389,8 +429,12 @@
 				4D475EA91B9A7A010021B51B /* StartViewController.xib in Resources */,
 				4D29985F1B9AFB7600AE37FF /* BloodShapeStartViewController.xib in Resources */,
 				4DCD6AF81B9B467100D3F287 /* ConfirmImageViewController.xib in Resources */,
+				BB2C5E551B9BAAB500EC60D4 /* Panton-ExtraBold.otf in Resources */,
+				BB2C5E591B9BAAB500EC60D4 /* Panton-Regular.otf in Resources */,
 				22F5594B1B9AFE50008F961C /* SelectRPMViewController.xib in Resources */,
 				4D475EB81B9AA6E40021B51B /* OpenCVTestViewController.xib in Resources */,
+				BB2C5E5B1B9BAAB500EC60D4 /* Panton-Thin.otf in Resources */,
+				BB2C5E581B9BAAB500EC60D4 /* Panton-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

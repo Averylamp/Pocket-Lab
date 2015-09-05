@@ -42,7 +42,7 @@ static void cvUIImageToMat(const UIImage* image, cv::Mat& m) {
     CGContextRelease(contextRef);
     //    CGColorSpaceRelease(colorSpace);
 }
-+(UIImage*)processImage:(UIImage *)image{
++(NSArray*)processImage:(UIImage *)image{
     cv::Mat img;
     cv::Mat resultImg;
     cvUIImageToMat(image, img);
@@ -120,7 +120,7 @@ static void cvUIImageToMat(const UIImage* image, cv::Mat& m) {
     UIImage *result = cvMatToUIImage(resultImg);
     img.release();
     resultImg.release();
-    return result;
+    return @[result,[NSNumber numberWithInt:allGood], [NSNumber numberWithInt:allBad]];
 }
 
 int minBallArea = 900;
