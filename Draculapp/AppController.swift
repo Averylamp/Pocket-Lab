@@ -50,7 +50,8 @@ extension AppController: Navigation {
         }
         
         if page == .OpenCV {
-            self.setViewControllers([opencv], animated: false)
+        //    self.setViewControllers([opencv], animated: false)
+            pushViewController(opencv, animated: false)
         }
         
     }
