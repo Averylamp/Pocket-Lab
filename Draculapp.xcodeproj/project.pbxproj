@@ -156,6 +156,7 @@
 		4D475E721B9A72420021B51B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = magicmark;
 				TargetAttributes = {
@@ -401,6 +402,7 @@
 				4D475E9E1B9A72420021B51B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D475E9F1B9A72420021B51B /* Build configuration list for PBXNativeTarget "DraculappTests" */ = {
 			isa = XCConfigurationList;
@@ -409,6 +411,7 @@
 				4D475EA11B9A72420021B51B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
