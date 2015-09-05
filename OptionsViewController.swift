@@ -32,9 +32,16 @@ class OptionsViewController: UIViewController {
         
         self.bgScroll.frame.origin.y = -self.bgScroll.image!.size.height + UIScreen.mainScreen().bounds.height
         startAnimation()
+        
+        spinButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "spinTapped:"))
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func spinTapped(recognizer: UITapGestureRecognizer) {
+        delegate?.goToPage(.Centrifuge)
     }
     
     func setButtonStyle(button: UIView) {

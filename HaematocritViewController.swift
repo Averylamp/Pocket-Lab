@@ -1,19 +1,15 @@
 //
-//  SelectRPMViewController.swift
-//  DraculappAccelerometer
+//  HaematocritViewController.swift
+//  Draculapp
 //
-//  Created by Jake Spracher on 9/4/15.
-//  Copyright (c) 2015 Turnt Technologies, LLC. All rights reserved.
+//  Created by Mark Larah on 05/09/2015.
+//  Copyright (c) 2015 magicmark. All rights reserved.
 //
 
 import UIKit
 
-class SelectRPMViewController: UIViewController {
+class HaematocritViewController: UIViewController {
 
-    @IBOutlet var RPMField: UITextField!
-    var delegate: Navigation?
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,10 +32,4 @@ class SelectRPMViewController: UIViewController {
     }
     */
 
-    class func generate(#delegate: Navigation) -> SelectRPMViewController {
-        let viewController = SelectRPMViewController(nibName: "SelectRPMViewController", bundle: NSBundle.mainBundle())
-        viewController.delegate = delegate
-        return viewController
-    }
-    
 }
