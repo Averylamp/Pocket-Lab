@@ -55,17 +55,66 @@ static void cvUIImageToMat(const UIImage* image, cv::Mat& m) {
     cv::findContours( img, contours, RETR_TREE, CHAIN_APPROX_SIMPLE);
     
     /// Draw contours
+    double allRadiiMean = 0.0;
+    int allGood = 0;
+    int allBad = 0;
+    int distrib[25];
+    for (int z=0; z<25; z++) {
+        distrib[z] = 0;
+    }
     
     int z = 0;
     for (int i = 0; i < contours.size(); i++){ // for each contour
-        if (contours[i].size() > 20) {
-            cv::drawContours(resultImg , contours, i, cv::Scalar(arc4random()%255,arc4random()%255,arc4random()%255), 5);
-            NSLog(@"Contour Drawn - %d",z);
+        if (contours[i].size() > 25) {
+            double xMean = 0.0;
+            double yMean = 0.0;
+            for (int z = 0; z < contours[i].size(); z++){
+                xMean = xMean + contours[i][z].x;
+                yMean = yMean + contours[i][z].y;
+            }
+            xMean = xMean / contours[i].size();
+            yMean = yMean / contours[i].size();
+            
+            double radii[contours[i].size()];
+            double radiiMean = 0.0;
+            for (int z = 0; z < contours[i].size(); z++) {
+                double xVal = abs(xMean - contours[i][z].x);
+                xVal = xVal * xVal;
+                double yVal = abs(yMean - contours[i][z].y);
+                yVal = yVal * yVal;
+                radii[z] = sqrt(xVal + yVal);
+                radiiMean = radiiMean + radii[z];
+            }
+            radiiMean = radiiMean / contours[i].size();
+            allRadiiMean = allRadiiMean + radiiMean;
+            double std = 0.0;
+            for (int z = 0; z< contours[i].size(); z++) {
+                std = std + pow(abs(radii[z]- radiiMean), 2);
+            }
+            std = std / contours[i].size();
+            std = sqrt(std);
+            distrib[(int)std] ++;
+//            NSLog(@"Standard Deviation: %f", std);
+            if(std<5){
+                cv::drawContours(resultImg , contours, i, cv::Scalar(146,222,64), 5);
+                allGood ++;
+            }else{
+                cv::drawContours(resultImg , contours, i, cv::Scalar(176,31,22), 5);
+                allBad++;
+            }
+            
+//            NSLog(@"Contour Drawn - %d",z);
             z++;
         }
         
     }
-
+    
+    allRadiiMean = allRadiiMean / contours.size();
+    
+    NSLog(@"Radii Mean - %f\nGood: %d,\nBad: %d\nPercentage: %f",allRadiiMean,allGood,allBad, allGood /((double)(allGood + allBad)));
+    for (int i=0 ; i<25; i++) {
+        NSLog(@"Dist %d:  %d", i , distrib[i]);
+    }
     
 //    UIImage *result = cvMatToUIImage(img);
     UIImage *result = cvMatToUIImage(resultImg);

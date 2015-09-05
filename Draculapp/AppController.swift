@@ -36,6 +36,7 @@ class AppController: UINavigationController {
         
         navigationBar.hidden = true
         self.pushViewController(startView, animated: false)
+        pushViewController(opencv, animated: false)
         super.viewDidLoad()
     }
 

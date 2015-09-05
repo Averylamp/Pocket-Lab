@@ -20,6 +20,7 @@
 		4D475EB31B9A90370021B51B /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D475EB11B9A90370021B51B /* OptionsViewController.swift */; };
 		4D475EB41B9A90370021B51B /* OptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D475EB21B9A90370021B51B /* OptionsViewController.xib */; };
 		4D475EB81B9AA6E40021B51B /* OpenCVTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D475EB61B9AA6E40021B51B /* OpenCVTestViewController.xib */; };
+		BB46AA431B9AF63400AC765B /* BloodShapeStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB46AA421B9AF63400AC765B /* BloodShapeStartViewController.swift */; };
 		BBAD60561B9AA80B00662186 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD60551B9AA80B00662186 /* CoreVideo.framework */; };
 		BBAD60581B9AA81000662186 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD60571B9AA81000662186 /* CoreAudio.framework */; };
 		BBAD605A1B9AA81900662186 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD60591B9AA81900662186 /* CoreMedia.framework */; };
@@ -65,6 +66,7 @@
 		4D475EB11B9A90370021B51B /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		4D475EB21B9A90370021B51B /* OptionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionsViewController.xib; sourceTree = "<group>"; };
 		4D475EB61B9AA6E40021B51B /* OpenCVTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenCVTestViewController.xib; sourceTree = "<group>"; };
+		BB46AA421B9AF63400AC765B /* BloodShapeStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodShapeStartViewController.swift; sourceTree = "<group>"; };
 		BBAD60551B9AA80B00662186 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		BBAD60571B9AA81000662186 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		BBAD60591B9AA81900662186 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				4D475EB11B9A90370021B51B /* OptionsViewController.swift */,
+				BB46AA421B9AF63400AC765B /* BloodShapeStartViewController.swift */,
 				BBAD60741B9AC8E400662186 /* OpenCVTestViewController.swift */,
 				4D475EB61B9AA6E40021B51B /* OpenCVTestViewController.xib */,
 				4D475EA61B9A7A010021B51B /* StartViewController.swift */,
@@ -324,6 +327,7 @@
 				4D475E801B9A72420021B51B /* AppDelegate.swift in Sources */,
 				BBAD60731B9AA8A100662186 /* Wrapper.mm in Sources */,
 				4D475EA51B9A74410021B51B /* AppController.swift in Sources */,
+				BB46AA431B9AF63400AC765B /* BloodShapeStartViewController.swift in Sources */,
 				4D475EB01B9A7FF50021B51B /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
