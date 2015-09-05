@@ -10,6 +10,7 @@
             <connections>
                 <outlet property="bgScroll" destination="LmV-gA-JFj" id="Zzb-xa-tkQ"/>
                 <outlet property="microscopy" destination="Bab-2g-pwk" id="Sgh-Cw-5Ub"/>
+                <outlet property="ratios" destination="Xo7-xQ-hsL" id="zAc-mw-uUi"/>
                 <outlet property="spinButton" destination="vSi-3a-tu4" id="rGn-SC-1j4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,14 +23,8 @@
                 <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="LmV-gA-JFj">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toolkit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKd-tg-3Ic">
-                    <rect key="frame" x="176" y="40" width="61" height="24.5"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="943-KE-Cjf">
-                    <rect key="frame" x="40" y="84" width="334" height="651.5"/>
+                    <rect key="frame" x="40" y="100" width="334" height="636"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vSi-3a-tu4">
                             <rect key="frame" x="0.0" y="0.0" width="147" height="147"/>
@@ -61,6 +56,38 @@
                                 <constraint firstItem="wnH-iR-Uns" firstAttribute="leading" secondItem="vSi-3a-tu4" secondAttribute="leading" constant="20" id="hi5-Pd-Ws2"/>
                                 <constraint firstAttribute="centerX" secondItem="xwn-v5-iHc" secondAttribute="centerX" id="qeY-IS-0CG"/>
                                 <constraint firstAttribute="bottom" secondItem="xwn-v5-iHc" secondAttribute="bottom" constant="11" id="uXY-dh-lgl"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xo7-xQ-hsL">
+                            <rect key="frame" x="0.0" y="187" width="147" height="147"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haematocrit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dps-um-x0Z">
+                                    <rect key="frame" x="32" y="118" width="84" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ruler" translatesAutoresizingMaskIntoConstraints="NO" id="882-WX-soe">
+                                    <rect key="frame" x="20" y="5" width="107" height="107"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="882-WX-soe" secondAttribute="height" multiplier="1:1" id="FrN-mh-T4Z"/>
+                                        <constraint firstAttribute="height" constant="90" id="dzw-7h-KLA"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="dzw-7h-KLA"/>
+                                        </mask>
+                                    </variation>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.04218033257" green="0.68235294120000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Xo7-xQ-hsL" secondAttribute="height" multiplier="1:1" id="B5R-2g-rQh"/>
+                                <constraint firstAttribute="centerX" secondItem="dps-um-x0Z" secondAttribute="centerX" id="Dfr-Br-RRD"/>
+                                <constraint firstAttribute="bottom" secondItem="dps-um-x0Z" secondAttribute="bottom" constant="11" id="UlW-pr-TYT"/>
+                                <constraint firstAttribute="centerX" secondItem="882-WX-soe" secondAttribute="centerX" id="b21-rt-xvo"/>
+                                <constraint firstItem="882-WX-soe" firstAttribute="top" secondItem="Xo7-xQ-hsL" secondAttribute="top" constant="5" id="h88-BM-1Ah"/>
+                                <constraint firstItem="882-WX-soe" firstAttribute="leading" secondItem="Xo7-xQ-hsL" secondAttribute="leading" constant="20" id="xrh-5Z-6P3"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bab-2g-pwk">
@@ -103,8 +130,8 @@
                                 </mask>
                             </variation>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYh-mx-5qI">
-                            <rect key="frame" x="122" y="176" width="90" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYh-mx-5qI">
+                            <rect key="frame" x="132" y="575.5" width="90" height="30"/>
                             <state key="normal" title="OpenCV Test">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -120,42 +147,53 @@
                         <constraint firstAttribute="height" constant="471" id="BLy-AN-QRK"/>
                         <constraint firstItem="Bab-2g-pwk" firstAttribute="width" secondItem="Bab-2g-pwk" secondAttribute="height" multiplier="1:1" id="Bnc-86-LAk"/>
                         <constraint firstItem="vSi-3a-tu4" firstAttribute="leading" secondItem="943-KE-Cjf" secondAttribute="leading" id="M5z-hy-IHL"/>
+                        <constraint firstItem="Xo7-xQ-hsL" firstAttribute="top" secondItem="vSi-3a-tu4" secondAttribute="bottom" constant="40" id="SIb-i5-4tC"/>
+                        <constraint firstItem="Xo7-xQ-hsL" firstAttribute="leading" secondItem="943-KE-Cjf" secondAttribute="leading" id="T3g-bO-8rw"/>
+                        <constraint firstItem="Xo7-xQ-hsL" firstAttribute="width" secondItem="Xo7-xQ-hsL" secondAttribute="height" multiplier="1:1" id="h4v-7Y-akG"/>
                         <constraint firstItem="vSi-3a-tu4" firstAttribute="width" secondItem="943-KE-Cjf" secondAttribute="width" multiplier="0.5" constant="-20" id="iOe-gT-rPD"/>
+                        <constraint firstItem="lYh-mx-5qI" firstAttribute="leading" secondItem="943-KE-Cjf" secondAttribute="leading" constant="132" id="ip4-fb-TsO"/>
+                        <constraint firstItem="Xo7-xQ-hsL" firstAttribute="width" secondItem="vSi-3a-tu4" secondAttribute="width" id="jkc-np-uoq"/>
+                        <constraint firstAttribute="bottom" secondItem="lYh-mx-5qI" secondAttribute="bottom" constant="30.5" id="neq-xq-gyK"/>
+                        <constraint firstAttribute="width" secondItem="Xo7-xQ-hsL" secondAttribute="width" multiplier="0.5" constant="-20" id="riZ-QB-EzR"/>
                         <constraint firstItem="Bab-2g-pwk" firstAttribute="top" secondItem="943-KE-Cjf" secondAttribute="top" id="wT1-45-zXQ"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="BLy-AN-QRK"/>
+                            <exclude reference="riZ-QB-EzR"/>
                         </mask>
                     </variation>
                 </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pl" translatesAutoresizingMaskIntoConstraints="NO" id="oSI-RQ-EZR">
+                    <rect key="frame" x="165" y="27" width="85" height="51"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="51" id="dkR-jH-NMF"/>
+                        <constraint firstAttribute="width" constant="85" id="yDg-gg-Gbj"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.23816179281345565" green="0.2196078431372549" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="LmV-gA-JFj" firstAttribute="top" secondItem="943-KE-Cjf" secondAttribute="top" constant="-100" id="BkS-61-Cpr"/>
                 <constraint firstAttribute="bottom" secondItem="943-KE-Cjf" secondAttribute="bottom" id="CbH-kG-tNv"/>
                 <constraint firstItem="LmV-gA-JFj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Fyc-In-ngc"/>
                 <constraint firstItem="LmV-gA-JFj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Kgq-RM-dhU"/>
                 <constraint firstAttribute="bottom" secondItem="LmV-gA-JFj" secondAttribute="bottom" id="MLv-H0-71F"/>
                 <constraint firstItem="943-KE-Cjf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="Nsa-GD-kDY"/>
-                <constraint firstAttribute="centerX" secondItem="PKd-tg-3Ic" secondAttribute="centerX" id="RJB-iS-Rha"/>
-                <constraint firstItem="LmV-gA-JFj" firstAttribute="leading" secondItem="PKd-tg-3Ic" secondAttribute="trailing" constant="-218" id="V8h-td-QuI"/>
                 <constraint firstAttribute="trailing" secondItem="LmV-gA-JFj" secondAttribute="trailing" id="dCr-Vw-5ja"/>
                 <constraint firstAttribute="trailing" secondItem="943-KE-Cjf" secondAttribute="trailing" constant="40" id="gea-XW-YyM"/>
-                <constraint firstItem="943-KE-Cjf" firstAttribute="top" secondItem="PKd-tg-3Ic" secondAttribute="bottom" constant="20" id="mhx-wN-CXw"/>
-                <constraint firstItem="PKd-tg-3Ic" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="rbT-xY-kmh"/>
+                <constraint firstItem="oSI-RQ-EZR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="27" id="jBZ-iW-OUN"/>
+                <constraint firstAttribute="centerX" secondItem="oSI-RQ-EZR" secondAttribute="centerX" constant="-0.5" id="rdk-8n-fc3"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="V8h-td-QuI"/>
-                </mask>
-            </variation>
             <point key="canvasLocation" x="339" y="377"/>
         </view>
     </objects>
     <resources>
         <image name="bg" width="1200" height="2780"/>
         <image name="microscope" width="512" height="512"/>
+        <image name="pl" width="419" height="263"/>
+        <image name="ruler" width="512" height="512"/>
         <image name="spin" width="512" height="512"/>
     </resources>
 </document>
