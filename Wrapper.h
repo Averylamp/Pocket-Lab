@@ -12,6 +12,7 @@
 @interface Wrapper : NSObject
 
 +(UIImage*)processImage:(UIImage*)image;
++(UIImage*)isolateYellow:(UIImage *)image;
 
 
 @end

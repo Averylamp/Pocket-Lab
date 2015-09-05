@@ -80,7 +80,7 @@ class OptionsViewController: UIViewController {
 
     
     @IBAction func opencvpush(sender: AnyObject) {
-        delegate?.goToPage(.OpenCV)
+        delegate?.goToPage(.OpenCV2)
         
     }
     

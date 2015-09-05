@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D29985F1B9AFB7600AE37FF /* BloodShapeStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D29985E1B9AFB7600AE37FF /* BloodShapeStartViewController.xib */; };
 		4D475E801B9A72420021B51B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D475E7F1B9A72420021B51B /* AppDelegate.swift */; };
 		4D475E831B9A72420021B51B /* Draculapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D475E811B9A72420021B51B /* Draculapp.xcdatamodeld */; };
 		4D475E8A1B9A72420021B51B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D475E891B9A72420021B51B /* Images.xcassets */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D29985E1B9AFB7600AE37FF /* BloodShapeStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BloodShapeStartViewController.xib; sourceTree = "<group>"; };
 		4D475E7A1B9A72420021B51B /* Draculapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Draculapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D475E7E1B9A72420021B51B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D475E7F1B9A72420021B51B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -198,8 +200,10 @@
 		4D475EAA1B9A7A080021B51B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4D475EB61B9AA6E40021B51B /* OpenCVTestViewController.xib */,
 				4D475EB21B9A90370021B51B /* OptionsViewController.xib */,
 				4D475EA71B9A7A010021B51B /* StartViewController.xib */,
+				4D29985E1B9AFB7600AE37FF /* BloodShapeStartViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -210,7 +214,6 @@
 				4D475EB11B9A90370021B51B /* OptionsViewController.swift */,
 				BB46AA421B9AF63400AC765B /* BloodShapeStartViewController.swift */,
 				BBAD60741B9AC8E400662186 /* OpenCVTestViewController.swift */,
-				4D475EB61B9AA6E40021B51B /* OpenCVTestViewController.xib */,
 				4D475EA61B9A7A010021B51B /* StartViewController.swift */,
 			);
 			name = Controllers;
@@ -301,6 +304,7 @@
 				4D475EB41B9A90370021B51B /* OptionsViewController.xib in Resources */,
 				4D475E8A1B9A72420021B51B /* Images.xcassets in Resources */,
 				4D475EA91B9A7A010021B51B /* StartViewController.xib in Resources */,
+				4D29985F1B9AFB7600AE37FF /* BloodShapeStartViewController.xib in Resources */,
 				4D475EB81B9AA6E40021B51B /* OpenCVTestViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

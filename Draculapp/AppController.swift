@@ -15,6 +15,7 @@ enum Page {
     case Ratios
     case Microscope
     case OpenCV
+    case OpenCV2
 }
 
 
@@ -36,7 +37,7 @@ class AppController: UINavigationController {
         
         navigationBar.hidden = true
         self.pushViewController(startView, animated: false)
-        pushViewController(opencv, animated: false)
+        //pushViewController(opencv, animated: false)
         super.viewDidLoad()
     }
 
@@ -51,8 +52,12 @@ extension AppController: Navigation {
         }
         
         if page == .OpenCV {
-        //    self.setViewControllers([opencv], animated: false)
-            pushViewController(opencv, animated: false)
+            self.setViewControllers([opencv], animated: false)
+        }
+        
+        if page == .OpenCV2 {
+            let vc = BloodShapeStartViewController(nibName: "BloodShapeStartViewController", bundle: NSBundle.mainBundle())
+            self.setViewControllers([vc], animated: false)
         }
         
     }
