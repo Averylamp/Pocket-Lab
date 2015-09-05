@@ -15,6 +15,8 @@ class TakePictureViewController: UIViewController {
     let preview = ConfirmImageViewController(nibName: "ConfirmImageViewController", bundle: NSBundle.mainBundle())
     var next: Page?
     
+    var placeAboveView: UIImageView?
+
     var delegate: Navigation?
     var callbackQueue: dispatch_queue_t?
     
@@ -52,6 +54,15 @@ class TakePictureViewController: UIViewController {
     override func viewDidLoad() {
         let touchGesture = UITapGestureRecognizer(target: self, action: "screenTouched")
         view.addGestureRecognizer(touchGesture)
+
+        placeAboveView = UIImageView(image: UIImage(named: "place"))
+        placeAboveView!.contentMode = .ScaleAspectFit
+        let imageWidth = UIScreen.mainScreen().bounds.width / 1.4
+        let buffer = (UIScreen.mainScreen().bounds.width - imageWidth) / 2
+        placeAboveView!.frame = CGRect(x: buffer, y: UIScreen.mainScreen().bounds.height - 155, width: imageWidth, height: imageWidth)
+        //        view.addSubview(placeAboveView!)
+
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -91,15 +102,16 @@ class TakePictureViewController: UIViewController {
         self.view.layer.addSublayer(previewLayer)
         
         if next == .Haematocrit {
-            let placeAboveView = UIImageView(image: UIImage(named: "place"))
-            placeAboveView.contentMode = .ScaleAspectFit
-            let imageWidth = UIScreen.mainScreen().bounds.width / 1.4
-            let buffer = (UIScreen.mainScreen().bounds.width - imageWidth) / 2
-            placeAboveView.frame = CGRect(x: buffer, y: UIScreen.mainScreen().bounds.height - 155, width: imageWidth, height: imageWidth)
-            view.addSubview(placeAboveView)
+            view.addSubview(placeAboveView!)
         }
         
         super.viewDidAppear(animated)
+    }
+    
+    
+    override func viewDidDisappear(animated: Bool) {
+        placeAboveView?.removeFromSuperview()
+        super.viewDidDisappear(animated)
     }
     
     override func didReceiveMemoryWarning() {
