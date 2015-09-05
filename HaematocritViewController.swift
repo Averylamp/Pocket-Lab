@@ -10,9 +10,14 @@ import UIKit
 
 class HaematocritViewController: UIViewController {
 
+    @IBOutlet weak var pic1: UIImageView!
+    @IBOutlet weak var pic2: UIImageView!
+    var delegate: Navigation?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        pic1.image = UIImage(named: "blood")
+        pic2.image = Wrapper.isolateYellow(UIImage(named: "blood"))
         // Do any additional setup after loading the view.
     }
 
@@ -31,5 +36,11 @@ class HaematocritViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    class func generate(#delegate: Navigation) -> HaematocritViewController {
+        let viewController = HaematocritViewController(nibName: "HaematocritViewController", bundle: NSBundle.mainBundle())
+        viewController.delegate = delegate
+        return viewController
+    }
 
 }

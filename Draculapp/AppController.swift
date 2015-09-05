@@ -36,6 +36,7 @@ class AppController: UINavigationController {
         
         navigationBar.hidden = true
         self.pushViewController(StartViewController.generate(delegate: self), animated: false)
+        pushViewController(HaematocritViewController.generate(delegate: self), animated: false)
         //pushViewController(opencv, animated: false)
         super.viewDidLoad()
     }
