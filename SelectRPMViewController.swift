@@ -29,7 +29,13 @@ class SelectRPMViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        RCFLabel.text = "400";
+        RadiusLabel.text = "1"
+        RadiusSlider.value = 1
+        RPMLabel.text = "600"
+        RPMSlider.value = 600
+        
         // Do any additional setup after loading the view.
     }
     
