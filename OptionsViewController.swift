@@ -12,6 +12,7 @@ import QuartzCore
 enum BackgroundDirection {
     case Up
     case Down
+    case Stop
 }
 
 class OptionsViewController: UIViewController {
@@ -50,16 +51,24 @@ class OptionsViewController: UIViewController {
 
     func startAnimation () {
         UIView.animateWithDuration(5.0, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: {
-            if self.animationFlag == .Down {
-                self.bgScroll.frame.origin.y = -self.bgScroll.image!.size.height + UIScreen.mainScreen().bounds.height
-                self.animationFlag = .Up
-            } else if self.animationFlag == .Up {
-                self.bgScroll.frame.origin.y = 0
-                self.animationFlag = .Down
+
+            [weak self] in
+            
+            
+            if let strongSelf = self {
+                if strongSelf.animationFlag == .Down {
+                    strongSelf.bgScroll.frame.origin.y = -strongSelf.bgScroll.image!.size.height + UIScreen.mainScreen().bounds.height
+                    strongSelf.animationFlag = .Up
+                } else if strongSelf.animationFlag == .Up {
+                    strongSelf.bgScroll.frame.origin.y = 0
+                    strongSelf.animationFlag = .Down
+                }
             }
             
-        }, completion: { finished in
-            self.startAnimation()
+        }, completion: { [weak self] finished in
+            if self?.animationFlag != .Stop {
+                self?.startAnimation()
+            }
         })
     }
     
@@ -73,6 +82,11 @@ class OptionsViewController: UIViewController {
     @IBAction func opencvpush(sender: AnyObject) {
         delegate?.goToPage(.OpenCV)
         
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.animationFlag = .Stop
+        super.viewWillDisappear(animated)
     }
     
     
