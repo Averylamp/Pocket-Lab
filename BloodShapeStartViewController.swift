@@ -13,8 +13,15 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
 
     var collectionVC: UICollectionViewController! = nil;
     
+    var delegate: Navigation?
+    
     override func viewDidLoad() {
+
         super.viewDidLoad()
+        
+        let bg = UIImageView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height))
+        bg.image = UIImage(named: "bg")
+        self.view.addSubview(bg)
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = UICollectionViewScrollDirection.Vertical
@@ -27,7 +34,7 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
         
         collectionVC = UICollectionViewController(collectionViewLayout: layout)
         collectionVC.collectionView  = UICollectionView(frame: CGRectMake(20, 20, 480, UIScreen.mainScreen().bounds.height - 40), collectionViewLayout: layout)
-        
+        collectionVC.collectionView?.backgroundColor = UIColor.clearColor()
         collectionVC.collectionView?.frame = CGRectMake(20, 60, self.view.frame.width-40, self.view.frame.height-140)
 //        collectionVC.collectionView?.layer.borderColor = UIColor.blackColor().CGColor
 //        collectionVC.collectionView?.layer.borderWidth = 1
@@ -36,7 +43,6 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
 //        collectionVC.collectionView?.registerClass:UICollectionReusableView.self forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
 //        NSLog(@"%f", self.view.frame.size.width);
 //        NSLog(@"%f", self.view.frame.size.height);
-        collectionVC.collectionView?.backgroundColor = UIColor.whiteColor()
         collectionVC.collectionView?.delegate = self;
         collectionVC.collectionView?.dataSource = self;
         self.view.addSubview(self.collectionVC.collectionView!)
@@ -199,7 +205,11 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
         default:
             print("Default")
         }
-
+        
+        sharedSampleDataModel.lastMicroscopyImage = image
+        
+        delegate?.goToPage(.OpenCV)
+        
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -217,8 +227,11 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
     }
     */
 
-    class func generate() -> BloodShapeStartViewController {
-        return BloodShapeStartViewController(nibName: "BloodShapeStartViewController", bundle: NSBundle.mainBundle())
+    
+    class func generate(#delegate: Navigation) -> BloodShapeStartViewController {
+        let viewController = BloodShapeStartViewController(nibName: "BloodShapeStartViewController", bundle: NSBundle.mainBundle())
+        viewController.delegate = delegate
+        return viewController
     }
     
 }

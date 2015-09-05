@@ -11,6 +11,11 @@ import UIKit
 class SampleDataModel: NSObject {
     private var samples = [Sample]()
    
+
+    var lastMicroscopyImage:UIImage?
+
+    var ratiosImage: UIImage?
+    
     func addSample(newSample: Sample) {
         samples.append(newSample)
     }
@@ -18,6 +23,7 @@ class SampleDataModel: NSObject {
     func getLastSample() -> Sample? {
         return samples.last
     }
+    
     
 }
 
