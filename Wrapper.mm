@@ -180,6 +180,36 @@ int* findBiggestContour(vector<vector<cv::Point>> contours,cv::Mat mColorMask) {
     return response;
 }
 
+Scalar BLUE_COLOR( 0, 176, 217 );
+
+void drawBox(cv::Mat img, cv::Rect roi){
+    int thickness = 100;
+    
+    // Top Left Corner
+    int x = roi.x-1;
+    int y = roi.y-1;
+    cv::line(img, cv::Point(x,y), cv::Point(x, y+roi.height/4), BLUE_COLOR, thickness );
+    cv::line(img, cv::Point(x,y), cv::Point(x+roi.width/4, y), BLUE_COLOR, thickness );
+    
+    // Bottom Left Corner
+    y= y+roi.height;
+    cv::line(img, cv::Point(x,y), cv::Point(x,y-roi.height/4), BLUE_COLOR, thickness);
+    cv::line(img, cv::Point(x,y), cv::Point(x+roi.width/4,y), BLUE_COLOR, thickness);
+    
+    // Top Right Corner
+    x = roi.x+roi.width+1;
+    y = roi.y+1;
+    cv::line(img, cv::Point(x,y), cv::Point(x-roi.width/4,y), BLUE_COLOR, thickness);
+    cv::line(img, cv::Point(x,y), cv::Point(x,y+roi.height/4), BLUE_COLOR, thickness);
+    
+    // Bottom Right Corner
+    x = roi.x+roi.width+1;
+    y = roi.y+roi.height+1;
+    cv::line(img, cv::Point(x,y), cv::Point(x-roi.width/4,y), BLUE_COLOR, thickness);
+    cv::line(img, cv::Point(x,y), cv::Point(x,y-roi.height/4), BLUE_COLOR, thickness);
+    
+}
+
 +(UIImage*)isolateYellow:(UIImage *)image {
     cv::Mat img;
     cv::Mat mask;
@@ -192,13 +222,27 @@ int* findBiggestContour(vector<vector<cv::Point>> contours,cv::Mat mColorMask) {
 //    cv::cvtColor(mask, mask, cv::COLOR_RGB2B);
     //cv::Canny(mask, mask, 50.0, 200.0);
     
-  //  vector<vector<cv::Point>> countours;
-   // cv::findContours(mask, countours, RETR_TREE, CHAIN_APPROX_SIMPLE);
+  vector<vector<cv::Point>> countours;
+   cv::findContours(mask, countours, RETR_TREE, CHAIN_APPROX_SIMPLE);
 
+    int* response = findBiggestContour(countours, mask);
+    int maxContour_id = response[0];
+    int ballSizedContours = response[1];
     
-//    for  (int i = 0; i < countours.size(); i++) {
+
+    //    for  (int i = 0; i < countours.size(); i++) {
   //      cv::drawContours(mask, mask, i, cv::Scalar(255,255,255));
     //}
+
+    double area = cv::contourArea(countours[maxContour_id]);
+    cv::Rect rc = cv::boundingRect(countours[maxContour_id]);
+    cv::rectangle(img, cv::Point(rc.x,rc.y), cv::Point(rc.x + rc.width, rc.y + rc.height), BLUE_COLOR,10,8,0);
+//    drawBox(mask, rc);
+    
+    
+//    for  (int i = 0; i < countours.size(); i++) {
+//        cv::drawContours(mask, countours, i, cv::Scalar(255,255,255), 5);
+//    }
     
 //    vector<vector<cv::Point>> countours;
 //    
@@ -210,8 +254,10 @@ int* findBiggestContour(vector<vector<cv::Point>> contours,cv::Mat mColorMask) {
 //    }
 //    
 //    cv::bitwise_and(img, mask, img);
+
     //mask.row(2)
-    UIImage *result = cvMatToUIImage(mask);
+    UIImage *result = cvMatToUIImage(img);
+    
     mask.release();
     img.release();
     return result;
