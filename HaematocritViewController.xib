@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HaematocritViewController" customModule="Draculapp" customModuleProvider="target">
             <connections>
-                <outlet property="pic1" destination="qqK-mj-jup" id="d9Z-kh-Nze"/>
+                <outlet property="backButton" destination="Gt4-5p-bQL" id="bOx-1k-sBH"/>
                 <outlet property="pic2" destination="CJk-ZD-GE8" id="ro6-If-o5o"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -16,29 +16,67 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qqK-mj-jup">
-                    <rect key="frame" x="74" y="0.0" width="227" height="284"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="227" id="aay-b3-QFf"/>
-                        <constraint firstAttribute="height" constant="284" id="tNM-Hm-qmw"/>
-                    </constraints>
-                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CJk-ZD-GE8">
-                    <rect key="frame" x="74" y="309" width="227" height="284"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="227" id="Bw3-HJ-ZDp"/>
                         <constraint firstAttribute="height" constant="284" id="wwI-ta-QJ1"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Bw3-HJ-ZDp"/>
+                            <exclude reference="wwI-ta-QJ1"/>
+                        </mask>
+                    </variation>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gt4-5p-bQL">
+                    <rect key="frame" x="16" y="18" width="80" height="40"/>
+                    <color key="backgroundColor" red="0.27058823529999998" green="0.4039215686" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="Nh1-UZ-kAG"/>
+                        <constraint firstAttribute="height" constant="40" id="e03-wr-zcH"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="nX2-3y-JnI"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="zXe-Bh-DgD"/>
+                    </constraints>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Back">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="nX2-3y-JnI"/>
+                            <exclude reference="zXe-Bh-DgD"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="backTapped:" destination="-1" eventType="touchUpInside" id="X9a-YJ-vvE"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="CJk-ZD-GE8" firstAttribute="top" secondItem="qqK-mj-jup" secondAttribute="bottom" constant="25" id="3Hd-mf-95i"/>
-                <constraint firstAttribute="centerX" secondItem="qqK-mj-jup" secondAttribute="centerX" id="gwo-t7-drp"/>
+                <constraint firstItem="CJk-ZD-GE8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2C7-0X-FAP"/>
+                <constraint firstItem="Gt4-5p-bQL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="18" id="2dW-Ld-VLO"/>
+                <constraint firstAttribute="bottom" secondItem="CJk-ZD-GE8" secondAttribute="bottom" id="Bvc-sz-uTP"/>
+                <constraint firstAttribute="trailing" secondItem="CJk-ZD-GE8" secondAttribute="trailing" id="DYD-Et-uUQ"/>
+                <constraint firstItem="CJk-ZD-GE8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DdV-Ve-a1U"/>
+                <constraint firstAttribute="trailing" secondItem="CJk-ZD-GE8" secondAttribute="trailing" id="FBD-1k-jUQ"/>
+                <constraint firstAttribute="bottom" secondItem="CJk-ZD-GE8" secondAttribute="bottom" id="UGT-gr-aFy"/>
+                <constraint firstItem="Gt4-5p-bQL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="XHu-M2-7AV"/>
                 <constraint firstAttribute="centerX" secondItem="CJk-ZD-GE8" secondAttribute="centerX" id="h7y-Ik-8IV"/>
-                <constraint firstItem="qqK-mj-jup" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="kc2-UT-7lr"/>
+                <constraint firstItem="CJk-ZD-GE8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ktH-Y7-2Ug"/>
+                <constraint firstItem="CJk-ZD-GE8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ugb-d3-CYc"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="2C7-0X-FAP"/>
+                    <exclude reference="Bvc-sz-uTP"/>
+                    <exclude reference="DYD-Et-uUQ"/>
+                    <exclude reference="h7y-Ik-8IV"/>
+                    <exclude reference="ugb-d3-CYc"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="262.5" y="377.5"/>
         </view>
     </objects>

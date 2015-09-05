@@ -75,7 +75,7 @@ class StartViewController: UIViewController {
             self.drop.frame.origin.y = UIScreen.mainScreen().bounds.height
         }, completion: nil)
 
-        UIView.animateWithDuration(1.5, delay: 1.2, options: .CurveEaseIn , animations: {
+        UIView.animateWithDuration(1.0, delay: 1.2, options: .CurveEaseOut , animations: {
             self.bloodOverlay.frame.origin.y = 0
         }, completion: { finished in
             self.delegate?.goToPage(.Options)

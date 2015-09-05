@@ -11,6 +11,8 @@ import UIKit
 class SampleDataModel: NSObject {
     private var samples = [Sample]()
    
+    var ratiosImage: UIImage?
+    
     func addSample(newSample: Sample) {
         samples.append(newSample)
     }

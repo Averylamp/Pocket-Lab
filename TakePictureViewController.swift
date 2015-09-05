@@ -13,7 +13,7 @@ import AudioToolbox
 class TakePictureViewController: UIViewController {
 
     let preview = ConfirmImageViewController(nibName: "ConfirmImageViewController", bundle: NSBundle.mainBundle())
-
+    var next: Page?
     
     var delegate: Navigation?
     var callbackQueue: dispatch_queue_t?
@@ -89,6 +89,16 @@ class TakePictureViewController: UIViewController {
         captureSession!.startRunning()
         previewLayer?.frame = self.view.bounds
         self.view.layer.addSublayer(previewLayer)
+        
+        if next == .Haematocrit {
+            let placeAboveView = UIImageView(image: UIImage(named: "place"))
+            placeAboveView.contentMode = .ScaleAspectFit
+            let imageWidth = UIScreen.mainScreen().bounds.width / 1.4
+            let buffer = (UIScreen.mainScreen().bounds.width - imageWidth) / 2
+            placeAboveView.frame = CGRect(x: buffer, y: UIScreen.mainScreen().bounds.height - 155, width: imageWidth, height: imageWidth)
+            view.addSubview(placeAboveView)
+        }
+        
         super.viewDidAppear(animated)
     }
     
@@ -100,7 +110,7 @@ class TakePictureViewController: UIViewController {
 
     /*
     // MARK: - Navigation
-
+ 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
@@ -111,6 +121,7 @@ class TakePictureViewController: UIViewController {
     class func generate(#delegate: Navigation, next: Page) -> TakePictureViewController {
         let viewController = TakePictureViewController(nibName: "TakePictureViewController", bundle: NSBundle.mainBundle())
         viewController.delegate = delegate
+        viewController.next = next
         return viewController
     }
     
@@ -122,8 +133,13 @@ extension TakePictureViewController: AVCaptureMetadataOutputObjectsDelegate {
 
 extension TakePictureViewController: ImageConfirm {
     func imageOk(image: UIImage) {
+        
+        if next == .Haematocrit {
+            sharedSampleDataModel.ratiosImage = image
+        }
+        
         self.dismissViewControllerAnimated(true) {
-            self.delegate?.goToPage(.Haematocrit)
+            self.delegate?.goToPage(next!)
         }
     }
     func imageRetake() {
