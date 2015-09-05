@@ -8,24 +8,28 @@
 
 import UIKit
 
-//enum Page {
-//    case Start
-//    case Options
-//    case Centrifuge
-//    case Ratios
-//    case Microscope
-//}
-//
-//protocol Navigation {
-//    func goToPage(page: Page)
-//}
+enum Page {
+    case Start
+    case Options
+    case Centrifuge
+    case Ratios
+    case Microscope
+}
+
+
+protocol Navigation {
+    func goToPage(page: Page)
+}
 
 class AppController: UINavigationController {
 
     var startView = StartViewController(nibName: "StartViewController", bundle: NSBundle.mainBundle())
+    var optionsView = OptionsViewController(nibName: "OptionsViewController", bundle: NSBundle.mainBundle())
     
     override func viewDidLoad() {
         UIApplication.sharedApplication().statusBarHidden = true
+        
+        startView.delegate = self
         
         navigationBar.hidden = true
         self.pushViewController(startView, animated: false)
@@ -34,10 +38,14 @@ class AppController: UINavigationController {
 
 }
 
-//extension AppController: Navigation {
-//
-//    func goToPage(page: Page) {
-//        
-//    }
-//    
-//}
+extension AppController: Navigation {
+
+    func goToPage(page: Page) {
+        
+        if page == .Options {
+            self.setViewControllers([optionsView], animated: false)
+        }
+        
+    }
+    
+}

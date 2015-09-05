@@ -13,8 +13,9 @@ class StartViewController: UIViewController {
 
     @IBOutlet weak var fadeInView: UIView!
     @IBOutlet weak var begin: UIButton!
-    
     @IBOutlet weak var drop: UIImageView!
+    
+    var delegate: Navigation?
     
     var bloodOverlay: UIView!
     
@@ -76,7 +77,9 @@ class StartViewController: UIViewController {
 
         UIView.animateWithDuration(1.5, delay: 1.2, options: .CurveEaseIn , animations: {
             self.bloodOverlay.frame.origin.y = 0
-        }, completion: nil)
+        }, completion: { finished in
+                self.delegate?.goToPage(.Options)
+        })
         
     }
 
