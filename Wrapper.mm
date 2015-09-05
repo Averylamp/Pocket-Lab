@@ -249,7 +249,7 @@ void drawBox(cv::Mat img, cv::Rect roi){
     cv::arrowedLine(origImg, p2, p1, cvScalar(10), 6);
     
     cv::putText(origImg, "23.45%", cv::Point(rc.x + rc.width / 2 + 15, rc.y + rc.height/2 + 10), cv::FONT_HERSHEY_DUPLEX, 1.0, cvScalar(0, 0, 255));
-    
+    cv::line(origImg, cv::Point(0, 155), cv::Point(500, 155), cvScalar(10));
     
     // Red
 //    cv::inRange(img, cv::Scalar(17, 15, 100), cv::Scalar(80, 80, 200), imgRedMask);
@@ -268,7 +268,7 @@ void drawBox(cv::Mat img, cv::Rect roi){
 //    cv::arrowedLine(origImg, p22, p12, cvScalar(10), 6);
 //    
 //    cv::putText(origImg, "23.45%", cv::Point(rc2.x + rc2.width / 2 + 15, rc2.y + rc2.height/2 + 10), cv::FONT_HERSHEY_DUPLEX, 1.0, cvScalar(0, 0, 255));
-//
+
     
     UIImage *result = cvMatToUIImage(origImg);
     
