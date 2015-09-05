@@ -82,5 +82,11 @@ class StartViewController: UIViewController {
         })
         
     }
+    
+    class func generate(#delegate: Navigation) -> StartViewController {
+        let viewController = StartViewController(nibName: "StartViewController", bundle: NSBundle.mainBundle())
+        viewController.delegate = delegate
+        return viewController
+    }
 
 }
