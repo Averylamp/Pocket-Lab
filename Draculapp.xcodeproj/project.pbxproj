@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22F5594B1B9AFE50008F961C /* SelectRPMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F559491B9AFE50008F961C /* SelectRPMViewController.xib */; };
+		22F5594C1B9AFE50008F961C /* CentrifugeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F5594A1B9AFE50008F961C /* CentrifugeViewController.xib */; };
+		22F5594F1B9AFE78008F961C /* StopWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F5594E1B9AFE78008F961C /* StopWatch.m */; };
+		22F559511B9AFE8B008F961C /* SelectRPMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F559501B9AFE8B008F961C /* SelectRPMViewController.swift */; };
+		22F559531B9AFE97008F961C /* CentrifugeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F559521B9AFE97008F961C /* CentrifugeViewController.swift */; };
 		4D29985F1B9AFB7600AE37FF /* BloodShapeStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D29985E1B9AFB7600AE37FF /* BloodShapeStartViewController.xib */; };
 		4D475E801B9A72420021B51B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D475E7F1B9A72420021B51B /* AppDelegate.swift */; };
 		4D475E831B9A72420021B51B /* Draculapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D475E811B9A72420021B51B /* Draculapp.xcdatamodeld */; };
@@ -50,6 +55,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22F559491B9AFE50008F961C /* SelectRPMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectRPMViewController.xib; sourceTree = "<group>"; };
+		22F5594A1B9AFE50008F961C /* CentrifugeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CentrifugeViewController.xib; sourceTree = "<group>"; };
+		22F5594D1B9AFE78008F961C /* StopWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopWatch.h; sourceTree = "<group>"; };
+		22F5594E1B9AFE78008F961C /* StopWatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopWatch.m; sourceTree = "<group>"; };
+		22F559501B9AFE8B008F961C /* SelectRPMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRPMViewController.swift; sourceTree = "<group>"; };
+		22F559521B9AFE97008F961C /* CentrifugeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CentrifugeViewController.swift; sourceTree = "<group>"; };
 		4D29985E1B9AFB7600AE37FF /* BloodShapeStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BloodShapeStartViewController.xib; sourceTree = "<group>"; };
 		4D475E7A1B9A72420021B51B /* Draculapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Draculapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D475E7E1B9A72420021B51B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -139,6 +150,8 @@
 				4D475EA41B9A74410021B51B /* AppController.swift */,
 				4D475EAC1B9A7C560021B51B /* Extensions.swift */,
 				4D475EAF1B9A7FF50021B51B /* Color.swift */,
+				22F5594D1B9AFE78008F961C /* StopWatch.h */,
+				22F5594E1B9AFE78008F961C /* StopWatch.m */,
 				BBAD60701B9AA8A100662186 /* PrefixHeader.pch */,
 				BBAD60711B9AA8A100662186 /* Wrapper.h */,
 				BBAD60721B9AA8A100662186 /* Wrapper.mm */,
@@ -204,6 +217,8 @@
 				4D475EB21B9A90370021B51B /* OptionsViewController.xib */,
 				4D475EA71B9A7A010021B51B /* StartViewController.xib */,
 				4D29985E1B9AFB7600AE37FF /* BloodShapeStartViewController.xib */,
+				22F559491B9AFE50008F961C /* SelectRPMViewController.xib */,
+				22F5594A1B9AFE50008F961C /* CentrifugeViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -215,6 +230,8 @@
 				BB46AA421B9AF63400AC765B /* BloodShapeStartViewController.swift */,
 				BBAD60741B9AC8E400662186 /* OpenCVTestViewController.swift */,
 				4D475EA61B9A7A010021B51B /* StartViewController.swift */,
+				22F559501B9AFE8B008F961C /* SelectRPMViewController.swift */,
+				22F559521B9AFE97008F961C /* CentrifugeViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -300,11 +317,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22F5594C1B9AFE50008F961C /* CentrifugeViewController.xib in Resources */,
 				4D475E8D1B9A72420021B51B /* LaunchScreen.xib in Resources */,
 				4D475EB41B9A90370021B51B /* OptionsViewController.xib in Resources */,
 				4D475E8A1B9A72420021B51B /* Images.xcassets in Resources */,
 				4D475EA91B9A7A010021B51B /* StartViewController.xib in Resources */,
 				4D29985F1B9AFB7600AE37FF /* BloodShapeStartViewController.xib in Resources */,
+				22F5594B1B9AFE50008F961C /* SelectRPMViewController.xib in Resources */,
 				4D475EB81B9AA6E40021B51B /* OpenCVTestViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,6 +352,9 @@
 				4D475EA51B9A74410021B51B /* AppController.swift in Sources */,
 				BB46AA431B9AF63400AC765B /* BloodShapeStartViewController.swift in Sources */,
 				4D475EB01B9A7FF50021B51B /* Color.swift in Sources */,
+				22F559511B9AFE8B008F961C /* SelectRPMViewController.swift in Sources */,
+				22F5594F1B9AFE78008F961C /* StopWatch.m in Sources */,
+				22F559531B9AFE97008F961C /* CentrifugeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
