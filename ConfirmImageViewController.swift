@@ -25,9 +25,7 @@ class ConfirmImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        ok.layer.cornerRadius = 6
-        ok.layer.borderWidth = 2
-        ok.layer.borderColor = "#28FDFF".CGColor
+ 
         retake.layer.cornerRadius = 6
         retake.layer.borderWidth = 2
         retake.layer.borderColor = "#28FDFF".CGColor

@@ -14,10 +14,17 @@ class HaematocritViewController: UIViewController {
     @IBOutlet weak var pic2: UIImageView!
     var delegate: Navigation?
     
+    @IBOutlet weak var backButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        pic1.image = UIImage(named: "blood3")
-        pic2.image = Wrapper.isolateYellow(UIImage(named: "blood3"))
+        
+        backButton.layer.cornerRadius = 6
+        backButton.layer.borderWidth = 2
+        backButton.layer.borderColor = "#28FDFF".CGColor
+        
+       // pic1.image = sharedSampleDataModel.ratiosImage
+        pic2.image = Wrapper.isolateBlood(sharedSampleDataModel.ratiosImage)
         // Do any additional setup after loading the view.
     }
 
@@ -36,6 +43,10 @@ class HaematocritViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func backTapped(sender: AnyObject) {
+        delegate?.goToPage(.Options)
+    }
     
     class func generate(#delegate: Navigation) -> HaematocritViewController {
         let viewController = HaematocritViewController(nibName: "HaematocritViewController", bundle: NSBundle.mainBundle())

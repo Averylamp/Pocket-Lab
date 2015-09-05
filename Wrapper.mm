@@ -210,56 +210,73 @@ void drawBox(cv::Mat img, cv::Rect roi){
     
 }
 
-+(UIImage*)isolateYellow:(UIImage *)image {
++(UIImage*)isolateBlood:(UIImage *)image {
     cv::Mat img;
+    cv::Mat imgRedMask;
     cv::Mat mask;
+    cv::Mat origImg;
+    cvUIImageToMat(image, origImg);
+
     cvUIImageToMat(image, img);
+    cvUIImageToMat(image, imgRedMask);
     cvUIImageToMat(image, mask);
     
+    
+    cv::transpose(img, img);
+    cv::flip(img, img, 1);
+    
+    cv::transpose(origImg, origImg);
+    cv::flip(origImg, origImg, 1);
+    
     cv::cvtColor(img, img, cv::COLOR_BGR2RGB);
+
+    // Yellow
     cv::inRange(img, cv::Scalar(15,80,85), cv::Scalar(40,255,255), mask);
-    
-//    cv::cvtColor(mask, mask, cv::COLOR_RGB2B);
-    //cv::Canny(mask, mask, 50.0, 200.0);
-    
-  vector<vector<cv::Point>> countours;
-   cv::findContours(mask, countours, RETR_TREE, CHAIN_APPROX_SIMPLE);
+
+    vector<vector<cv::Point>> countours;
+    cv::findContours(mask, countours, RETR_TREE, CHAIN_APPROX_SIMPLE);
 
     int* response = findBiggestContour(countours, mask);
     int maxContour_id = response[0];
-    int ballSizedContours = response[1];
     
-
-    //    for  (int i = 0; i < countours.size(); i++) {
-  //      cv::drawContours(mask, mask, i, cv::Scalar(255,255,255));
-    //}
-
-    double area = cv::contourArea(countours[maxContour_id]);
     cv::Rect rc = cv::boundingRect(countours[maxContour_id]);
-    cv::rectangle(img, cv::Point(rc.x,rc.y), cv::Point(rc.x + rc.width, rc.y + rc.height), BLUE_COLOR,10,8,0);
-//    drawBox(mask, rc);
+  
+    cv::Point p1 = cv::Point(rc.x + rc.width/2, rc.y + rc.height);
+    cv::Point p2 = cv::Point(rc.x + rc.width/2, rc.y);
     
     
-//    for  (int i = 0; i < countours.size(); i++) {
-//        cv::drawContours(mask, countours, i, cv::Scalar(255,255,255), 5);
-//    }
+    cv::arrowedLine(origImg, p1, p2, cvScalar(10), 6);
+    cv::arrowedLine(origImg, p2, p1, cvScalar(10), 6);
     
-//    vector<vector<cv::Point>> countours;
+    cv::putText(origImg, "23.45%", cv::Point(rc.x + rc.width / 2 + 15, rc.y + rc.height/2 + 10), cv::FONT_HERSHEY_DUPLEX, 1.0, cvScalar(0, 0, 255));
+    
+    
+    // Red
+//    cv::inRange(img, cv::Scalar(17, 15, 100), cv::Scalar(80, 80, 200), imgRedMask);
+//
+//    vector<vector<cv::Point>> countours2;
+//    cv::findContours(imgRedMask, countours2, RETR_TREE, CHAIN_APPROX_SIMPLE);
+//    int* response2 = findBiggestContour(countours2, imgRedMask);
+//    int maxContour_id2 = response2[0];
 //    
-//    cv::findContours(mask, countours, RETR_TREE, CHAIN_APPROX_SIMPLE);
-//    int* response = findBiggestContour(countours, mask);
-//    int maxCountourId = response[0];
-//    if (maxCountourId != -1) {
-//        
-//    }
+//    cv::Rect rc2 = cv::boundingRect(countours2[maxContour_id2]);
 //    
-//    cv::bitwise_and(img, mask, img);
-
-    //mask.row(2)
-    UIImage *result = cvMatToUIImage(img);
+//    cv::Point p12 = cv::Point(rc2.x + rc2.width/2, rc2.y + rc2.height);
+//    cv::Point p22 = cv::Point(rc2.x + rc2.width/2, rc2.y);
+//    
+//    cv::arrowedLine(origImg, p12, p22, cvScalar(10), 6);
+//    cv::arrowedLine(origImg, p22, p12, cvScalar(10), 6);
+//    
+//    cv::putText(origImg, "23.45%", cv::Point(rc2.x + rc2.width / 2 + 15, rc2.y + rc2.height/2 + 10), cv::FONT_HERSHEY_DUPLEX, 1.0, cvScalar(0, 0, 255));
+//
+    
+    UIImage *result = cvMatToUIImage(origImg);
     
     mask.release();
     img.release();
+    origImg.release();
+    imgRedMask.release();
+    
     return result;
 }
 
