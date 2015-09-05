@@ -123,15 +123,96 @@ static void cvUIImageToMat(const UIImage* image, cv::Mat& m) {
     return result;
 }
 
+int minBallArea = 900;
+
+int* findBiggestContour(vector<vector<cv::Point>> contours,cv::Mat mColorMask) {
+    int* response = new int[2];
+    
+    int maxArea =0;
+    int ballSizedContours=0;
+    int maxContour_id=-1;
+    
+    for (int i = 0; i < contours.size(); i++) { // for each contour
+        
+        cv::Rect rc = cv::boundingRect(contours[i]); // get a bounding box around it
+        int diameter = (int)  sqrt( (rc.width * rc.width) + (rc.height * rc.height) );
+        int area = (int) contourArea(contours[i]); // calculate the area
+        
+        
+        if (area > minBallArea) {
+            ballSizedContours+=1;
+            
+            cv::drawContours(mColorMask, contours, i, cv::Scalar(255,255,255),-1);
+            
+            if (maxArea < area) { // if this is the largest area so far
+                maxArea = area; // update the variables
+                maxContour_id = i;
+            }
+            
+        }
+        else {
+            cv::drawContours(mColorMask, contours, i, cv::Scalar(255,255,255));
+        }
+        // if there are any largish contours, consider them ball sized
+        //	if (diameter/2 >= BALL_MIN_RADIUS/1.5 && diameter/2 <= BALL_MAX_RADIUS) {
+        //		ballSizedContours+=1;
+        //	}
+        
+        
+        
+        /*
+         if (diameter/2 >= BALL_MIN_RADIUS
+         && diameter/2 <= BALL_MAX_RADIUS)
+         //		&& rc.width <= rc.height * 2 // was both 1.6
+         //		&& rc.height <= rc.width * 2)
+         {
+         
+         if (maxArea < area) { // if this is the largest area so far
+         maxArea = area; // update the variables
+         maxContour_id = i;
+         }
+         }  */
+    } // end for all contours
+    
+    response[0] = maxContour_id;
+    response[1] = ballSizedContours;
+    
+    return response;
+}
+
 +(UIImage*)isolateYellow:(UIImage *)image {
-    cv::Mat inputImage;
-    cv::Mat resultImg;
-    cvUIImageToMat(image, inputImage);
-    cvUIImageToMat(image, resultImg);
-    cv::inRange(inputImage, cv::Scalar(25, 146, 190), cv::Scalar(62, 174, 250), resultImg);
-    UIImage *result = cvMatToUIImage(resultImg);
-    inputImage.release();
-    resultImg.release();
+    cv::Mat img;
+    cv::Mat mask;
+    cvUIImageToMat(image, img);
+    cvUIImageToMat(image, mask);
+    
+    cv::cvtColor(img, img, cv::COLOR_BGR2RGB);
+    cv::inRange(img, cv::Scalar(15,80,85), cv::Scalar(40,255,255), mask);
+    
+//    cv::cvtColor(mask, mask, cv::COLOR_RGB2B);
+    //cv::Canny(mask, mask, 50.0, 200.0);
+    
+    vector<vector<cv::Point>> countours;
+    cv::findContours(mask, countours, RETR_TREE, CHAIN_APPROX_SIMPLE);
+
+    
+    for  (int i = 0; i < countours.size(); i++) {
+        cv::drawContours(mask, mask, i, cv::Scalar(255,255,255));
+    }
+    
+//    vector<vector<cv::Point>> countours;
+//    
+//    cv::findContours(mask, countours, RETR_TREE, CHAIN_APPROX_SIMPLE);
+//    int* response = findBiggestContour(countours, mask);
+//    int maxCountourId = response[0];
+//    if (maxCountourId != -1) {
+//        
+//    }
+//    
+//    cv::bitwise_and(img, mask, img);
+    UIImage *result = cvMatToUIImage(mask);
+    mask.release();
+    img.release();
     return result;
 }
 

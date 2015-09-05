@@ -1,19 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HaematocritViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HaematocritViewController" customModule="Draculapp" customModuleProvider="target">
             <connections>
+                <outlet property="pic1" destination="qqK-mj-jup" id="d9Z-kh-Nze"/>
+                <outlet property="pic2" destination="CJk-ZD-GE8" id="ro6-If-o5o"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qqK-mj-jup">
+                    <rect key="frame" x="74" y="0.0" width="227" height="284"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="227" id="aay-b3-QFf"/>
+                        <constraint firstAttribute="height" constant="284" id="tNM-Hm-qmw"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CJk-ZD-GE8">
+                    <rect key="frame" x="74" y="309" width="227" height="284"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="227" id="Bw3-HJ-ZDp"/>
+                        <constraint firstAttribute="height" constant="284" id="wwI-ta-QJ1"/>
+                    </constraints>
+                </imageView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="CJk-ZD-GE8" firstAttribute="top" secondItem="qqK-mj-jup" secondAttribute="bottom" constant="25" id="3Hd-mf-95i"/>
+                <constraint firstAttribute="centerX" secondItem="qqK-mj-jup" secondAttribute="centerX" id="gwo-t7-drp"/>
+                <constraint firstAttribute="centerX" secondItem="CJk-ZD-GE8" secondAttribute="centerX" id="h7y-Ik-8IV"/>
+                <constraint firstItem="qqK-mj-jup" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="kc2-UT-7lr"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="262.5" y="377.5"/>
         </view>
     </objects>
 </document>
