@@ -19,9 +19,9 @@ class CentrifugeViewController: UIViewController {
     var direction :String = "NONE"
     var avgRPM = 0.0 // Exponential moving average of centrifuge RPM
     var EMA_Alpha = 0.2 // % significance of current sample compared to all past samples
+    var dirChangeThresh = 0.08 // force in G's needed to indicate the phone has changed direction
     
     var timer = StopWatch()
-    var lastPeriod = 0.0
     var totalElapsedTime = 0.0
     var initTime: Double!
     
@@ -79,13 +79,13 @@ class CentrifugeViewController: UIViewController {
         
         self.prevZ = event.acceleration.z
         
-        if (zChange > 0.08){
+        if (zChange > dirChangeThresh){
             if direction == "UP" {
                 self.directionChanged()
             }
             direction = "DOWN";
         }
-        else if (zChange < -0.08){
+        else if (zChange < -1 * dirChangeThresh){
             if direction == "DOWN" {
                 self.directionChanged()
             }
@@ -94,7 +94,7 @@ class CentrifugeViewController: UIViewController {
     }
     
     func directionChanged() {
-        
+        // update the elapsed time
         var cycleTime = self.timer.getTimeSinceStart()
         totalElapsedTime = (CFAbsoluteTimeGetCurrent() - initTime)
         
@@ -118,7 +118,7 @@ class CentrifugeViewController: UIViewController {
         var rpmRange = ((self.desiredRPM + 300) - (self.desiredRPM - 300))
         var rpmBallPosition = (((self.avgRPM - (self.desiredRPM - 300)) * screenRange) / rpmRange) - screenRange / 2
         
-
+        // Move the ball
         
         dispatch_async(dispatch_get_main_queue(),{
             UIView.animateWithDuration(0.3, delay: 0, options: .CurveEaseOut, animations: {
@@ -138,7 +138,7 @@ class CentrifugeViewController: UIViewController {
             })
         })
 
-        println("\(totalElapsedTime), \(avgRPM), \(direction)")
+        println("\(totalElapsedTime), \(avgRPM), \(direction)") // print data in csv format
         
     }
 
