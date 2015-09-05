@@ -9,7 +9,7 @@
 import UIKit
 
 class OpenCVTestViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let normalImage = UIImageView(frame: CGRectMake(0, 0, self.view.frame.width, self.view.frame.height / 2))
@@ -24,24 +24,24 @@ class OpenCVTestViewController: UIViewController {
         processedImage.contentMode = UIViewContentMode.ScaleAspectFit
         self.view.addSubview(processedImage)
         
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

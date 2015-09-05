@@ -19,7 +19,6 @@
 		4D475EB01B9A7FF50021B51B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D475EAF1B9A7FF50021B51B /* Color.swift */; };
 		4D475EB31B9A90370021B51B /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D475EB11B9A90370021B51B /* OptionsViewController.swift */; };
 		4D475EB41B9A90370021B51B /* OptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D475EB21B9A90370021B51B /* OptionsViewController.xib */; };
-		4D475EB71B9AA6E40021B51B /* OpenCVTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D475EB51B9AA6E40021B51B /* OpenCVTestViewController.swift */; };
 		4D475EB81B9AA6E40021B51B /* OpenCVTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D475EB61B9AA6E40021B51B /* OpenCVTestViewController.xib */; };
 		BBAD60561B9AA80B00662186 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD60551B9AA80B00662186 /* CoreVideo.framework */; };
 		BBAD60581B9AA81000662186 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD60571B9AA81000662186 /* CoreAudio.framework */; };
@@ -35,6 +34,7 @@
 		BBAD606C1B9AA88000662186 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD606B1B9AA88000662186 /* CoreGraphics.framework */; };
 		BBAD606E1B9AA88E00662186 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD606D1B9AA88E00662186 /* opencv2.framework */; };
 		BBAD60731B9AA8A100662186 /* Wrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = BBAD60721B9AA8A100662186 /* Wrapper.mm */; };
+		BBAD60751B9AC8E400662186 /* OpenCVTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAD60741B9AC8E400662186 /* OpenCVTestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,6 @@
 		4D475EAF1B9A7FF50021B51B /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		4D475EB11B9A90370021B51B /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		4D475EB21B9A90370021B51B /* OptionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionsViewController.xib; sourceTree = "<group>"; };
-		4D475EB51B9AA6E40021B51B /* OpenCVTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenCVTestViewController.swift; sourceTree = "<group>"; };
 		4D475EB61B9AA6E40021B51B /* OpenCVTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenCVTestViewController.xib; sourceTree = "<group>"; };
 		BBAD60551B9AA80B00662186 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		BBAD60571B9AA81000662186 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
@@ -83,6 +82,7 @@
 		BBAD60701B9AA8A100662186 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		BBAD60711B9AA8A100662186 /* Wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wrapper.h; sourceTree = "<group>"; };
 		BBAD60721B9AA8A100662186 /* Wrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Wrapper.mm; sourceTree = "<group>"; };
+		BBAD60741B9AC8E400662186 /* OpenCVTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenCVTestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,7 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				4D475EB11B9A90370021B51B /* OptionsViewController.swift */,
-				4D475EB51B9AA6E40021B51B /* OpenCVTestViewController.swift */,
+				BBAD60741B9AC8E400662186 /* OpenCVTestViewController.swift */,
 				4D475EB61B9AA6E40021B51B /* OpenCVTestViewController.xib */,
 				4D475EA61B9A7A010021B51B /* StartViewController.swift */,
 			);
@@ -319,8 +319,8 @@
 				4D475EAD1B9A7C560021B51B /* Extensions.swift in Sources */,
 				4D475E831B9A72420021B51B /* Draculapp.xcdatamodeld in Sources */,
 				4D475EA81B9A7A010021B51B /* StartViewController.swift in Sources */,
-				4D475EB71B9AA6E40021B51B /* OpenCVTestViewController.swift in Sources */,
 				4D475EB31B9A90370021B51B /* OptionsViewController.swift in Sources */,
+				BBAD60751B9AC8E400662186 /* OpenCVTestViewController.swift in Sources */,
 				4D475E801B9A72420021B51B /* AppDelegate.swift in Sources */,
 				BBAD60731B9AA8A100662186 /* Wrapper.mm in Sources */,
 				4D475EA51B9A74410021B51B /* AppController.swift in Sources */,

@@ -12,6 +12,8 @@
 #import <opencv2/core/core_c.h>
 #import <vector>
 
+using std::vector;
+using namespace cv;
 
 
 @implementation Wrapper
@@ -42,12 +44,33 @@ static void cvUIImageToMat(const UIImage* image, cv::Mat& m) {
 }
 +(UIImage*)processImage:(UIImage *)image{
     cv::Mat img;
+    cv::Mat resultImg;
     cvUIImageToMat(image, img);
+    cvUIImageToMat(image, resultImg);
     cv::cvtColor(img, img, cv::COLOR_RGB2GRAY);
+    cv::Canny(img, img, 50, 150);
     
+    vector<vector<cv::Point> > contours;
+
+    cv::findContours( img, contours, RETR_TREE, CHAIN_APPROX_SIMPLE);
     
-    UIImage *result = cvMatToUIImage(img);
+    /// Draw contours
     
+    int z = 0;
+    for (int i = 0; i < contours.size(); i++){ // for each contour
+        if (contours[i].size() > 20) {
+            cv::drawContours(resultImg , contours, i, cv::Scalar(arc4random()%255,arc4random()%255,arc4random()%255), 5);
+            NSLog(@"Contour Drawn - %d",z);
+            z++;
+        }
+        
+    }
+
+    
+//    UIImage *result = cvMatToUIImage(img);
+    UIImage *result = cvMatToUIImage(resultImg);
+    img.release();
+    resultImg.release();
     return result;
 }
 
