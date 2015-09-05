@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 enum BackgroundDirection {
     case Up
@@ -16,13 +17,34 @@ enum BackgroundDirection {
 class OptionsViewController: UIViewController {
 
     var animationFlag: BackgroundDirection = .Down
+    @IBOutlet weak var spinButton: UIView!
+    @IBOutlet weak var microscopy: UIView!
+    
     
     @IBOutlet weak var bgScroll: UIImageView!
     override func viewDidLoad() {
+        
+        
+        setButtonStyle(spinButton)
+        setButtonStyle(microscopy)
+        
+        self.bgScroll.frame.origin.y = -self.bgScroll.image!.size.height + UIScreen.mainScreen().bounds.height
         startAnimation()
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func setButtonStyle(button: UIView) {
+        button.backgroundColor = UIColor.clearColor()
+        button.layer.cornerRadius = 6
+        button.layer.borderWidth = 2
+        button.layer.borderColor = "#FFFFFF".CGColor
+        
+        for sbSubview in spinButton.subviews.filter({ $0 is UIImageView }) {
+            (sbSubview as! UIImageView).image = (sbSubview as! UIImageView).image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+            (sbSubview as! UIImageView).tintColor = UIColor.whiteColor()
+        }
     }
 
     func startAnimation () {
