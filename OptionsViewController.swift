@@ -28,6 +28,8 @@ class OptionsViewController: UIViewController {
     override func viewDidLoad() {
         
         
+        
+        
         setButtonStyle(spinButton)
         setButtonStyle(microscopy)
         setButtonStyle(ratios)

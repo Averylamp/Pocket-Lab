@@ -69,7 +69,8 @@ extension AppController: Navigation {
         }
         
         if page == .OpenCV2 {
-            self.setViewControllers([BloodShapeStartViewController.generate()], animated: false)
+            self.pushViewController(BloodShapeStartViewController.generate(delegate: self), animated: true)
+//            self.setViewControllers([BloodShapeStartViewController.generate(delegate: self)], animated: false)
         }
         
     }
