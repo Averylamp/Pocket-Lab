@@ -12,6 +12,9 @@
 		22F5594F1B9AFE78008F961C /* StopWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F5594E1B9AFE78008F961C /* StopWatch.m */; };
 		22F559511B9AFE8B008F961C /* SelectRPMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F559501B9AFE8B008F961C /* SelectRPMViewController.swift */; };
 		22F559531B9AFE97008F961C /* CentrifugeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F559521B9AFE97008F961C /* CentrifugeViewController.swift */; };
+		22F559551B9B3626008F961C /* SampleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F559541B9B3626008F961C /* SampleDataModel.swift */; };
+		22F559571B9B3638008F961C /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F559561B9B3638008F961C /* Sample.swift */; };
+		22F5595B1B9B3EC2008F961C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F5595A1B9B3EC2008F961C /* MBProgressHUD.m */; };
 		4D29985F1B9AFB7600AE37FF /* BloodShapeStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D29985E1B9AFB7600AE37FF /* BloodShapeStartViewController.xib */; };
 		4D475E801B9A72420021B51B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D475E7F1B9A72420021B51B /* AppDelegate.swift */; };
 		4D475E831B9A72420021B51B /* Draculapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D475E811B9A72420021B51B /* Draculapp.xcdatamodeld */; };
@@ -63,6 +66,10 @@
 		22F5594E1B9AFE78008F961C /* StopWatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopWatch.m; sourceTree = "<group>"; };
 		22F559501B9AFE8B008F961C /* SelectRPMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRPMViewController.swift; sourceTree = "<group>"; };
 		22F559521B9AFE97008F961C /* CentrifugeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CentrifugeViewController.swift; sourceTree = "<group>"; };
+		22F559541B9B3626008F961C /* SampleDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleDataModel.swift; sourceTree = "<group>"; };
+		22F559561B9B3638008F961C /* Sample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
+		22F559591B9B3EC2008F961C /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		22F5595A1B9B3EC2008F961C /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		4D29985E1B9AFB7600AE37FF /* BloodShapeStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BloodShapeStartViewController.xib; sourceTree = "<group>"; };
 		4D475E7A1B9A72420021B51B /* Draculapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Draculapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D475E7E1B9A72420021B51B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,6 +142,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22F559581B9B363E008F961C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				22F559541B9B3626008F961C /* SampleDataModel.swift */,
+				22F559561B9B3638008F961C /* Sample.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		4D475E711B9A72420021B51B = {
 			isa = PBXGroup;
 			children = (
@@ -159,9 +175,12 @@
 				BBAD60701B9AA8A100662186 /* PrefixHeader.pch */,
 				BBAD60711B9AA8A100662186 /* Wrapper.h */,
 				BBAD60721B9AA8A100662186 /* Wrapper.mm */,
+				22F559591B9B3EC2008F961C /* MBProgressHUD.h */,
+				22F5595A1B9B3EC2008F961C /* MBProgressHUD.m */,
 				4D475E7C1B9A72420021B51B /* Draculapp */,
 				4D475EAB1B9A7A120021B51B /* Controllers */,
 				4D475EAA1B9A7A080021B51B /* Views */,
+				22F559581B9B363E008F961C /* Models */,
 				4D475E951B9A72420021B51B /* DraculappTests */,
 				4D475E7B1B9A72420021B51B /* Products */,
 				BBAD606F1B9AA8A000662186 /* Draculapp-Bridging-Header.h */,
@@ -356,10 +375,13 @@
 				4DCD6AEF1B9B02A200D3F287 /* HaematocritViewController.swift in Sources */,
 				BBAD60751B9AC8E400662186 /* OpenCVTestViewController.swift in Sources */,
 				4D475E801B9A72420021B51B /* AppDelegate.swift in Sources */,
+				22F5595B1B9B3EC2008F961C /* MBProgressHUD.m in Sources */,
 				BBAD60731B9AA8A100662186 /* Wrapper.mm in Sources */,
 				4D475EA51B9A74410021B51B /* AppController.swift in Sources */,
+				22F559571B9B3638008F961C /* Sample.swift in Sources */,
 				BB46AA431B9AF63400AC765B /* BloodShapeStartViewController.swift in Sources */,
 				4D475EB01B9A7FF50021B51B /* Color.swift in Sources */,
+				22F559551B9B3626008F961C /* SampleDataModel.swift in Sources */,
 				22F559511B9AFE8B008F961C /* SelectRPMViewController.swift in Sources */,
 				22F5594F1B9AFE78008F961C /* StopWatch.m in Sources */,
 				22F559531B9AFE97008F961C /* CentrifugeViewController.swift in Sources */,

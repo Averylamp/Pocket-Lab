@@ -16,11 +16,12 @@ class CentrifugeViewController: UIViewController {
     
     let motionManager: CMMotionManager = CMMotionManager()
     
+    var trackingIntialized = false
     var prevZ: Double = 0
     var direction :String = "NONE"
     var avgRPM = 0.0 // Exponential moving average of centrifuge RPM
-    var EMA_Alpha = 0.2 // % significance of current sample compared to all past samples
-    var dirChangeThresh = 0.08 // force in G's needed to indicate the phone has changed direction
+    var EMA_Alpha = 0.25 // % significance of current sample compared to all past samples
+    var dirChangeThresh = 0.09 // force in G's needed to indicate the phone has changed direction
     
     var timer = StopWatch()
     var totalElapsedTime = 0.0
@@ -33,7 +34,8 @@ class CentrifugeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        desiredRPM = 300
+        desiredRPM = sharedSampleDataModel.getLastSample()?.RPM
+        if desiredRPM != nil { desiredRPM! += 100.0 } // constant correction factor
         
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         self.rpmBar = UIView(frame: CGRect(x: screenSize.width/2 - 40, y: screenSize.height/2 - 40, width: 80, height: 80))
@@ -42,7 +44,10 @@ class CentrifugeViewController: UIViewController {
         
         self.view.addSubview(rpmBar)
         
-        self.startAccelerometerPollingWithInterval(0.01)
+        trackingIntialized = false
+        var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        hud.labelText = "Begin Spinning, Averaging RPM Data";
+        self.startAccelerometerPollingWithInterval(0.05)
         
     }
 
@@ -89,13 +94,13 @@ class CentrifugeViewController: UIViewController {
         self.prevZ = event.acceleration.z
         
         if (zChange > dirChangeThresh){
-            if direction == "UP" {
+            if direction == "Start" {
                 self.directionChanged()
             }
             direction = "DOWN";
         }
         else if (zChange < -1 * dirChangeThresh){
-            if direction == "DOWN" {
+            if direction == "." {
                 self.directionChanged()
             }
             direction = "UP"
@@ -128,24 +133,38 @@ class CentrifugeViewController: UIViewController {
         var rpmBallPosition = (((self.avgRPM - (self.desiredRPM - 300)) * screenRange) / rpmRange) - screenRange / 2
         
         // Move the ball
-        
-        dispatch_async(dispatch_get_main_queue(),{
-            UIView.animateWithDuration(0.3, delay: 0, options: .CurveEaseOut, animations: {
-                // position.y = center + (targetRPM - currentRPM)
-                var rpmframe = self.rpmBar.frame
-                var newframe = CGFloat(screenRange) / 2 + CGFloat(rpmBallPosition)
-                if newframe > screenSize.height {
-                    newframe = screenSize.height - 50
-                } else if newframe < 0 {
-                    newframe = 50
+        if(avgRPM > 80 ) {
+            dispatch_async(dispatch_get_main_queue(),{
+                
+                if !self.trackingIntialized {
+                    self.trackingIntialized = true
+                    MBProgressHUD.hideHUDForView(self.view, animated: true)
                 }
                 
-                rpmframe.origin.y = newframe
-                
-                self.rpmBar.frame = rpmframe
-                }, completion: { finished in
+                UIView.animateWithDuration(0.3, delay: 0, options: .CurveEaseOut, animations: {
+                    // position.y = center + (targetRPM - currentRPM)
+                    var rpmframe = self.rpmBar.frame
+                    var newframe = CGFloat(screenRange) / 2 + CGFloat(rpmBallPosition)
+                    if newframe > screenSize.height {
+                        newframe = screenSize.height - 50
+                    } else if newframe < 0 {
+                        newframe = 50
+                    }
+                    
+                    rpmframe.origin.y = newframe
+                    
+                    self.rpmBar.frame = rpmframe
+                    }, completion: { finished in
+                })
             })
-        })
+        } else {
+            var rpmframe = self.rpmBar.frame
+            var newframe = CGFloat(screenRange) / 2 - 40
+            rpmframe.origin.y = newframe
+            
+            self.rpmBar.frame = rpmframe
+        }
+
 
         println("\(totalElapsedTime), \(avgRPM), \(direction)") // print data in csv format
         
