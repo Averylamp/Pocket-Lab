@@ -12,6 +12,7 @@ enum Page {
     case Start
     case Options
     case Centrifuge
+    case SelectRPM
     case Ratios
     case Microscope
     case OpenCV
@@ -21,6 +22,7 @@ enum Page {
 
 protocol Navigation {
     func goToPage(page: Page)
+    func setHiddenNavigationBar(hidden: Bool, animated: Bool)
 }
 
 class AppController: UINavigationController {
@@ -53,14 +55,22 @@ extension AppController: Navigation {
             self.setViewControllers([OpenCVTestViewController.generate()], animated: false)
         }
         
-        if page == .Centrifuge {
+        if page == .SelectRPM {
             self.setViewControllers([SelectRPMViewController.generate(delegate: self)], animated: false)
+        }
+        
+        if page == .Centrifuge {
+            self.setViewControllers([CentrifugeViewController.generate(delegate: self)], animated: false)
         }
         
         if page == .OpenCV2 {
             self.setViewControllers([BloodShapeStartViewController.generate()], animated: false)
         }
         
+    }
+    
+    func setHiddenNavigationBar(hidden: Bool, animated: Bool) {
+        self.setNavigationBarHidden(hidden, animated: animated)
     }
     
 }
