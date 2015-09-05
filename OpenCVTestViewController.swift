@@ -12,6 +12,18 @@ class OpenCVTestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let normalImage = UIImageView(frame: CGRectMake(0, 0, self.view.frame.width, self.view.frame.height / 2))
+        normalImage.image = UIImage(named: "blood-cells-200x-1")
+        normalImage.contentMode = UIViewContentMode.ScaleAspectFit
+        self.view.addSubview(normalImage)
+        
+        let processedImageRaw = Wrapper.processImage(normalImage.image!)
+        
+        let processedImage = UIImageView(frame: CGRectMake(0, self.view.frame.height / 2, self.view.frame.width, self.view.frame.height / 2))
+        processedImage.image = processedImageRaw
+        processedImage.contentMode = UIViewContentMode.ScaleAspectFit
+        self.view.addSubview(processedImage)
+        
 
         // Do any additional setup after loading the view.
     }

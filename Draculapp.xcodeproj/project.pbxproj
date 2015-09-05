@@ -21,6 +21,20 @@
 		4D475EB41B9A90370021B51B /* OptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D475EB21B9A90370021B51B /* OptionsViewController.xib */; };
 		4D475EB71B9AA6E40021B51B /* OpenCVTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D475EB51B9AA6E40021B51B /* OpenCVTestViewController.swift */; };
 		4D475EB81B9AA6E40021B51B /* OpenCVTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D475EB61B9AA6E40021B51B /* OpenCVTestViewController.xib */; };
+		BBAD60561B9AA80B00662186 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD60551B9AA80B00662186 /* CoreVideo.framework */; };
+		BBAD60581B9AA81000662186 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD60571B9AA81000662186 /* CoreAudio.framework */; };
+		BBAD605A1B9AA81900662186 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD60591B9AA81900662186 /* CoreMedia.framework */; };
+		BBAD605C1B9AA82200662186 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD605B1B9AA82200662186 /* AssetsLibrary.framework */; };
+		BBAD605E1B9AA82900662186 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD605D1B9AA82900662186 /* QuartzCore.framework */; };
+		BBAD60601B9AA83800662186 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD605F1B9AA83800662186 /* CoreImage.framework */; };
+		BBAD60621B9AA84A00662186 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD60611B9AA84A00662186 /* GLKit.framework */; };
+		BBAD60641B9AA85000662186 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD60631B9AA85000662186 /* OpenGLES.framework */; };
+		BBAD60661B9AA85900662186 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD60651B9AA85900662186 /* AVFoundation.framework */; };
+		BBAD60681B9AA86600662186 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD60671B9AA86600662186 /* UIKit.framework */; };
+		BBAD606A1B9AA86F00662186 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD60691B9AA86F00662186 /* Foundation.framework */; };
+		BBAD606C1B9AA88000662186 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD606B1B9AA88000662186 /* CoreGraphics.framework */; };
+		BBAD606E1B9AA88E00662186 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD606D1B9AA88E00662186 /* opencv2.framework */; };
+		BBAD60731B9AA8A100662186 /* Wrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = BBAD60721B9AA8A100662186 /* Wrapper.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +66,23 @@
 		4D475EB21B9A90370021B51B /* OptionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionsViewController.xib; sourceTree = "<group>"; };
 		4D475EB51B9AA6E40021B51B /* OpenCVTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenCVTestViewController.swift; sourceTree = "<group>"; };
 		4D475EB61B9AA6E40021B51B /* OpenCVTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenCVTestViewController.xib; sourceTree = "<group>"; };
+		BBAD60551B9AA80B00662186 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		BBAD60571B9AA81000662186 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		BBAD60591B9AA81900662186 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		BBAD605B1B9AA82200662186 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		BBAD605D1B9AA82900662186 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BBAD605F1B9AA83800662186 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		BBAD60611B9AA84A00662186 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		BBAD60631B9AA85000662186 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		BBAD60651B9AA85900662186 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BBAD60671B9AA86600662186 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BBAD60691B9AA86F00662186 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BBAD606B1B9AA88000662186 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BBAD606D1B9AA88E00662186 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		BBAD606F1B9AA8A000662186 /* Draculapp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Draculapp-Bridging-Header.h"; sourceTree = "<group>"; };
+		BBAD60701B9AA8A100662186 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		BBAD60711B9AA8A100662186 /* Wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wrapper.h; sourceTree = "<group>"; };
+		BBAD60721B9AA8A100662186 /* Wrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Wrapper.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +90,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBAD606C1B9AA88000662186 /* CoreGraphics.framework in Frameworks */,
+				BBAD606A1B9AA86F00662186 /* Foundation.framework in Frameworks */,
+				BBAD60681B9AA86600662186 /* UIKit.framework in Frameworks */,
+				BBAD60661B9AA85900662186 /* AVFoundation.framework in Frameworks */,
+				BBAD60641B9AA85000662186 /* OpenGLES.framework in Frameworks */,
+				BBAD606E1B9AA88E00662186 /* opencv2.framework in Frameworks */,
+				BBAD60621B9AA84A00662186 /* GLKit.framework in Frameworks */,
+				BBAD605A1B9AA81900662186 /* CoreMedia.framework in Frameworks */,
+				BBAD60601B9AA83800662186 /* CoreImage.framework in Frameworks */,
+				BBAD605E1B9AA82900662186 /* QuartzCore.framework in Frameworks */,
+				BBAD605C1B9AA82200662186 /* AssetsLibrary.framework in Frameworks */,
+				BBAD60581B9AA81000662186 /* CoreAudio.framework in Frameworks */,
+				BBAD60561B9AA80B00662186 /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,14 +119,31 @@
 		4D475E711B9A72420021B51B = {
 			isa = PBXGroup;
 			children = (
+				BBAD606D1B9AA88E00662186 /* opencv2.framework */,
+				BBAD606B1B9AA88000662186 /* CoreGraphics.framework */,
+				BBAD60691B9AA86F00662186 /* Foundation.framework */,
+				BBAD60671B9AA86600662186 /* UIKit.framework */,
+				BBAD60651B9AA85900662186 /* AVFoundation.framework */,
+				BBAD60631B9AA85000662186 /* OpenGLES.framework */,
+				BBAD60611B9AA84A00662186 /* GLKit.framework */,
+				BBAD605F1B9AA83800662186 /* CoreImage.framework */,
+				BBAD605D1B9AA82900662186 /* QuartzCore.framework */,
+				BBAD605B1B9AA82200662186 /* AssetsLibrary.framework */,
+				BBAD60591B9AA81900662186 /* CoreMedia.framework */,
+				BBAD60571B9AA81000662186 /* CoreAudio.framework */,
+				BBAD60551B9AA80B00662186 /* CoreVideo.framework */,
 				4D475EA41B9A74410021B51B /* AppController.swift */,
 				4D475EAC1B9A7C560021B51B /* Extensions.swift */,
 				4D475EAF1B9A7FF50021B51B /* Color.swift */,
+				BBAD60701B9AA8A100662186 /* PrefixHeader.pch */,
+				BBAD60711B9AA8A100662186 /* Wrapper.h */,
+				BBAD60721B9AA8A100662186 /* Wrapper.mm */,
 				4D475E7C1B9A72420021B51B /* Draculapp */,
 				4D475EAB1B9A7A120021B51B /* Controllers */,
 				4D475EAA1B9A7A080021B51B /* Views */,
 				4D475E951B9A72420021B51B /* DraculappTests */,
 				4D475E7B1B9A72420021B51B /* Products */,
+				BBAD606F1B9AA8A000662186 /* Draculapp-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -261,6 +322,7 @@
 				4D475EB71B9AA6E40021B51B /* OpenCVTestViewController.swift in Sources */,
 				4D475EB31B9A90370021B51B /* OptionsViewController.swift in Sources */,
 				4D475E801B9A72420021B51B /* AppDelegate.swift in Sources */,
+				BBAD60731B9AA8A100662186 /* Wrapper.mm in Sources */,
 				4D475EA51B9A74410021B51B /* AppController.swift in Sources */,
 				4D475EB01B9A7FF50021B51B /* Color.swift in Sources */,
 			);
@@ -381,9 +443,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = Draculapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Draculapp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -391,9 +462,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = Draculapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Draculapp-Bridging-Header.h";
 			};
 			name = Release;
 		};
