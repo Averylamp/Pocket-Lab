@@ -192,13 +192,13 @@ int* findBiggestContour(vector<vector<cv::Point>> contours,cv::Mat mColorMask) {
 //    cv::cvtColor(mask, mask, cv::COLOR_RGB2B);
     //cv::Canny(mask, mask, 50.0, 200.0);
     
-    vector<vector<cv::Point>> countours;
-    cv::findContours(mask, countours, RETR_TREE, CHAIN_APPROX_SIMPLE);
+  //  vector<vector<cv::Point>> countours;
+   // cv::findContours(mask, countours, RETR_TREE, CHAIN_APPROX_SIMPLE);
 
     
-    for  (int i = 0; i < countours.size(); i++) {
-        cv::drawContours(mask, mask, i, cv::Scalar(255,255,255));
-    }
+//    for  (int i = 0; i < countours.size(); i++) {
+  //      cv::drawContours(mask, mask, i, cv::Scalar(255,255,255));
+    //}
     
 //    vector<vector<cv::Point>> countours;
 //    
@@ -210,6 +210,7 @@ int* findBiggestContour(vector<vector<cv::Point>> contours,cv::Mat mColorMask) {
 //    }
 //    
 //    cv::bitwise_and(img, mask, img);
+    //mask.row(2)
     UIImage *result = cvMatToUIImage(mask);
     mask.release();
     img.release();
