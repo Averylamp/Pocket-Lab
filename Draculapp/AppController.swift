@@ -52,6 +52,10 @@ extension AppController: Navigation {
             self.setViewControllers([OpenCVTestViewController.generate()], animated: false)
         }
         
+        if page == .Centrifuge {
+            self.setViewControllers([SelectRPMViewController.generate(delegate: self)], animated: false)
+        }
+        
         if page == .OpenCV2 {
             self.setViewControllers([BloodShapeStartViewController.generate()], animated: false)
         }

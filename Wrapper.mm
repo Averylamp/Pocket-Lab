@@ -123,4 +123,16 @@ static void cvUIImageToMat(const UIImage* image, cv::Mat& m) {
     return result;
 }
 
++(UIImage*)isolateYellow:(UIImage *)image {
+    cv::Mat inputImage;
+    cv::Mat resultImg;
+    cvUIImageToMat(image, inputImage);
+    cvUIImageToMat(image, resultImg);
+    cv::inRange(inputImage, cv::Scalar(25, 146, 190), cv::Scalar(62, 174, 250), resultImg);
+    UIImage *result = cvMatToUIImage(resultImg);
+    inputImage.release();
+    resultImg.release();
+    return result;
+}
+
 @end

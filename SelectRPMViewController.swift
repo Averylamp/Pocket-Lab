@@ -24,4 +24,10 @@ class SelectRPMViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    class func generate(#delegate: Navigation) -> SelectRPMViewController {
+        let viewController = SelectRPMViewController(nibName: "SelectRPMViewController", bundle: NSBundle.mainBundle())
+        viewController.delegate = delegate
+        return viewController
+    }
+    
 }
