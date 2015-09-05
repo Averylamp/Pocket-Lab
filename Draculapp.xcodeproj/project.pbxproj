@@ -19,6 +19,8 @@
 		4D475EB01B9A7FF50021B51B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D475EAF1B9A7FF50021B51B /* Color.swift */; };
 		4D475EB31B9A90370021B51B /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D475EB11B9A90370021B51B /* OptionsViewController.swift */; };
 		4D475EB41B9A90370021B51B /* OptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D475EB21B9A90370021B51B /* OptionsViewController.xib */; };
+		4D475EB71B9AA6E40021B51B /* OpenCVTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D475EB51B9AA6E40021B51B /* OpenCVTestViewController.swift */; };
+		4D475EB81B9AA6E40021B51B /* OpenCVTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D475EB61B9AA6E40021B51B /* OpenCVTestViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		4D475EAF1B9A7FF50021B51B /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		4D475EB11B9A90370021B51B /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		4D475EB21B9A90370021B51B /* OptionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionsViewController.xib; sourceTree = "<group>"; };
+		4D475EB51B9AA6E40021B51B /* OpenCVTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenCVTestViewController.swift; sourceTree = "<group>"; };
+		4D475EB61B9AA6E40021B51B /* OpenCVTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenCVTestViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				4D475EB11B9A90370021B51B /* OptionsViewController.swift */,
+				4D475EB51B9AA6E40021B51B /* OpenCVTestViewController.swift */,
+				4D475EB61B9AA6E40021B51B /* OpenCVTestViewController.xib */,
 				4D475EA61B9A7A010021B51B /* StartViewController.swift */,
 			);
 			name = Controllers;
@@ -231,6 +237,7 @@
 				4D475EB41B9A90370021B51B /* OptionsViewController.xib in Resources */,
 				4D475E8A1B9A72420021B51B /* Images.xcassets in Resources */,
 				4D475EA91B9A7A010021B51B /* StartViewController.xib in Resources */,
+				4D475EB81B9AA6E40021B51B /* OpenCVTestViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +258,7 @@
 				4D475EAD1B9A7C560021B51B /* Extensions.swift in Sources */,
 				4D475E831B9A72420021B51B /* Draculapp.xcdatamodeld in Sources */,
 				4D475EA81B9A7A010021B51B /* StartViewController.swift in Sources */,
+				4D475EB71B9AA6E40021B51B /* OpenCVTestViewController.swift in Sources */,
 				4D475EB31B9A90370021B51B /* OptionsViewController.swift in Sources */,
 				4D475E801B9A72420021B51B /* AppDelegate.swift in Sources */,
 				4D475EA51B9A74410021B51B /* AppController.swift in Sources */,

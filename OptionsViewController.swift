@@ -19,7 +19,8 @@ class OptionsViewController: UIViewController {
     var animationFlag: BackgroundDirection = .Down
     @IBOutlet weak var spinButton: UIView!
     @IBOutlet weak var microscopy: UIView!
-    
+    var delegate: Navigation?
+
     
     @IBOutlet weak var bgScroll: UIImageView!
     override func viewDidLoad() {
@@ -68,6 +69,13 @@ class OptionsViewController: UIViewController {
     }
     
 
+    
+    @IBAction func opencvpush(sender: AnyObject) {
+        delegate?.goToPage(.OpenCV)
+        
+    }
+    
+    
     /*
     // MARK: - Navigation
 

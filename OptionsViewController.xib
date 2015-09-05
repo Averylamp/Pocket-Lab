@@ -95,6 +95,15 @@
                                 </mask>
                             </variation>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYh-mx-5qI">
+                            <rect key="frame" x="122" y="176" width="90" height="30"/>
+                            <state key="normal" title="OpenCV Test">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="opencvpush:" destination="-1" eventType="touchUpInside" id="0Vp-TP-5pJ"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="vSi-3a-tu4" firstAttribute="top" secondItem="943-KE-Cjf" secondAttribute="top" id="4J8-Np-aHX"/>

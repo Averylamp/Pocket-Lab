@@ -14,6 +14,7 @@ enum Page {
     case Centrifuge
     case Ratios
     case Microscope
+    case OpenCV
 }
 
 
@@ -25,11 +26,13 @@ class AppController: UINavigationController {
 
     var startView = StartViewController(nibName: "StartViewController", bundle: NSBundle.mainBundle())
     var optionsView = OptionsViewController(nibName: "OptionsViewController", bundle: NSBundle.mainBundle())
+    var opencv = OpenCVTestViewController(nibName: "OpenCVTestViewController", bundle: NSBundle.mainBundle())
     
     override func viewDidLoad() {
         UIApplication.sharedApplication().statusBarHidden = true
         
         startView.delegate = self
+        optionsView.delegate = self
         
         navigationBar.hidden = true
         self.pushViewController(startView, animated: false)
@@ -44,6 +47,10 @@ extension AppController: Navigation {
         
         if page == .Options {
             self.setViewControllers([optionsView], animated: false)
+        }
+        
+        if page == .OpenCV {
+            self.setViewControllers([opencv], animated: false)
         }
         
     }
