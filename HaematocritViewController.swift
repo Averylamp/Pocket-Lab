@@ -16,6 +16,8 @@ class HaematocritViewController: UIViewController {
     
     @IBOutlet weak var backButton: UIButton!
     
+    @IBOutlet weak var statusLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,8 +26,25 @@ class HaematocritViewController: UIViewController {
         backButton.layer.borderColor = "#28FDFF".CGColor
         
        // pic1.image = sharedSampleDataModel.ratiosImage
-        pic2.image = Wrapper.isolateBlood(sharedSampleDataModel.ratiosImage)
+       
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        let results = Wrapper.isolateBlood(sharedSampleDataModel.ratiosImage)
+        
+        let redBloodCellPercentage = results[2] as! Double
+        if redBloodCellPercentage < 36 {
+            statusLabel.text = "Your red blood cell count looks a little low.\nPossible indicator of anemia!"
+        } else if redBloodCellPercentage > 49 {
+            statusLabel.text = "Your plasma looks a little low.\nPossible indicator of low oxygenation issues!"
+        } else {
+            statusLabel.text = "Your blood levels are within normal ranges.\nYou appear to have a negative haematocrit."
+        }
+        
+        
+        pic2.image = results[0] as? UIImage
     }
 
     override func didReceiveMemoryWarning() {

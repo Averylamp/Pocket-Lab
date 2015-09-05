@@ -210,7 +210,7 @@ void drawBox(cv::Mat img, cv::Rect roi){
     
 }
 
-+(UIImage*)isolateBlood:(UIImage *)image {
++(NSArray *)isolateBlood:(UIImage *)image {
     cv::Mat img;
     cv::Mat imgRedMask;
     cv::Mat mask;
@@ -238,37 +238,54 @@ void drawBox(cv::Mat img, cv::Rect roi){
 
     int* response = findBiggestContour(countours, mask);
     int maxContour_id = response[0];
-    
-    cv::Rect rc = cv::boundingRect(countours[maxContour_id]);
-  
-    cv::Point p1 = cv::Point(rc.x + rc.width/2, rc.y + rc.height);
-    cv::Point p2 = cv::Point(rc.x + rc.width/2, rc.y);
-    
-    
-    cv::arrowedLine(origImg, p1, p2, cvScalar(10), 6);
-    cv::arrowedLine(origImg, p2, p1, cvScalar(10), 6);
-    
-    cv::putText(origImg, "23.45%", cv::Point(rc.x + rc.width / 2 + 15, rc.y + rc.height/2 + 10), cv::FONT_HERSHEY_DUPLEX, 1.0, cvScalar(0, 0, 255));
-    cv::line(origImg, cv::Point(0, 155), cv::Point(500, 155), cvScalar(10));
-    
-    // Red
-//    cv::inRange(img, cv::Scalar(17, 15, 100), cv::Scalar(80, 80, 200), imgRedMask);
-//
-//    vector<vector<cv::Point>> countours2;
-//    cv::findContours(imgRedMask, countours2, RETR_TREE, CHAIN_APPROX_SIMPLE);
-//    int* response2 = findBiggestContour(countours2, imgRedMask);
-//    int maxContour_id2 = response2[0];
-//    
-//    cv::Rect rc2 = cv::boundingRect(countours2[maxContour_id2]);
-//    
-//    cv::Point p12 = cv::Point(rc2.x + rc2.width/2, rc2.y + rc2.height);
-//    cv::Point p22 = cv::Point(rc2.x + rc2.width/2, rc2.y);
-//    
-//    cv::arrowedLine(origImg, p12, p22, cvScalar(10), 6);
-//    cv::arrowedLine(origImg, p22, p12, cvScalar(10), 6);
-//    
-//    cv::putText(origImg, "23.45%", cv::Point(rc2.x + rc2.width / 2 + 15, rc2.y + rc2.height/2 + 10), cv::FONT_HERSHEY_DUPLEX, 1.0, cvScalar(0, 0, 255));
+    double plasmaPercentage, redBloodPercentage;
+    if (maxContour_id != -1) {
+        
+        cv::Rect rc = cv::boundingRect(countours[maxContour_id]);
+      
+        cv::Point p1 = cv::Point(rc.x + rc.width/2, rc.y + rc.height);
+        cv::Point p2 = cv::Point(rc.x + rc.width/2, rc.y);
 
+        
+        cv::Point q1 = cv::Point(rc.x + rc.width/2, rc.y + rc.height);
+        cv::Point q2 = cv::Point(rc.x + rc.width/2, 325);
+        
+        cv::arrowedLine(origImg, p1, p2, cvScalar(0, 0, 255), 6);
+        cv::arrowedLine(origImg, p2, p1, cvScalar(0, 0, 255), 6);
+
+        cv::arrowedLine(origImg, q1, q2, cvScalar(100, 100, 0), 6);
+        cv::arrowedLine(origImg, q2, q1, cvScalar(100, 100, 0), 6);
+        
+        
+        // Calculate total blood height
+        int totalHeight = 325 - rc.y;
+        std::cout << "totalHeight " << totalHeight << "\n";
+
+        int plasmaHeight = rc.height;
+        std::cout << "plasmaHeight " << plasmaHeight << "\n";
+
+        int redBloodHeight = totalHeight - plasmaHeight;
+        
+        plasmaPercentage = ((double)plasmaHeight / totalHeight) * 100;
+        redBloodPercentage = 100 - plasmaPercentage;
+
+        std::cout << "plasmaPercentage " << plasmaPercentage << "\n";
+
+        char buffer1 [10];
+        char buffer2 [20];
+
+        int n = std::sprintf(buffer1, "%.2f%%", plasmaPercentage);
+        int n1 = std::sprintf(buffer2, "%.2f%%", redBloodPercentage);
+        
+        cv::putText(origImg, buffer1, cv::Point(rc.x + rc.width / 2 + 15, rc.y + rc.height/2 + 10), cv::FONT_HERSHEY_DUPLEX, 1.0, cvScalar(0, 0, 255));
+
+        cv::putText(origImg, buffer2, cv::Point(rc.x + rc.width / 2 + 15, 325 - (redBloodHeight/2) - 10), cv::FONT_HERSHEY_DUPLEX, 1.0, cvScalar(100, 100, 0));
+        
+        
+    //        cv::line(origImg, cv::Point(0, 325), cv::Point(500, 325), cvScalar(10));
+        
+        
+    }
     
     UIImage *result = cvMatToUIImage(origImg);
     
@@ -276,8 +293,11 @@ void drawBox(cv::Mat img, cv::Rect roi){
     img.release();
     origImg.release();
     imgRedMask.release();
-    
-    return result;
+    NSNumber *num1 = [NSNumber numberWithDouble:plasmaPercentage];
+    NSNumber *num2 = [NSNumber numberWithDouble:redBloodPercentage];
+    NSArray* arr = @[result, num1, num2, [NSNull null]];
+    return arr;
+   // return result;
 }
 
 @end

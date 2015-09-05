@@ -12,8 +12,9 @@ import CoreMotion
 class CentrifugeViewController: UIViewController {
     
     var delegate: Navigation?
-    var desiredRPM: Double!
     
+    var desiredRPM: Double!
+    var rpmCircle: CAShapeLayer!
     let motionManager: CMMotionManager = CMMotionManager()
     
     var trackingIntialized = false
@@ -24,10 +25,11 @@ class CentrifugeViewController: UIViewController {
     var dirChangeThresh = 0.08 // force in G's needed to indicate the phone has changed direction
     
     var timer = StopWatch()
+    @IBOutlet var timeLabel: UILabel!
     var totalElapsedTime = 0.0
+    var elapsedMinutes = 0
+    var elapsedSeconds = 0
     var initTime: Double!
-
-    var rpmCircle: CAShapeLayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +68,14 @@ class CentrifugeViewController: UIViewController {
         let viewController = CentrifugeViewController(nibName: "CentrifugeViewController", bundle: NSBundle.mainBundle())
         viewController.delegate = delegate
         return viewController
+    }
+    
+    @IBAction func backPressed() {
+        
+    }
+    
+    @IBAction func donePressed() {
+        
     }
     
     // MARK: - Accelerometer Shenanigans
@@ -132,12 +142,12 @@ class CentrifugeViewController: UIViewController {
         // NewValue = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin
         
         let screenSize: CGRect = self.view.bounds
-        var screenRange = Double(screenSize.height) - 50
-        var rpmRange = 600.0
-        var rpmBallPosition = (((self.avgRPM - (self.desiredRPM - 300)) * screenRange) / rpmRange)
+        var screenRange = Double(screenSize.height) - 35
+        var rpmRange = desiredRPM * 2
+        var rpmBallPosition = (((self.avgRPM) * screenRange) / rpmRange)
         var newframe = CGFloat(rpmBallPosition)
-        // Move the ball
-        if(avgRPM > 80 ) {
+        
+        if(avgRPM > 80 ) { // Move the ball
             dispatch_async(dispatch_get_main_queue(),{
                 if !self.trackingIntialized {
                     self.trackingIntialized = true
@@ -146,14 +156,13 @@ class CentrifugeViewController: UIViewController {
             })
             
             if newframe > screenSize.height {
-                newframe = screenSize.height - 50
+                newframe = screenSize.height - 35
             } else if newframe < 0 {
-                newframe = 50
+                newframe = 35
             } else {
-                
                 CATransaction.begin()
-                CATransaction.setAnimationDuration(0.6)
-                var newPoint = CGPoint(x: screenSize.width/2, y: newframe)
+                CATransaction.setAnimationDuration(0.7)
+                var newPoint = CGPoint(x: screenSize.width/2 - 35, y: newframe )
                 
                 rpmCircle.position = newPoint
                 
@@ -161,13 +170,11 @@ class CentrifugeViewController: UIViewController {
                 
             }
             
-            
-        } else {
+        } else { // hold the ball in place while calibrating
             var rpmframe = self.rpmCircle.frame
             var newframe = CGFloat(screenRange) / 2 - 40
             rpmframe.origin.y = newframe
             
-            //self.rpmBar.frame = rpmframe
         }
 
         println("\(totalElapsedTime), \(avgRPM), \(direction), \(newframe)") // print data in csv format
