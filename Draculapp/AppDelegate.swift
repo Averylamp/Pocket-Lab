@@ -13,10 +13,19 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var appController: UIViewController?
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+        // Initialisate views and windows
+        window        = UIWindow(frame: UIScreen.mainScreen().bounds)
+        appController = UIViewController()
+        
+        appController?.view.frame = UIScreen.mainScreen().bounds
+        appController?.view.backgroundColor = UIColor.redColor()
+        window!.rootViewController = appController
+        window!.makeKeyAndVisible()
+        
         return true
     }
 
