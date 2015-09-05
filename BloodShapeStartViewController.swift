@@ -43,7 +43,6 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
 //        collectionVC.collectionView?.registerClass:UICollectionReusableView.self forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
 //        NSLog(@"%f", self.view.frame.size.width);
 //        NSLog(@"%f", self.view.frame.size.height);
-        collectionVC.collectionView?.backgroundColor = UIColor.whiteColor()
         collectionVC.collectionView?.delegate = self;
         collectionVC.collectionView?.dataSource = self;
         self.view.addSubview(self.collectionVC.collectionView!)

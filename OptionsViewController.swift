@@ -56,7 +56,7 @@ class OptionsViewController: UIViewController {
     func setButtonStyle(button: UIView) {
         button.backgroundColor = UIColor.clearColor()
         button.layer.cornerRadius = 6
-        button.layer.borderWidth = 2
+        button.layer.borderWidth = 1
         button.layer.borderColor = "#FFFFFF".CGColor
         
         for sbSubview in spinButton.subviews.filter({ $0 is UIImageView }) {
