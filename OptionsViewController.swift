@@ -41,7 +41,7 @@ class OptionsViewController: UIViewController {
     }
     
     func spinTapped(recognizer: UITapGestureRecognizer) {
-        delegate?.goToPage(.Centrifuge)
+        delegate?.goToPage(.SelectRPM)
     }
     
     func setButtonStyle(button: UIView) {

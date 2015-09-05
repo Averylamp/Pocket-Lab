@@ -11,6 +11,7 @@ import CoreMotion
 
 class CentrifugeViewController: UIViewController {
     
+    var delegate: Navigation?
     var desiredRPM: Double!
     
     let motionManager: CMMotionManager = CMMotionManager()
@@ -50,7 +51,15 @@ class CentrifugeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: Accelerometer Shenanigans
+    // MARK: Navigation
+    
+    class func generate(#delegate: Navigation) -> CentrifugeViewController {
+        let viewController = CentrifugeViewController(nibName: "CentrifugeViewController", bundle: NSBundle.mainBundle())
+        viewController.delegate = delegate
+        return viewController
+    }
+    
+    // MARK: - Accelerometer Shenanigans
 
     func startAccelerometerPollingWithInterval(interval: Double)  {
         
