@@ -222,13 +222,18 @@ void drawBox(cv::Mat img, cv::Rect roi){
 //    cv::cvtColor(mask, mask, cv::COLOR_RGB2B);
     //cv::Canny(mask, mask, 50.0, 200.0);
     
-    vector<vector<cv::Point>> countours;
-    cv::findContours(mask, countours, RETR_TREE, CHAIN_APPROX_SIMPLE);
+  vector<vector<cv::Point>> countours;
+   cv::findContours(mask, countours, RETR_TREE, CHAIN_APPROX_SIMPLE);
 
     int* response = findBiggestContour(countours, mask);
     int maxContour_id = response[0];
     int ballSizedContours = response[1];
     
+
+    //    for  (int i = 0; i < countours.size(); i++) {
+  //      cv::drawContours(mask, mask, i, cv::Scalar(255,255,255));
+    //}
+
     double area = cv::contourArea(countours[maxContour_id]);
     cv::Rect rc = cv::boundingRect(countours[maxContour_id]);
     cv::rectangle(img, cv::Point(rc.x,rc.y), cv::Point(rc.x + rc.width, rc.y + rc.height), BLUE_COLOR,10,8,0);
@@ -249,7 +254,10 @@ void drawBox(cv::Mat img, cv::Rect roi){
 //    }
 //    
 //    cv::bitwise_and(img, mask, img);
+
+    //mask.row(2)
     UIImage *result = cvMatToUIImage(img);
+    
     mask.release();
     img.release();
     return result;
