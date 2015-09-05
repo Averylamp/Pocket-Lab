@@ -28,6 +28,10 @@
 		4D475EB81B9AA6E40021B51B /* OpenCVTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D475EB61B9AA6E40021B51B /* OpenCVTestViewController.xib */; };
 		4DCD6AEF1B9B02A200D3F287 /* HaematocritViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD6AED1B9B02A200D3F287 /* HaematocritViewController.swift */; };
 		4DCD6AF01B9B02A200D3F287 /* HaematocritViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCD6AEE1B9B02A200D3F287 /* HaematocritViewController.xib */; };
+		4DCD6AF31B9B361A00D3F287 /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD6AF11B9B361A00D3F287 /* TakePictureViewController.swift */; };
+		4DCD6AF41B9B361A00D3F287 /* TakePictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCD6AF21B9B361A00D3F287 /* TakePictureViewController.xib */; };
+		4DCD6AF71B9B467100D3F287 /* ConfirmImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD6AF51B9B467100D3F287 /* ConfirmImageViewController.swift */; };
+		4DCD6AF81B9B467100D3F287 /* ConfirmImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCD6AF61B9B467100D3F287 /* ConfirmImageViewController.xib */; };
 		BB46AA431B9AF63400AC765B /* BloodShapeStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB46AA421B9AF63400AC765B /* BloodShapeStartViewController.swift */; };
 		BBAD60561B9AA80B00662186 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD60551B9AA80B00662186 /* CoreVideo.framework */; };
 		BBAD60581B9AA81000662186 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD60571B9AA81000662186 /* CoreAudio.framework */; };
@@ -83,6 +87,10 @@
 		4D475EB61B9AA6E40021B51B /* OpenCVTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenCVTestViewController.xib; sourceTree = "<group>"; };
 		4DCD6AED1B9B02A200D3F287 /* HaematocritViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HaematocritViewController.swift; sourceTree = "<group>"; };
 		4DCD6AEE1B9B02A200D3F287 /* HaematocritViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HaematocritViewController.xib; sourceTree = "<group>"; };
+		4DCD6AF11B9B361A00D3F287 /* TakePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
+		4DCD6AF21B9B361A00D3F287 /* TakePictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TakePictureViewController.xib; sourceTree = "<group>"; };
+		4DCD6AF51B9B467100D3F287 /* ConfirmImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmImageViewController.swift; sourceTree = "<group>"; };
+		4DCD6AF61B9B467100D3F287 /* ConfirmImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmImageViewController.xib; sourceTree = "<group>"; };
 		BB46AA421B9AF63400AC765B /* BloodShapeStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodShapeStartViewController.swift; sourceTree = "<group>"; };
 		BBAD60551B9AA80B00662186 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		BBAD60571B9AA81000662186 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
@@ -217,6 +225,8 @@
 		4D475EAA1B9A7A080021B51B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4DCD6AF21B9B361A00D3F287 /* TakePictureViewController.xib */,
+				4DCD6AF61B9B467100D3F287 /* ConfirmImageViewController.xib */,
 				4DCD6AEE1B9B02A200D3F287 /* HaematocritViewController.xib */,
 				4D475EB61B9AA6E40021B51B /* OpenCVTestViewController.xib */,
 				4D475EB21B9A90370021B51B /* OptionsViewController.xib */,
@@ -236,6 +246,8 @@
 				BBAD60741B9AC8E400662186 /* OpenCVTestViewController.swift */,
 				4D475EA61B9A7A010021B51B /* StartViewController.swift */,
 				4DCD6AED1B9B02A200D3F287 /* HaematocritViewController.swift */,
+				4DCD6AF51B9B467100D3F287 /* ConfirmImageViewController.swift */,
+				4DCD6AF11B9B361A00D3F287 /* TakePictureViewController.swift */,
 				22F559501B9AFE8B008F961C /* SelectRPMViewController.swift */,
 				22F559521B9AFE97008F961C /* CentrifugeViewController.swift */,
 			);
@@ -323,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DCD6AF41B9B361A00D3F287 /* TakePictureViewController.xib in Resources */,
 				22F5594C1B9AFE50008F961C /* CentrifugeViewController.xib in Resources */,
 				4D475E8D1B9A72420021B51B /* LaunchScreen.xib in Resources */,
 				4D475EB41B9A90370021B51B /* OptionsViewController.xib in Resources */,
@@ -330,6 +343,7 @@
 				4D475E8A1B9A72420021B51B /* Images.xcassets in Resources */,
 				4D475EA91B9A7A010021B51B /* StartViewController.xib in Resources */,
 				4D29985F1B9AFB7600AE37FF /* BloodShapeStartViewController.xib in Resources */,
+				4DCD6AF81B9B467100D3F287 /* ConfirmImageViewController.xib in Resources */,
 				22F5594B1B9AFE50008F961C /* SelectRPMViewController.xib in Resources */,
 				4D475EB81B9AA6E40021B51B /* OpenCVTestViewController.xib in Resources */,
 			);
@@ -355,12 +369,14 @@
 				4D475EB31B9A90370021B51B /* OptionsViewController.swift in Sources */,
 				4DCD6AEF1B9B02A200D3F287 /* HaematocritViewController.swift in Sources */,
 				BBAD60751B9AC8E400662186 /* OpenCVTestViewController.swift in Sources */,
+				4DCD6AF71B9B467100D3F287 /* ConfirmImageViewController.swift in Sources */,
 				4D475E801B9A72420021B51B /* AppDelegate.swift in Sources */,
 				BBAD60731B9AA8A100662186 /* Wrapper.mm in Sources */,
 				4D475EA51B9A74410021B51B /* AppController.swift in Sources */,
 				BB46AA431B9AF63400AC765B /* BloodShapeStartViewController.swift in Sources */,
 				4D475EB01B9A7FF50021B51B /* Color.swift in Sources */,
 				22F559511B9AFE8B008F961C /* SelectRPMViewController.swift in Sources */,
+				4DCD6AF31B9B361A00D3F287 /* TakePictureViewController.swift in Sources */,
 				22F5594F1B9AFE78008F961C /* StopWatch.m in Sources */,
 				22F559531B9AFE97008F961C /* CentrifugeViewController.swift in Sources */,
 			);
@@ -489,6 +505,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = Draculapp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Draculapp-Bridging-Header.h";
@@ -508,6 +525,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = Draculapp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Draculapp-Bridging-Header.h";

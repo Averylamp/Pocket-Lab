@@ -19,8 +19,6 @@ class SelectRPMViewController: UIViewController {
     
     @IBOutlet var bloodUrineSegment: UISegmentedControl!
     
-    
-    
     @IBOutlet var startButton: UIButton!
     
     
@@ -51,23 +49,42 @@ class SelectRPMViewController: UIViewController {
         // Blood: 10-15 minutes at 3400 RPM.
         // 1000-1200 RCF
         
-        // Urine: On most centrifuges, 400 RCF equals about 1500 to 2000 rpm
+        // Urine: 1500-2000 RPM
+        // 400 RCF
         
         // RCF = 1.12 x R (mm) x KRPM x KRPM
         // R: Centrifuge rotor radius (mm) KRPM: Centrifuge speed in thousands
         // Example: If rotor radius is 102mm, speed is 3.4krpm (3400rpm), Then,
         // RCF = 1.12 x 102 x 3.4 x 3.4 = 1320g
         
-        
+        self.RadiusLabel.text = "\(round(self.RadiusSlider.value * 100) / 100)";
         self.RPMLabel.text = "\(Int(self.RPMSlider.value))";
+        var rcf = 1.12 * (self.RadiusSlider.value * 1000) * pow(self.RPMSlider.value / 1000, 2)
+        self.RCFLabel.text = "\(Int(rcf))"
+        
+        if 300 <= rcf && rcf < 400 {
+            self.bloodUrineSegment.selectedSegmentIndex = 1
+        } else if rcf >= 400 {
+            self.bloodUrineSegment.selectedSegmentIndex = 0
+        }
+        
     }
     
     @IBAction func indexChanged(sender:UISegmentedControl) {
         switch bloodUrineSegment.selectedSegmentIndex {
             case 0:
-                    RCFLabel.text = "1000";
+                    RCFLabel.text = "400";
+                    RadiusLabel.text = "1"
+                    RadiusSlider.value = 1
+                    RPMLabel.text = "600"
+                    RPMSlider.value = 600
+            
             case 1:
-                    RCFLabel.text = "Second Segment selected";
+                    RCFLabel.text = "300";
+                    RadiusLabel.text = "0.75"
+                    RadiusSlider.value = 1
+                    RPMLabel.text = "600"
+                    RPMSlider.value = 600
             default:
                 break;
         }

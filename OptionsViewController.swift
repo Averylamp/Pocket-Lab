@@ -20,6 +20,7 @@ class OptionsViewController: UIViewController {
     var animationFlag: BackgroundDirection = .Down
     @IBOutlet weak var spinButton: UIView!
     @IBOutlet weak var microscopy: UIView!
+    @IBOutlet weak var ratios: UIView!
     var delegate: Navigation?
 
     
@@ -29,11 +30,13 @@ class OptionsViewController: UIViewController {
         
         setButtonStyle(spinButton)
         setButtonStyle(microscopy)
+        setButtonStyle(ratios)
         
         self.bgScroll.frame.origin.y = -self.bgScroll.image!.size.height + UIScreen.mainScreen().bounds.height
         startAnimation()
         
         spinButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "spinTapped:"))
+        ratios.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "ratiosTapped:"))
         
         super.viewDidLoad()
 
@@ -42,6 +45,10 @@ class OptionsViewController: UIViewController {
     
     func spinTapped(recognizer: UITapGestureRecognizer) {
         delegate?.goToPage(.SelectRPM)
+    }
+
+    func ratiosTapped(recognizer: UITapGestureRecognizer) {
+        delegate?.goToPage(.Ratios)
     }
     
     func setButtonStyle(button: UIView) {

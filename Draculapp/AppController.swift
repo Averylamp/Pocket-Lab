@@ -17,6 +17,7 @@ enum Page {
     case Microscope
     case OpenCV
     case OpenCV2
+    case Haematocrit
 }
 
 
@@ -36,7 +37,7 @@ class AppController: UINavigationController {
         
         navigationBar.hidden = true
         self.pushViewController(StartViewController.generate(delegate: self), animated: false)
-        pushViewController(HaematocritViewController.generate(delegate: self), animated: false)
+        //pushViewController(HaematocritViewController.generate(delegate: self), animated: false)
         //pushViewController(opencv, animated: false)
         super.viewDidLoad()
     }
@@ -61,6 +62,10 @@ extension AppController: Navigation {
         
         if page == .Centrifuge {
             self.setViewControllers([CentrifugeViewController.generate(delegate: self)], animated: false)
+        }
+        
+        if page == .Ratios {
+            self.setViewControllers([TakePictureViewController.generate(delegate: self, next: .Haematocrit)], animated: false)
         }
         
         if page == .OpenCV2 {
