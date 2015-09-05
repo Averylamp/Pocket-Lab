@@ -90,4 +90,8 @@ class OpenCVTestViewController: UIViewController {
     }
     */
     
+    class func generate() -> OpenCVTestViewController {
+        return OpenCVTestViewController(nibName: "OpenCVTestViewController", bundle: NSBundle.mainBundle())
+    }
+    
 }

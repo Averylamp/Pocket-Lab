@@ -25,18 +25,15 @@ protocol Navigation {
 
 class AppController: UINavigationController {
 
-    var startView = StartViewController(nibName: "StartViewController", bundle: NSBundle.mainBundle())
-    var optionsView = OptionsViewController(nibName: "OptionsViewController", bundle: NSBundle.mainBundle())
-    var opencv = OpenCVTestViewController(nibName: "OpenCVTestViewController", bundle: NSBundle.mainBundle())
+  //  var startView = StartViewController(nibName: "StartViewController", bundle: NSBundle.mainBundle())
+//    var optionsView = OptionsViewController(nibName: "OptionsViewController", bundle: NSBundle.mainBundle())
+    //var opencv = OpenCVTestViewController(nibName: "OpenCVTestViewController", bundle: NSBundle.mainBundle())
     
     override func viewDidLoad() {
         UIApplication.sharedApplication().statusBarHidden = true
         
-        startView.delegate = self
-        optionsView.delegate = self
-        
         navigationBar.hidden = true
-        self.pushViewController(startView, animated: false)
+        self.pushViewController(StartViewController.generate(delegate: self), animated: false)
         //pushViewController(opencv, animated: false)
         super.viewDidLoad()
     }
@@ -48,16 +45,15 @@ extension AppController: Navigation {
     func goToPage(page: Page) {
         
         if page == .Options {
-            self.setViewControllers([optionsView], animated: false)
+            self.setViewControllers([OptionsViewController.generate(delegate: self)], animated: false)
         }
         
         if page == .OpenCV {
-            self.setViewControllers([opencv], animated: false)
+            self.setViewControllers([OpenCVTestViewController.generate()], animated: false)
         }
         
         if page == .OpenCV2 {
-            let vc = BloodShapeStartViewController(nibName: "BloodShapeStartViewController", bundle: NSBundle.mainBundle())
-            self.setViewControllers([vc], animated: false)
+            self.setViewControllers([BloodShapeStartViewController.generate()], animated: false)
         }
         
     }

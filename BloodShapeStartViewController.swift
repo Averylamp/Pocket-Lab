@@ -32,4 +32,8 @@ class BloodShapeStartViewController: UIViewController {
     }
     */
 
+    class func generate() -> BloodShapeStartViewController {
+        return BloodShapeStartViewController(nibName: "BloodShapeStartViewController", bundle: NSBundle.mainBundle())
+    }
+    
 }
