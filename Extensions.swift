@@ -6,4 +6,3 @@
 //  Copyright (c) 2015 magicmark. All rights reserved.
 //
 
-import Foundation

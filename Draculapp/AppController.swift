@@ -8,28 +8,36 @@
 
 import UIKit
 
-class AppController: UIViewController {
+//enum Page {
+//    case Start
+//    case Options
+//    case Centrifuge
+//    case Ratios
+//    case Microscope
+//}
+//
+//protocol Navigation {
+//    func goToPage(page: Page)
+//}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+class AppController: UINavigationController {
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    var startView = StartViewController(nibName: "StartViewController", bundle: NSBundle.mainBundle())
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        UIApplication.sharedApplication().statusBarHidden = true
+        
+        navigationBar.hidden = true
+        self.pushViewController(startView, animated: false)
+        super.viewDidLoad()
     }
-    */
 
 }
+
+//extension AppController: Navigation {
+//
+//    func goToPage(page: Page) {
+//        
+//    }
+//    
+//}

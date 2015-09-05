@@ -13,13 +13,13 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var appController: UIViewController?
+    var appController: UINavigationController?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
         // Initialisate views and windows
         window        = UIWindow(frame: UIScreen.mainScreen().bounds)
-        appController = UIViewController()
+        appController = AppController()
         
         appController?.view.frame = UIScreen.mainScreen().bounds
         appController?.view.backgroundColor = UIColor.redColor()

@@ -1,19 +1,94 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController" customModule="Draculapp" customModuleProvider="target">
             <connections>
+                <outlet property="begin" destination="uiI-wL-TRd" id="iBJ-xF-3fQ"/>
+                <outlet property="drop" destination="lcl-de-5FT" id="3ji-A1-8dR"/>
+                <outlet property="fadeInView" destination="oJn-9O-605" id="hpp-B2-hcQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJn-9O-605">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="droplet" translatesAutoresizingMaskIntoConstraints="NO" id="CPu-K6-aTT">
+                            <rect key="frame" x="123" y="120" width="128" height="128"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="CPu-K6-aTT" secondAttribute="height" multiplier="1:1" id="RHB-FM-hMb"/>
+                                <constraint firstAttribute="height" constant="128" id="e9t-nL-P26"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop" translatesAutoresizingMaskIntoConstraints="NO" id="lcl-de-5FT">
+                            <rect key="frame" x="218" y="208" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="Lb6-SY-77f"/>
+                                <constraint firstAttribute="width" secondItem="lcl-de-5FT" secondAttribute="height" multiplier="1:1" id="kNx-7L-AgD"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Draculapp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHX-As-z4z">
+                            <rect key="frame" x="120" y="59" width="134" height="34"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="29"/>
+                            <color key="textColor" red="0.15686274509803921" green="0.99215686274509807" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="sHX-As-z4z" secondAttribute="centerX" id="8wZ-jO-1qY"/>
+                        <constraint firstItem="CPu-K6-aTT" firstAttribute="top" secondItem="oJn-9O-605" secondAttribute="top" constant="120" id="HCT-84-ccv"/>
+                        <constraint firstItem="lcl-de-5FT" firstAttribute="leading" secondItem="CPu-K6-aTT" secondAttribute="leading" constant="95" id="VEg-Ep-zA1"/>
+                        <constraint firstAttribute="height" constant="300" id="a5m-fl-XmI"/>
+                        <constraint firstAttribute="centerX" secondItem="CPu-K6-aTT" secondAttribute="centerX" id="eHq-nU-5nX"/>
+                        <constraint firstItem="lcl-de-5FT" firstAttribute="top" secondItem="CPu-K6-aTT" secondAttribute="top" constant="88" id="eQN-M9-V3a"/>
+                        <constraint firstItem="sHX-As-z4z" firstAttribute="top" secondItem="oJn-9O-605" secondAttribute="top" constant="59" id="iaW-O9-ytA"/>
+                        <constraint firstAttribute="centerY" secondItem="sHX-As-z4z" secondAttribute="centerY" id="rxG-Q4-KrC"/>
+                        <constraint firstAttribute="trailing" secondItem="sHX-As-z4z" secondAttribute="trailing" constant="20" symbolic="YES" id="vbr-az-trS"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="rxG-Q4-KrC"/>
+                            <exclude reference="vbr-az-trS"/>
+                        </mask>
+                    </variation>
+                </view>
+                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uiI-wL-TRd">
+                    <rect key="frame" x="97" y="537" width="181" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="181" id="2aF-oI-qDw"/>
+                        <constraint firstAttribute="height" constant="38" id="Rbz-K4-VJR"/>
+                    </constraints>
+                    <state key="normal" title="Begin Blood Analysis">
+                        <color key="titleColor" red="0.15686274510000001" green="0.99215686270000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="beginTouched:" destination="-1" eventType="touchUpInside" id="f8Z-Fr-Q9c"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.1287987385321101" green="0.18721330275229359" blue="0.23261897935779816" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="oJn-9O-605" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3Dh-TH-zdJ"/>
+                <constraint firstAttribute="bottom" secondItem="uiI-wL-TRd" secondAttribute="bottom" constant="92" id="6Xc-Bt-c6X"/>
+                <constraint firstAttribute="trailing" secondItem="oJn-9O-605" secondAttribute="trailing" id="GDW-nz-kEN"/>
+                <constraint firstItem="oJn-9O-605" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="N6x-t5-o13"/>
+                <constraint firstAttribute="centerX" secondItem="uiI-wL-TRd" secondAttribute="centerX" id="a1R-Fn-cZx"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="469.5" y="377.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="drop" width="129" height="172"/>
+        <image name="droplet" width="512" height="512"/>
+    </resources>
 </document>

@@ -13,6 +13,10 @@
 		4D475E8D1B9A72420021B51B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D475E8B1B9A72420021B51B /* LaunchScreen.xib */; };
 		4D475E991B9A72420021B51B /* DraculappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D475E981B9A72420021B51B /* DraculappTests.swift */; };
 		4D475EA51B9A74410021B51B /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D475EA41B9A74410021B51B /* AppController.swift */; };
+		4D475EA81B9A7A010021B51B /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D475EA61B9A7A010021B51B /* StartViewController.swift */; };
+		4D475EA91B9A7A010021B51B /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D475EA71B9A7A010021B51B /* StartViewController.xib */; };
+		4D475EAD1B9A7C560021B51B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D475EAC1B9A7C560021B51B /* Extensions.swift */; };
+		4D475EB01B9A7FF50021B51B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D475EAF1B9A7FF50021B51B /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		4D475E971B9A72420021B51B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D475E981B9A72420021B51B /* DraculappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraculappTests.swift; sourceTree = "<group>"; };
 		4D475EA41B9A74410021B51B /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppController.swift; path = Draculapp/AppController.swift; sourceTree = "<group>"; };
+		4D475EA61B9A7A010021B51B /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		4D475EA71B9A7A010021B51B /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
+		4D475EAC1B9A7C560021B51B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4D475EAF1B9A7FF50021B51B /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +68,11 @@
 			isa = PBXGroup;
 			children = (
 				4D475EA41B9A74410021B51B /* AppController.swift */,
+				4D475EAC1B9A7C560021B51B /* Extensions.swift */,
+				4D475EAF1B9A7FF50021B51B /* Color.swift */,
 				4D475E7C1B9A72420021B51B /* Draculapp */,
+				4D475EAB1B9A7A120021B51B /* Controllers */,
+				4D475EAA1B9A7A080021B51B /* Views */,
 				4D475E951B9A72420021B51B /* DraculappTests */,
 				4D475E7B1B9A72420021B51B /* Products */,
 			);
@@ -110,6 +122,22 @@
 				4D475E971B9A72420021B51B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4D475EAA1B9A7A080021B51B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4D475EA71B9A7A010021B51B /* StartViewController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4D475EAB1B9A7A120021B51B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4D475EA61B9A7A010021B51B /* StartViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +223,7 @@
 			files = (
 				4D475E8D1B9A72420021B51B /* LaunchScreen.xib in Resources */,
 				4D475E8A1B9A72420021B51B /* Images.xcassets in Resources */,
+				4D475EA91B9A7A010021B51B /* StartViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,9 +241,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D475EAD1B9A7C560021B51B /* Extensions.swift in Sources */,
 				4D475E831B9A72420021B51B /* Draculapp.xcdatamodeld in Sources */,
+				4D475EA81B9A7A010021B51B /* StartViewController.swift in Sources */,
 				4D475E801B9A72420021B51B /* AppDelegate.swift in Sources */,
 				4D475EA51B9A74410021B51B /* AppController.swift in Sources */,
+				4D475EB01B9A7FF50021B51B /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

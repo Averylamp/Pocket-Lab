@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>BD6C1D58-9B96-429A-90BA-F17BFD78FD93</string>
+	<string>609F197C-E2D0-4548-9693-36FA291D0082</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Draculapp</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>BB0C0847CF60B1211CB78597A0873805A555F13D</key>
 		<string>https://github.com/magicmark/draculapp.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Draculapp.xcodeproj</string>
+	<string>Draculapp.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>BB0C0847CF60B1211CB78597A0873805A555F13D</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>BB0C0847CF60B1211CB78597A0873805A555F13D</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Draculab</string>
+			<string>Draculapp</string>
 		</dict>
 	</array>
 </dict>
