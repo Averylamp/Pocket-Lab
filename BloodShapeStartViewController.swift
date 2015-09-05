@@ -125,6 +125,8 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
             switch indexPath.row{
             case 0:
                 imgV.image = UIImage(named: "Hereditary_elliptocytosis")
+            case 1:
+                imgV.image = UIImage(named: "Hereditary_elliptocytosis2")
             default:
                 print("default")
             }
@@ -153,12 +155,51 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
         case 0:
             return 3
         case 1:
-            return 1
+            return 2
         case 2:
             return 2
         default:
             return 0
         }
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        var image = UIImage()
+        
+        switch indexPath.section{
+        case 0:
+            switch indexPath.row{
+            case 0:
+                image = UIImage(named: "Normal_1")!
+            case 1:
+                image = UIImage(named: "Normal_2")!
+            case 2:
+                image = UIImage(named: "Normal_3")!
+            default:
+                print("default")
+            }
+        case 1:
+            switch indexPath.row{
+            case 0:
+                image = UIImage(named: "Hereditary_elliptocytosis")!
+            case 1:
+                image = UIImage(named: "Hereditary_elliptocytosis2")!
+            default:
+                print("default")
+            }
+        case 2:
+            switch indexPath.row{
+            case 0:
+                image = UIImage(named: "SickleCell_1")!
+            case 1:
+                image = UIImage(named: "SickleCell_2")!
+            default:
+                print("default")
+            }
+        default:
+            print("Default")
+        }
+
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
