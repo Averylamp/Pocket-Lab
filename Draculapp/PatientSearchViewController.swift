@@ -31,7 +31,23 @@ class PatientSearchViewController: UIViewController {
         sharedEpic.getPatientInfo(name: idField.text, callback: { error, data in
             if let data = data {
                 let patient = data["entry"][0]["resource"]["Patient"]
-                println(patient["name"][0]["family"][0].string)
+                
+                var newPatient = Patient()
+                
+                newPatient.firstName = patient["name"][0]["given"][0].string
+                newPatient.lastName = patient["name"][0]["usual"][0].string
+                newPatient.careProvider = patient["name"][0]["careProvider"][0].string
+                newPatient.home = patient["name"][0]["home"][0].string
+                newPatient.phone = patient["name"][0]["phone"][0].string
+                newPatient.email = patient["name"][0]["email"][0].string
+                newPatient.married = patient["name"][0]["married"][0].string
+                
+                sharedSampleDataModel.addPatient(newPatient)
+                
+                dispatch_async(dispatch_get_main_queue(),{
+                    delegate?.goToPage(.PatientInfo)
+                })
+                
             }
         })
         

@@ -20,6 +20,7 @@ enum Page {
     case OpenCV2
     case Haematocrit
     case PatientSearch
+    case PatientInfo
 }
 
 
@@ -40,7 +41,7 @@ class AppController: UINavigationController {
         navigationBar.hidden = true
         self.pushViewController(StartViewController.generate(delegate: self), animated: false)
         //pushViewController(HaematocritViewController.generate(delegate: self), animated: false)
-        //pushViewController(opencv, animated: false)
+        self.pushViewController(OpenCVTestViewController.generate(), animated: true)
         super.viewDidLoad()
     }
 
@@ -86,6 +87,11 @@ extension AppController: Navigation {
         
         if page == .PatientSearch {
             self.setViewControllers([PatientSearchViewController.generate(delegate: self)], animated: false)
+            
+        }
+        
+        if page == .PatientInfo {
+            self.setViewControllers([PatientInfoViewController.generate(delegate: self)], animated: false)
             
         }
         
