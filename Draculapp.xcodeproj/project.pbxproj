@@ -368,6 +368,8 @@
 		4D475EAA1B9A7A080021B51B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BB8A90571B9C47A900C30BC1 /* HemaSamplesViewController.xib */,
+				BB8A90541B9C475F00C30BC1 /* HaemaCVViewController.xib */,
 				4DCD6AF21B9B361A00D3F287 /* TakePictureViewController.xib */,
 				4DCD6AF61B9B467100D3F287 /* ConfirmImageViewController.xib */,
 				4DCD6AEE1B9B02A200D3F287 /* HaematocritViewController.xib */,
@@ -387,9 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				BB8A90521B9C471C00C30BC1 /* HaemaCVViewController.swift */,
-				BB8A90541B9C475F00C30BC1 /* HaemaCVViewController.xib */,
 				BB8A90561B9C47A900C30BC1 /* HemaSamplesViewController.swift */,
-				BB8A90571B9C47A900C30BC1 /* HemaSamplesViewController.xib */,
 				4D475EB11B9A90370021B51B /* OptionsViewController.swift */,
 				BB46AA421B9AF63400AC765B /* BloodShapeStartViewController.swift */,
 				BBAD60741B9AC8E400662186 /* OpenCVTestViewController.swift */,
