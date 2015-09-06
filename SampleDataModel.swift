@@ -10,13 +10,19 @@ import UIKit
 
 class SampleDataModel: NSObject {
     private var samples = [Sample]()
-   
+    
+    private var patients = [Patient]()
 
+    
     var lastMicroscopyImage:UIImage?
 
     var ratiosImage: UIImage?
     
     var live:Bool?
+
+    func addPatient(newSample: Patient) {
+        patients.append(newSample)
+    }
     
     func addSample(newSample: Sample) {
         samples.append(newSample)
@@ -26,7 +32,9 @@ class SampleDataModel: NSObject {
         return samples.last
     }
     
-    
+    func getLastPatient() -> Patient? {
+        return patients.last
+    }
 }
 
 let sharedSampleDataModel = SampleDataModel()

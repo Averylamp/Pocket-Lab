@@ -385,6 +385,7 @@ void drawBox(cv::Mat img, cv::Rect roi){
    // return result;
 }
 
+
 int findBiggestContourByPerimeter(vector<vector<cv::Point>> contours) {
     unsigned long maxXs = 0;
     int maxIndex = -1;
@@ -620,4 +621,13 @@ static void morphOps(cv::Mat img) {
     return arr;
     
 }
+
+//+(UIImage *)cropImage:(UIImage *)image byRect:(CGRect)rect {
+//
+//    cv::Rect roi = cv::Rect( (int) rect.origin.x, (int) rect.origin.y, 150,150);
+//    // Top Left Corner is X,Y
+//    cv::Mat cropImg = cv::Mat(img_scene, roi);
+//}
+
+
 @end

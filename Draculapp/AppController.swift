@@ -22,6 +22,7 @@ enum Page {
     case HaemaSamples
     case HaemaCV
     case PatientSearch
+    case PatientInfo
 }
 
 
@@ -95,6 +96,11 @@ extension AppController: Navigation {
         
         if page == .PatientSearch {
             self.setViewControllers([PatientSearchViewController.generate(delegate: self)], animated: false)
+            
+        }
+        
+        if page == .PatientInfo {
+            self.setViewControllers([PatientInfoViewController.generate(delegate: self)], animated: false)
             
         }
         
