@@ -19,8 +19,6 @@ class ConfirmImageViewController: UIViewController {
     var doCropping = false
     var cropRect: CGRect?
     
-    var croppedImage: UIImage?
-
     //Dragging
     var dragging = false
     var start: CGPoint? = nil;
@@ -52,7 +50,6 @@ class ConfirmImageViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        croppedImage = nil;
     }
     
     override func didReceiveMemoryWarning() {
@@ -129,6 +126,7 @@ class ConfirmImageViewController: UIViewController {
         let bigImageSnap = image.pb_takeSnapshot()
         
         let imageRef = CGImageCreateWithImageInRect(bigImageSnap.CGImage, rect);
+
         // or use the UIImage wherever you like
         let myImg = UIImage(CGImage: imageRef)
       
@@ -142,7 +140,7 @@ class ConfirmImageViewController: UIViewController {
 
         if !doCropping {
             let bigImageSnap = image.pb_takeSnapshot()
-            delegate?.imageOk(bigImageSnap)
+            delegate?.imageOk(bigImageSnap.imageRotatedByDegrees(270, flip: false))
             return;
         }
         

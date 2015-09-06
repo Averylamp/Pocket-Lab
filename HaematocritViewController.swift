@@ -34,6 +34,9 @@ class HaematocritViewController: UIViewController {
         super.viewDidAppear(animated)
         let results = Wrapper.isolateBlood(sharedSampleDataModel.ratiosImage)
         
+        sharedRatios.plasmaCount = results[1] as! Double
+        sharedRatios.redBloodCellCount = results[2] as! Double
+        
         let redBloodCellPercentage = results[2] as! Double
         if redBloodCellPercentage < 36 {
             statusLabel.text = "Your red blood cell count looks a little low.\nPossible indicator of anemia!"
