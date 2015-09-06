@@ -19,7 +19,7 @@ class ConfirmImageViewController: UIViewController {
     var doCropping = false
     var cropRect: CGRect?
     
-    var croppedImage: UIImage?
+    //var croppedImage: UIImage?
     
     //Dragging
     var dragging = false
@@ -52,7 +52,6 @@ class ConfirmImageViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        croppedImage = nil;
     }
     
     override func didReceiveMemoryWarning() {
@@ -143,7 +142,7 @@ class ConfirmImageViewController: UIViewController {
         
         if !doCropping {
             let bigImageSnap = image.pb_takeSnapshot()
-            delegate?.imageOk(bigImageSnap)
+            delegate?.imageOk(bigImageSnap.imageRotatedByDegrees(270, flip: false))
             return;
         }
         

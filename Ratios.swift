@@ -16,4 +16,4 @@ class Ratios {
     
 }
 
-let sharedInstance = Ratios()
+let sharedRatios = Ratios()

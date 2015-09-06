@@ -296,6 +296,9 @@ void drawBox(cv::Mat img, cv::Rect roi){
 }
 
 +(NSArray *)isolateBlood:(UIImage *)image {
+    
+    int bottom = 500;
+    
     cv::Mat img;
     cv::Mat imgRedMask;
     cv::Mat mask;
@@ -333,7 +336,7 @@ void drawBox(cv::Mat img, cv::Rect roi){
 
         
         cv::Point q1 = cv::Point(rc.x + rc.width/2, rc.y + rc.height);
-        cv::Point q2 = cv::Point(rc.x + rc.width/2, 325);
+        cv::Point q2 = cv::Point(rc.x + rc.width/2, bottom);
         
         cv::arrowedLine(origImg, p1, p2, cvScalar(0, 0, 255), 6);
         cv::arrowedLine(origImg, p2, p1, cvScalar(0, 0, 255), 6);
@@ -343,7 +346,7 @@ void drawBox(cv::Mat img, cv::Rect roi){
         
         
         // Calculate total blood height
-        int totalHeight = 325 - rc.y;
+        int totalHeight = bottom - rc.y;
         std::cout << "totalHeight " << totalHeight << "\n";
 
         int plasmaHeight = rc.height;
@@ -364,7 +367,7 @@ void drawBox(cv::Mat img, cv::Rect roi){
         
         cv::putText(origImg, buffer1, cv::Point(rc.x + rc.width / 2 + 15, rc.y + rc.height/2 + 10), cv::FONT_HERSHEY_DUPLEX, 1.0, cvScalar(0, 0, 255));
 
-        cv::putText(origImg, buffer2, cv::Point(rc.x + rc.width / 2 + 15, 325 - (redBloodHeight/2) - 10), cv::FONT_HERSHEY_DUPLEX, 1.0, cvScalar(100, 100, 0));
+        cv::putText(origImg, buffer2, cv::Point(rc.x + rc.width / 2 + 15, bottom - (redBloodHeight/2) - 10), cv::FONT_HERSHEY_DUPLEX, 1.0, cvScalar(100, 100, 0));
         
         
     //        cv::line(origImg, cv::Point(0, 325), cv::Point(500, 325), cvScalar(10));
