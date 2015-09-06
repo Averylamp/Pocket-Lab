@@ -84,7 +84,7 @@ class HemaSamplesViewController: UIViewController,UICollectionViewDataSource,UIC
     }
     
     func takeOwn(){
-        delegate?.goToPage(.LiveCV)
+        delegate?.goToPage(.TakeRatiosPicture)
     }
     
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {

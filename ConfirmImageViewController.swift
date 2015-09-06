@@ -150,7 +150,10 @@ class ConfirmImageViewController: UIViewController {
             ok.setTitle("Crop!!", forState: .Normal)
         } else {
             
-            image.image = crop(image.image!, withRect: cropRect!)
+            // Avery, use this!! Goto to your view here and pass this along
+            let croppedImage = crop(image.image!, withRect: cropRect!)
+            
+            image.image = croppedImage
             start = nil
             shape.path = nil;
             //image.layer.addSublayer(shape)

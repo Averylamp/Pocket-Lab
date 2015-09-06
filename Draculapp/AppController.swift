@@ -23,6 +23,8 @@ enum Page {
     case HaemaCV
     case PatientSearch
     case PatientInfo
+    case TakeRatiosPicture
+    case TakeBloodCellsPicture
 }
 
 
@@ -75,7 +77,15 @@ extension AppController: Navigation {
             self.setViewControllers([HemaSamplesViewController.generate(delegate: self)], animated: false)
         }
         
-        if page == .LiveCV{
+        if page == .TakeRatiosPicture {
+            self.setViewControllers([TakePictureViewController.generate(delegate: self, next: .Haematocrit)], animated: false)
+        }
+
+        if page == .TakeBloodCellsPicture {
+            self.setViewControllers([TakePictureViewController.generate(delegate: self, next: .OpenCV)], animated: false)
+        }
+        
+        if page == .LiveCV {
             self.setViewControllers([TakePictureViewController.generate(delegate: self, next: .Haematocrit)], animated: false)
         }
         

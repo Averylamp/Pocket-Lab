@@ -83,7 +83,7 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
     }
     
     func takeOwn(){
-        delegate?.goToPage(.LiveCV)
+        delegate?.goToPage(.TakeBloodCellsPicture)
     }
    
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
