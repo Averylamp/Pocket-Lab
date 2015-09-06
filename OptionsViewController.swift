@@ -21,6 +21,9 @@ class OptionsViewController: UIViewController {
     @IBOutlet weak var spinButton: UIView!
     @IBOutlet weak var microscopy: UIView!
     @IBOutlet weak var ratios: UIView!
+    @IBOutlet weak var allResults: UIView!
+    @IBOutlet weak var cloudSync: UIView!
+    
     var delegate: Navigation?
 
     
@@ -33,13 +36,15 @@ class OptionsViewController: UIViewController {
         setButtonStyle(spinButton)
         setButtonStyle(microscopy)
         setButtonStyle(ratios)
+        setButtonStyle(allResults)
+        setButtonStyle(cloudSync)
         
         self.bgScroll.frame.origin.y = -self.bgScroll.image!.size.height + UIScreen.mainScreen().bounds.height
         startAnimation()
         
         spinButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "spinTapped:"))
         ratios.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "ratiosTapped:"))
-        ratios.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "microscopyTapped:"))
+        microscopy.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "microscopyTapped:"))
         
         super.viewDidLoad()
 
