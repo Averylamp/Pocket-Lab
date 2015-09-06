@@ -42,17 +42,101 @@ static void cvUIImageToMat(const UIImage* image, cv::Mat& m) {
     CGContextRelease(contextRef);
     //    CGColorSpaceRelease(colorSpace);
 }
-+(NSArray*)processImage:(UIImage *)image{
++(NSArray*)processImage:(UIImage*)image live:(BOOL) live{
     cv::Mat img;
     cv::Mat resultImg;
     cvUIImageToMat(image, img);
     cvUIImageToMat(image, resultImg);
-    cv::cvtColor(img, img, cv::COLOR_RGB2GRAY);
-    cv::Canny(img, img, 50, 150);
+//    cv::cvtColor(img, img, cv::COLOR_BGR2HSV);
+    cv::Mat sharpImg;
+
+    
+   
+    if (live == YES){
+//        sharpImg = img;
+        NSLog(@"%d,%d,%d",img.at<Vec4b>(0, 0)[0],img.at<Vec4b>(0, 0)[1],img.at<Vec4b>(0, 0)[2]);
+        NSLog(@"%d,%d,%d",img.at<Vec4b>(0, 1)[0],img.at<Vec4b>(0, 1)[1],img.at<Vec4b>(0, 1)[2]);
+        
+        img.at<Vec4b>(0, 1) = Vec4b(0,255,0);
+//        NSLog(@"%d,%d,%d",img.at<Vec3b>(0, 0)[0],img.at<Vec3b>(0, 0)[1],img.at<Vec3b>(0, 0)[2]);
+//        NSLog(@"%d,%d,%d",img.at<Vec3b>(0, 1)[0],img.at<Vec3b>(0, 1)[1],img.at<Vec3b>(0, 1)[2]);
+        long greenValue = 0;
+        int count = 0;
+        for(int j=0;j<img.rows;j++)
+        {
+            
+            for (int i=0;i<img.cols;i++)
+            {
+                Vec4b hsvValue =  img.at<Vec4b>(j, i);
+                int G = hsvValue.val[1];  // = imgHSV.get(y, x)[1];
+                greenValue += G;
+                count++;
+            }
+        }
+        
+        double meanGreen = greenValue / (double) count;
+        
+        for(int j=0;j<img.rows;j++)
+        {
+            
+            for (int i=0;i<img.cols;i++)
+            {
+                
+                Vec4b hsvValue =  img.at<Vec4b>(j, i);
+                
+                int B = hsvValue.val[0];  // = imgHSV.get(y,x)[0];
+                int G = hsvValue.val[1];  // = imgHSV.get(y, x)[1];
+                int R = hsvValue.val[2];  // = imgHSV.get(y, x)[2];
+                
+                if (G > meanGreen - 5 ) {
+                    img.at<cv::Vec4b>(j,i) = cv::Vec4b(40,40,40);
+//                    img.at<cv::Vec3b>(j,i)[1] = 40;
+//                    img.at<cv::Vec3b>(j,i)[2] = 40;
+//                    img.at<cv::Vec3b>(j,i)[3] = 40;
+                }
+                
+//                NSLog(@"G VAL : %d",G);
+//                NSLog(@"pixed Val: %d",img.at<uchar>(j,i));
+                
+//                if(img.at<uchar>(j,i)> 203){
+//                    img.at<uchar>(j, i) += 20;
+//                }else{
+//                    img.at<uchar>(j,i) -= 20;
+//                }
+//
+//                if( i== j)
+//                    img.at<uchar>(j,i) = 255; //white
+            }
+        }
+//        NSLog(@"Sharpening Finished");
+//        
+//        cv::Laplacian(img, sharpImg, CV_8U);
+//        convertScaleAbs( dst, abs_dst );
+        
+//
+        cv::cvtColor(img, img, COLOR_BGR2GRAY);
+        cv::Canny(img, img, 100, 210);
+    }else{
+        cv::Canny(img, img, 50, 150);
+    }
+    
+//    UIImage *result = cvMatToUIImage(img);
+//    img.release();
+//    resultImg.release();
+//    return [[NSArray alloc]initWithObjects:result,[NSNumber numberWithInt:0],[NSNumber numberWithInt:0], nil];
+
+    
     
     vector<vector<cv::Point> > contours;
 
     cv::findContours( img, contours, RETR_TREE, CHAIN_APPROX_SIMPLE);
+    
+    for (int i=0; i< contours.size(); i++) {
+        cv::drawContours(img, contours, i, cv::Scalar(arc4random() % 255,arc4random() % 255,arc4random() % 255), -5);
+    }
+    
+    
+
     
     /// Draw contours
     double allRadiiMean = 0.0;
@@ -66,6 +150,11 @@ static void cvUIImageToMat(const UIImage* image, cv::Mat& m) {
     int z = 0;
     for (int i = 0; i < contours.size(); i++){ // for each contour
         if (contours[i].size() > 25) {
+            if (live){
+                if( contours[i].size() > 70){
+                    continue;
+                }
+            }
             double xMean = 0.0;
             double yMean = 0.0;
             for (int z = 0; z < contours[i].size(); z++){
@@ -121,6 +210,7 @@ static void cvUIImageToMat(const UIImage* image, cv::Mat& m) {
     img.release();
     resultImg.release();
     return @[result,[NSNumber numberWithInt:allGood], [NSNumber numberWithInt:allBad]];
+//    return nil;
 }
 
 int minBallArea = 900;
