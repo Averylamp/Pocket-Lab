@@ -153,6 +153,10 @@ class TakePictureViewController: UIViewController {
         return viewController
     }
     
+    @IBAction func backPressed() {
+        delegate?.goToPage(.Microscope)
+    }
+    
 }
 
 extension TakePictureViewController: AVCaptureMetadataOutputObjectsDelegate {
