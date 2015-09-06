@@ -8,14 +8,12 @@
 
 struct Patient {
     
-    var firstName: String
-    var lastName: String
-    var sampleDataModel: SampleDataModel
-    var birthDate: String
-    var gender: String
-    var line: String?
-    var city: String?
-    var country: String?
-    // would put state or more address info here but always guaranteed to be there
+    var firstName: String?
+    var lastName: String?
+    var careProvider: String?
+    var home: String?
+    var phone: String?
+    var email: String?
+    var married: String?
     
 }

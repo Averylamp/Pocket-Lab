@@ -64,8 +64,8 @@ class ConfirmImageViewController: UIViewController {
         if !doCropping || touches.count != 1 {
             return ;
         }
-        let touch: AnyObject? = touches.anyObject();
-        start = touch!.locationInView(self.view)
+        //let touch: AnyObject? = touches.anyObject();
+        //start = touch!.locationInView(self.view)
     }
     
     override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {

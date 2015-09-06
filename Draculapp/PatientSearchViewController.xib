@@ -74,6 +74,7 @@
                             <rect key="frame" x="8" y="8" width="304" height="30"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstAttribute="width" constant="304" id="IeY-ZV-lUG"/>
                                 <constraint firstAttribute="height" constant="46" id="og0-sc-tzB"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -97,6 +98,7 @@
                 <constraint firstAttribute="trailing" secondItem="QC0-IL-YNl" secondAttribute="trailing" id="H5Q-Ez-yNm"/>
                 <constraint firstAttribute="centerX" secondItem="oLb-3Q-eRi" secondAttribute="centerX" id="Kkf-Z7-Qvv"/>
                 <constraint firstItem="QC0-IL-YNl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Njg-3d-uiM"/>
+                <constraint firstAttribute="trailing" secondItem="8Xo-CW-AbX" secondAttribute="trailing" id="Wvt-gD-fPf"/>
                 <constraint firstItem="8Xo-CW-AbX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZGQ-q3-JWi"/>
                 <constraint firstItem="oLb-3Q-eRi" firstAttribute="top" secondItem="QC0-IL-YNl" secondAttribute="bottom" constant="8" id="eBz-yf-Vkn"/>
                 <constraint firstItem="QC0-IL-YNl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sSb-2P-kdC"/>

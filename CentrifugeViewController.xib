@@ -78,10 +78,11 @@
                         <constraint firstAttribute="height" constant="1" id="OWb-5F-8rK"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uNJ-DC-6C7">
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uNJ-DC-6C7">
                     <rect key="frame" x="-2" y="423" width="152" height="2"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstAttribute="width" constant="152" id="4Jf-Lk-smx"/>
                         <constraint firstAttribute="height" constant="4" id="h2z-kY-gLp"/>
                     </constraints>
                 </view>
@@ -90,6 +91,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="4" id="LQf-lg-gcT"/>
+                        <constraint firstAttribute="width" constant="152" id="Ufj-LK-xuN"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jqp-S4-wdg">
