@@ -130,15 +130,6 @@
                                 </mask>
                             </variation>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYh-mx-5qI">
-                            <rect key="frame" x="132" y="575.5" width="90" height="30"/>
-                            <state key="normal" title="OpenCV Test">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="opencvpush:" destination="-1" eventType="touchUpInside" id="0Vp-TP-5pJ"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="vSi-3a-tu4" firstAttribute="top" secondItem="943-KE-Cjf" secondAttribute="top" id="4J8-Np-aHX"/>
@@ -151,9 +142,7 @@
                         <constraint firstItem="Xo7-xQ-hsL" firstAttribute="leading" secondItem="943-KE-Cjf" secondAttribute="leading" id="T3g-bO-8rw"/>
                         <constraint firstItem="Xo7-xQ-hsL" firstAttribute="width" secondItem="Xo7-xQ-hsL" secondAttribute="height" multiplier="1:1" id="h4v-7Y-akG"/>
                         <constraint firstItem="vSi-3a-tu4" firstAttribute="width" secondItem="943-KE-Cjf" secondAttribute="width" multiplier="0.5" constant="-20" id="iOe-gT-rPD"/>
-                        <constraint firstItem="lYh-mx-5qI" firstAttribute="leading" secondItem="943-KE-Cjf" secondAttribute="leading" constant="132" id="ip4-fb-TsO"/>
                         <constraint firstItem="Xo7-xQ-hsL" firstAttribute="width" secondItem="vSi-3a-tu4" secondAttribute="width" id="jkc-np-uoq"/>
-                        <constraint firstAttribute="bottom" secondItem="lYh-mx-5qI" secondAttribute="bottom" constant="30.5" id="neq-xq-gyK"/>
                         <constraint firstAttribute="width" secondItem="Xo7-xQ-hsL" secondAttribute="width" multiplier="0.5" constant="-20" id="riZ-QB-EzR"/>
                         <constraint firstItem="Bab-2g-pwk" firstAttribute="top" secondItem="943-KE-Cjf" secondAttribute="top" id="wT1-45-zXQ"/>
                     </constraints>

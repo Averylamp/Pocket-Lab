@@ -39,6 +39,7 @@ class OptionsViewController: UIViewController {
         
         spinButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "spinTapped:"))
         ratios.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "ratiosTapped:"))
+        ratios.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "microscopyTapped:"))
         
         super.viewDidLoad()
 
@@ -51,6 +52,10 @@ class OptionsViewController: UIViewController {
 
     func ratiosTapped(recognizer: UITapGestureRecognizer) {
         delegate?.goToPage(.Ratios)
+    }
+    
+    func microscopyTapped(recognizer: UITapGestureRecognizer) {
+        delegate?.goToPage(.OpenCV2)
     }
     
     func setButtonStyle(button: UIView) {
@@ -94,12 +99,7 @@ class OptionsViewController: UIViewController {
     }
     
 
-    
-    @IBAction func opencvpush(sender: AnyObject) {
-        delegate?.goToPage(.OpenCV2)
-        
-    }
-    
+
     override func viewWillDisappear(animated: Bool) {
         self.animationFlag = .Stop
         super.viewWillDisappear(animated)
