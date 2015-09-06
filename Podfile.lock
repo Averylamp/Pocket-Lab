@@ -1,13 +1,16 @@
 PODS:
   - FLAnimatedImage (1.0.8)
   - SwiftyJSON (2.2.1)
+  - TOCropViewController (1.0.6)
 
 DEPENDENCIES:
   - FLAnimatedImage (~> 1.0)
   - SwiftyJSON (~> 2.1)
+  - TOCropViewController
 
 SPEC CHECKSUMS:
   FLAnimatedImage: f9422f796135aff80d8c00b2afc48015bb746e24
   SwiftyJSON: ae2d0a3d68025d136602a33c4ee215091ced3e33
+  TOCropViewController: a8589f4a62e633fc0fbf13a113b3dff042932d67
 
 COCOAPODS: 0.38.0.beta.2

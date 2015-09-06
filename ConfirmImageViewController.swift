@@ -17,14 +17,15 @@ class ConfirmImageViewController: UIViewController {
 
     var delegate: ImageConfirm?
     var doCropping = false
+    var cropRect: CGRect?
     
     var croppedImage: UIImage?
 
     //Dragging
     var dragging = false
     var start: CGPoint? = nil;
-
-    
+    var path = UIBezierPath()
+    var shape = CAShapeLayer()
     
     @IBOutlet weak var retake: UIButton!
     
@@ -40,6 +41,9 @@ class ConfirmImageViewController: UIViewController {
         ok.layer.borderWidth = 2
         ok.layer.borderColor = "#28FDFF".CGColor
         
+        
+        
+
         // Do any additional setup after loading the view.
     }
 
@@ -61,11 +65,15 @@ class ConfirmImageViewController: UIViewController {
 //    }
 
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        println("TOUCHES BEGAN")
         if !doCropping || touches.count != 1 {
             return ;
         }
-        let touch: AnyObject? = touches.anyObject();
+        println("continuing")
+        let touch: AnyObject? = touches.first as? UITouch
         start = touch!.locationInView(self.view)
+        shape.path = nil;
+        image.layer.addSublayer(shape)
     }
     
     override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
@@ -74,6 +82,44 @@ class ConfirmImageViewController: UIViewController {
         }
         
         let touch = touches.first as? UITouch
+        let end = touch!.locationInView(view)
+        path.removeAllPoints()
+
+        println("moving")
+        shape.opacity = 0.5
+        shape.lineWidth = 2
+        shape.lineJoin = kCALineJoinMiter
+        shape.strokeColor = UIColor(hue: 0.786, saturation: 0.79, brightness: 0.53, alpha: 1.0).CGColor
+        shape.fillColor = UIColor(hue: 0.786, saturation: 0.15, brightness: 0.89, alpha: 1.0).CGColor
+        
+        
+        path.moveToPoint(start!)
+        var dx = end.x - start!.x;
+        var dy = end.y - start!.y;
+        path.addLineToPoint(CGPoint(x: start!.x + dx, y: start!.y))
+        path.addLineToPoint(CGPoint(x: start!.x + dx, y: start!.y + dy))
+        path.addLineToPoint(CGPoint(x: start!.x, y: start!.y + dy))
+        path.closePath()
+        shape.path = path.CGPath
+        image.layer.addSublayer(shape)
+        
+      
+        
+        dragging = false
+        
+        let startX = min(end.x, start!.x)
+        let startY = min(end.y, start!.y)
+        
+        cropRect = CGRect(origin: CGPoint(x: startX, y: startY), size: CGSize(width: abs(dx), height: abs(dy)))
+   
+    }
+    
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+
+        
+       // start = nil
+        //shape.path = nil;
+        //image.layer.addSublayer(shape)
     }
 
     @IBAction func okay(sender: AnyObject) {
@@ -83,12 +129,14 @@ class ConfirmImageViewController: UIViewController {
             return;
         }
         
-        if croppedImage == nil {
-            
-            ok.setTitle("Crop", forState: .Normal)
+        if cropRect == nil {
+            ok.setTitle("Crop!!", forState: .Normal)
         } else {
+            let cropping = CGImageCreateWithImageInRect(image.image?.CGImage, cropRect!)
+            cropRect.ima
+            image.image = UIImage(CGImage: cropping)
             // set image somewhere
-            delegate?.imageOk(image.image!)
+//            delegate?.imageOk(image.image!)
         }
         
     }
