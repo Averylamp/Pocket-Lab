@@ -76,15 +76,15 @@ extension AppController: Navigation {
         }
         
         if page == .Ratios {
-            self.setViewControllers([HemaSamplesViewController.generate(delegate: self)], animated: false)
+            self.pushViewController(HemaSamplesViewController.generate(delegate: self), animated: true)
         }
         
         if page == .TakeRatiosPicture {
-            self.setViewControllers([TakePictureViewController.generate(delegate: self, next: .Haematocrit)], animated: false)
+            self.pushViewController(TakePictureViewController.generate(delegate: self, next: .Haematocrit), animated: true)
         }
 
         if page == .TakeBloodCellsPicture {
-            self.setViewControllers([TakePictureViewController.generate(delegate: self, next: .OpenCV)], animated: false)
+            self.pushViewController(TakePictureViewController.generate(delegate: self, next: .OpenCV), animated: true)
         }
         
         if page == .LiveCV {
@@ -92,10 +92,10 @@ extension AppController: Navigation {
         }
         
         if page == .Haematocrit {
-            self.setViewControllers([HaematocritViewController.generate(delegate: self)], animated: false)
+            self.pushViewController(HaematocritViewController.generate(delegate: self), animated: true)
         }
         if page == .HaemaSamples {
-            self.setViewControllers([HemaSamplesViewController.generate(delegate: self)], animated: false)
+            self.pushViewController(HemaSamplesViewController.generate(delegate: self), animated: true)
         }
         
         if page == .OpenCV2 {

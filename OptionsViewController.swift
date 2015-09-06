@@ -43,7 +43,6 @@ class OptionsViewController: UIViewController {
         setButtonStyle(newPatient)
         
         self.bgScroll.frame.origin.y = -self.bgScroll.image!.size.height + UIScreen.mainScreen().bounds.height
-        startAnimation()
         
         spinButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "spinTapped:"))
         ratios.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "ratiosTapped:"))
@@ -52,6 +51,12 @@ class OptionsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        animationFlag = .Up
+        startAnimation()
     }
     
     func spinTapped(recognizer: UITapGestureRecognizer) {
@@ -65,6 +70,8 @@ class OptionsViewController: UIViewController {
     func ratiosTapped(recognizer: UITapGestureRecognizer) {
         delegate?.goToPage(.Ratios)
     }
+    
+    
     
     func microscopyTapped(recognizer: UITapGestureRecognizer) {
         delegate?.goToPage(.OpenCV2)
