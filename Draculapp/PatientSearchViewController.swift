@@ -35,12 +35,12 @@ class PatientSearchViewController: UIViewController {
                 var newPatient = Patient()
                 
                 newPatient.firstName = patient["name"][0]["given"][0].string
-                newPatient.lastName = patient["name"][0]["usual"][0].string
-                newPatient.careProvider = patient["name"][0]["careProvider"][0].string
-                newPatient.home = patient["name"][0]["home"][0].string
-                newPatient.phone = patient["name"][0]["phone"][0].string
-                newPatient.email = patient["name"][0]["email"][0].string
-                newPatient.married = patient["name"][0]["married"][0].string
+                newPatient.lastName = patient["name"][0]["family"][0].string
+                newPatient.careProvider = patient["careProvider"][0]["display"].string
+                newPatient.home = patient["address"][0]["line"][0].string
+                newPatient.phone = patient["telecom"][0]["value"].string
+                newPatient.email = patient["telecom"][2]["value"].string
+                newPatient.married = patient["maritalStatus"]["text"].string
                 
                 sharedSampleDataModel.addPatient(newPatient)
                 

@@ -124,4 +124,8 @@ class SelectRPMViewController: UIViewController {
         return viewController
     }
     
+    @IBAction func backPressed() {
+        delegate?.goToPage(.Options)
+    }
+    
 }

@@ -16,6 +16,9 @@
 		22EB31971B9BE1F500A23377 /* PatientSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EB31951B9BE1F500A23377 /* PatientSearchViewController.xib */; };
 		22EB319A1B9BFC6800A23377 /* PatientInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EB31981B9BFC6800A23377 /* PatientInfoViewController.swift */; };
 		22EB319B1B9BFC6800A23377 /* PatientInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EB31991B9BFC6800A23377 /* PatientInfoViewController.xib */; };
+		22EB31A21B9C2AF400A23377 /* PatientInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EB31A01B9C2AF400A23377 /* PatientInfoTableViewCell.swift */; };
+		22EB31A31B9C2AF400A23377 /* PatientInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EB31A11B9C2AF400A23377 /* PatientInfoTableViewCell.xib */; };
+		22EB31A71B9C312300A23377 /* EPIC.png in Resources */ = {isa = PBXBuildFile; fileRef = 22EB31A61B9C312300A23377 /* EPIC.png */; };
 		22F5594B1B9AFE50008F961C /* SelectRPMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F559491B9AFE50008F961C /* SelectRPMViewController.xib */; };
 		22F5594C1B9AFE50008F961C /* CentrifugeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F5594A1B9AFE50008F961C /* CentrifugeViewController.xib */; };
 		22F5594F1B9AFE78008F961C /* StopWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F5594E1B9AFE78008F961C /* StopWatch.m */; };
@@ -99,6 +102,9 @@
 		22EB31951B9BE1F500A23377 /* PatientSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PatientSearchViewController.xib; path = Draculapp/PatientSearchViewController.xib; sourceTree = "<group>"; };
 		22EB31981B9BFC6800A23377 /* PatientInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientInfoViewController.swift; sourceTree = "<group>"; };
 		22EB31991B9BFC6800A23377 /* PatientInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PatientInfoViewController.xib; sourceTree = "<group>"; };
+		22EB31A01B9C2AF400A23377 /* PatientInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientInfoTableViewCell.swift; sourceTree = "<group>"; };
+		22EB31A11B9C2AF400A23377 /* PatientInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PatientInfoTableViewCell.xib; sourceTree = "<group>"; };
+		22EB31A61B9C312300A23377 /* EPIC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = EPIC.png; path = Draculapp/EPIC.png; sourceTree = "<group>"; };
 		22F559491B9AFE50008F961C /* SelectRPMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectRPMViewController.xib; sourceTree = "<group>"; };
 		22F5594A1B9AFE50008F961C /* CentrifugeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CentrifugeViewController.xib; sourceTree = "<group>"; };
 		22F5594D1B9AFE78008F961C /* StopWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopWatch.h; sourceTree = "<group>"; };
@@ -215,12 +221,33 @@
 		22EB317F1B9BC4E100A23377 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				22EB31A61B9C312300A23377 /* EPIC.png */,
 				22EB318B1B9BDB6F00A23377 /* logo_66.jpg */,
 				22EB31801B9BC4F700A23377 /* backButtonArrow@2x.png */,
 				22EB31821B9BC50D00A23377 /* more@2x.png */,
 			);
 			name = Images;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		22EB31A41B9C2B0A00A23377 /* Patient Info */ = {
+			isa = PBXGroup;
+			children = (
+				22EB31941B9BE1F500A23377 /* PatientSearchViewController.swift */,
+				22EB31981B9BFC6800A23377 /* PatientInfoViewController.swift */,
+				22EB31A01B9C2AF400A23377 /* PatientInfoTableViewCell.swift */,
+			);
+			name = "Patient Info";
+			sourceTree = "<group>";
+		};
+		22EB31A51B9C2B1D00A23377 /* Patient Info */ = {
+			isa = PBXGroup;
+			children = (
+				22EB31951B9BE1F500A23377 /* PatientSearchViewController.xib */,
+				22EB31991B9BFC6800A23377 /* PatientInfoViewController.xib */,
+				22EB31A11B9C2AF400A23377 /* PatientInfoTableViewCell.xib */,
+			);
+			name = "Patient Info";
 			sourceTree = "<group>";
 		};
 		22F559581B9B363E008F961C /* Models */ = {
@@ -337,8 +364,7 @@
 				4D29985E1B9AFB7600AE37FF /* BloodShapeStartViewController.xib */,
 				22F559491B9AFE50008F961C /* SelectRPMViewController.xib */,
 				22F5594A1B9AFE50008F961C /* CentrifugeViewController.xib */,
-				22EB31951B9BE1F500A23377 /* PatientSearchViewController.xib */,
-				22EB31991B9BFC6800A23377 /* PatientInfoViewController.xib */,
+				22EB31A51B9C2B1D00A23377 /* Patient Info */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -356,8 +382,7 @@
 				4DCD6AF11B9B361A00D3F287 /* TakePictureViewController.swift */,
 				22F559501B9AFE8B008F961C /* SelectRPMViewController.swift */,
 				22F559521B9AFE97008F961C /* CentrifugeViewController.swift */,
-				22EB31941B9BE1F500A23377 /* PatientSearchViewController.swift */,
-				22EB31981B9BFC6800A23377 /* PatientInfoViewController.swift */,
+				22EB31A41B9C2B0A00A23377 /* Patient Info */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -488,11 +513,13 @@
 				BB2C5E551B9BAAB500EC60D4 /* Panton-ExtraBold.otf in Resources */,
 				BB2C5E591B9BAAB500EC60D4 /* Panton-Regular.otf in Resources */,
 				22F5594B1B9AFE50008F961C /* SelectRPMViewController.xib in Resources */,
+				22EB31A31B9C2AF400A23377 /* PatientInfoTableViewCell.xib in Resources */,
 				22EB31971B9BE1F500A23377 /* PatientSearchViewController.xib in Resources */,
 				22EB318C1B9BDB6F00A23377 /* logo_66.jpg in Resources */,
 				4D1D439A1B9BD39A0092D2D5 /* PatientDataViewController.xib in Resources */,
 				4D475EB81B9AA6E40021B51B /* OpenCVTestViewController.xib in Resources */,
 				22EB31811B9BC4F700A23377 /* backButtonArrow@2x.png in Resources */,
+				22EB31A71B9C312300A23377 /* EPIC.png in Resources */,
 				22EB31831B9BC50D00A23377 /* more@2x.png in Resources */,
 				BB2C5E5B1B9BAAB500EC60D4 /* Panton-Thin.otf in Resources */,
 				BB2C5E581B9BAAB500EC60D4 /* Panton-Light.otf in Resources */,
@@ -578,6 +605,7 @@
 				4D475EA51B9A74410021B51B /* AppController.swift in Sources */,
 				22F559571B9B3638008F961C /* Sample.swift in Sources */,
 				BB46AA431B9AF63400AC765B /* BloodShapeStartViewController.swift in Sources */,
+				22EB31A21B9C2AF400A23377 /* PatientInfoTableViewCell.swift in Sources */,
 				4D475EB01B9A7FF50021B51B /* Color.swift in Sources */,
 				22F559551B9B3626008F961C /* SampleDataModel.swift in Sources */,
 				4D1D439C1B9BD8D30092D2D5 /* Patient.swift in Sources */,

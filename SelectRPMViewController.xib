@@ -196,6 +196,9 @@
                             <state key="normal" image="backButtonArrow.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="backPressed" destination="-1" eventType="touchUpInside" id="EDS-Ag-vNM"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pocket Centrifuge" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8U-4r-hF4">
                             <rect key="frame" x="84" y="30" width="153" height="21"/>

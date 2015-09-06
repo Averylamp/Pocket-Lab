@@ -133,7 +133,6 @@ class ConfirmImageViewController: UIViewController {
             ok.setTitle("Crop!!", forState: .Normal)
         } else {
             let cropping = CGImageCreateWithImageInRect(image.image?.CGImage, cropRect!)
-            cropRect.ima
             image.image = UIImage(CGImage: cropping)
             // set image somewhere
 //            delegate?.imageOk(image.image!)

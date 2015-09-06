@@ -44,7 +44,7 @@
                         <constraint firstAttribute="centerX" secondItem="XBG-a4-OoN" secondAttribute="centerX" constant="-0.5" id="vQg-Jt-4vs"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_66.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="oLb-3Q-eRi">
+                <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EPIC.png" translatesAutoresizingMaskIntoConstraints="NO" id="oLb-3Q-eRi">
                     <rect key="frame" x="41" y="68" width="238" height="103"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -90,7 +90,7 @@
                     </constraints>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.12941176469999999" green="0.18823529410000001" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="8Xo-CW-AbX" secondAttribute="trailing" id="3Lh-TO-9Bj"/>
                 <constraint firstAttribute="bottom" secondItem="8Xo-CW-AbX" secondAttribute="bottom" id="B2V-QL-HPm"/>
@@ -107,8 +107,8 @@
         </view>
     </objects>
     <resources>
+        <image name="EPIC.png" width="935" height="360"/>
         <image name="backButtonArrow.png" width="13" height="22"/>
-        <image name="logo_66.jpg" width="500" height="188"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

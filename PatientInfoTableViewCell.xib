@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PatientInfoTableViewCell" customModule="Draculapp" customModuleProvider="target">
+            <connections>
+                <outlet property="info" destination="KBS-YZ-cmx" id="pCc-OS-OHW"/>
+                <outlet property="label" destination="EZa-ZN-59y" id="wE8-KL-DPC"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="PatientInfoCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="PatientInfoCell" rowHeight="60" id="KGk-i7-Jjw" customClass="PatientInfoTableViewCell" customModule="Draculapp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBS-YZ-cmx">
+                        <rect key="frame" x="8" y="30" width="304" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="HfW-xq-aXY"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZa-ZN-59y">
+                        <rect key="frame" x="8" y="8" width="66" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="6eB-G6-xde"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="KBS-YZ-cmx" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="6ks-hJ-3Cc"/>
+                    <constraint firstItem="KBS-YZ-cmx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="6oT-Ej-noa"/>
+                    <constraint firstItem="KBS-YZ-cmx" firstAttribute="top" secondItem="EZa-ZN-59y" secondAttribute="bottom" constant="1" id="QUe-TD-R2Y"/>
+                    <constraint firstItem="EZa-ZN-59y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="SKi-Jn-Yg4"/>
+                    <constraint firstItem="KBS-YZ-cmx" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="cFl-RM-2er"/>
+                    <constraint firstItem="EZa-ZN-59y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="pLq-aW-zWZ"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="QUe-TD-R2Y"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="info" destination="KBS-YZ-cmx" id="IOB-uT-MXe"/>
+                <outlet property="label" destination="EZa-ZN-59y" id="eaS-iI-jUU"/>
+            </connections>
+            <point key="canvasLocation" x="455" y="426"/>
+        </tableViewCell>
+    </objects>
+</document>
