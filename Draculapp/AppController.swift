@@ -19,6 +19,7 @@ enum Page {
     case OpenCV
     case OpenCV2
     case Haematocrit
+    case PatientSearch
 }
 
 
@@ -81,6 +82,11 @@ extension AppController: Navigation {
         if page == .OpenCV2 {
             self.pushViewController(BloodShapeStartViewController.generate(delegate: self), animated: true)
 //            self.setViewControllers([BloodShapeStartViewController.generate(delegate: self)], animated: false)
+        }
+        
+        if page == .PatientSearch {
+            self.setViewControllers([PatientSearchViewController.generate(delegate: self)], animated: false)
+            
         }
         
     }

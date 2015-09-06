@@ -30,7 +30,8 @@ class PatientSearchViewController: UIViewController {
     @IBAction func patientSearch() {
         sharedEpic.getPatientInfo(name: idField.text, callback: { error, data in
             if let data = data {
-                println(data)
+                let patient = data["entry"][0]["resource"]["Patient"]
+                println(patient["name"][0]["family"][0].string)
             }
         })
         
@@ -40,6 +41,12 @@ class PatientSearchViewController: UIViewController {
 
     @IBAction func backPressed() {
         delegate?.goToPage(.Options)
+    }
+    
+    class func generate(#delegate: Navigation) -> PatientSearchViewController {
+        let viewController = PatientSearchViewController(nibName: "PatientSearchViewController", bundle: NSBundle.mainBundle())
+        viewController.delegate = delegate
+        return viewController
     }
 
 }

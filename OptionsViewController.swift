@@ -48,7 +48,7 @@ class OptionsViewController: UIViewController {
         spinButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "spinTapped:"))
         ratios.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "ratiosTapped:"))
         microscopy.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "microscopyTapped:"))
-        
+        allResults.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "allResultsTapped:"))
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -56,6 +56,10 @@ class OptionsViewController: UIViewController {
     
     func spinTapped(recognizer: UITapGestureRecognizer) {
         delegate?.goToPage(.SelectRPM)
+    }
+    
+    func allResultsTapped(reconizer: UITapGestureRecognizer) {
+        delegate?.goToPage(.PatientSearch)
     }
 
     func ratiosTapped(recognizer: UITapGestureRecognizer) {

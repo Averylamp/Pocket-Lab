@@ -7,318 +7,282 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E6CB8AEE7DC322F2048004E3FCBFB12 /* Pods-Draculapp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E75B0E8B686D8F1F76B0B5F6B0DD4520 /* Pods-Draculapp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		133176A97E18A4302D27F983CA543990 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EC4B75BAE91861986227C1BE7B931E /* Foundation.framework */; };
-		14A582D73E1BAD8A33B9832D81D80300 /* Pods-Draculapp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2497677F8F3F2E07978BF195109542BA /* Pods-Draculapp-dummy.m */; };
-		1BD35DC0FC79E8EA8FE0FA98122683D1 /* FLAnimatedImage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FBBFCDF7F3FEA441B7601B2E3F7498B0 /* FLAnimatedImage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		23F5940A08DB5F0B129F9DFF7CCC3452 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 85E62DA073C367ACFC8C77B0B6180FD1 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3769B9433B301E32A9DC200E73038AF3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EC4B75BAE91861986227C1BE7B931E /* Foundation.framework */; };
-		39A8A7DB3537BDC61EF618B1737C1EB5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F861572AEF58AF8E8738463397C601 /* SwiftyJSON.swift */; };
-		3F9B13C4C72668E4EA17C9121B3653BA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C19FC6E595AE7B2D080DFDE8D3F01AB /* MobileCoreServices.framework */; };
-		4E2F4FFFD5C11EF49724D6E6C89E71CD /* FLAnimatedImage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 751804728E62882A788AC74B908AD433 /* FLAnimatedImage-dummy.m */; };
-		5C85343EB258E76978D6C243647DA66B /* FLAnimatedImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1509651E257739300FDDF67AE7FE29D9 /* FLAnimatedImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		70F8926A681C8FC492ED22BA88978D20 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B4C94D1B2211578DEEA1F7FB873BD1 /* ImageIO.framework */; };
-		8391DF7D65BB21F3844E1623A7361812 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EC4B75BAE91861986227C1BE7B931E /* Foundation.framework */; };
-		90EF20BB8DC0A183A97CEE5D4BE375EE /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D3575B7F9DE11C652ED4F55D4D976B /* SwiftyJSON-dummy.m */; };
-		A58FEF08C3BD66B27B5651120704466D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD35F8A78509B38E6F804FF8671D7F57 /* CoreGraphics.framework */; };
-		A8CA309DD48413347497B7C21B316D88 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F09F88436905C04B7A9AC74AB93967 /* QuartzCore.framework */; };
-		CABE79FE7938178BFD5483029CD2F4DB /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D40B7DB93B260E548BC70503B0B1F0F9 /* FLAnimatedImageView.m */; };
-		D88ADB652C9B3BC49836A053BB0A34F2 /* FLAnimatedImage.h in Headers */ = {isa = PBXBuildFile; fileRef = D6AB101706E28FF349F4A1316BA80E83 /* FLAnimatedImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F7FC948CAE145D1CDB286F47905BFEC6 /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = FE43EB8F2F06559BAE3C5381E976C0EF /* FLAnimatedImage.m */; };
+		239E0548CCF8869903906D0A34B87569 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3F5B97FDFFAF2B1C5B259846CA3B3C /* ImageIO.framework */; };
+		5CF3A511E53A9417AF372BEDACBFF522 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F40A154E3F4AD6D1E374E98A4C8B60B /* CoreGraphics.framework */; };
+		619FD289E517B71CED654BD5159582A9 /* FLAnimatedImage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C04869D1024EEBF6B8505448CFAEABB9 /* FLAnimatedImage-dummy.m */; };
+		65092C5EBF8A81D70F8FE883B9DDD849 /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F5976A91B060608B5069441A46A2D /* FLAnimatedImage.m */; };
+		6BAC85686327276B997C758C6F908266 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEA9E1C49B52F378F4385450A8BA6AD /* SwiftyJSON.swift */; };
+		761AB58333CE07B135D7F6FAB1493498 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659BFDBA660AFD70A2B48DBD8F0D5254 /* QuartzCore.framework */; };
+		77EB4E6F04B589C1B68F2C3B479D3451 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8C90D1D981B927F8DCE6B738790577 /* SwiftyJSON-dummy.m */; };
+		7DFFE2C69C4B510FA751E7DCA15A2018 /* Pods-Draculapp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 566AA1BECE9571212609EA04EEFB6FC6 /* Pods-Draculapp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		825C3661B983AE5D4AD099BEA706297D /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D56D5BF0D39810EA8D8C7CA4E8259E /* FLAnimatedImageView.m */; };
+		84742BC65C4AE1BAFD660DAF3BFE7F99 /* Pods-Draculapp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A13CE1FC8132586CE9D3C4840043FED7 /* Pods-Draculapp-dummy.m */; };
+		942CC81DA01D9716656BAF6E81759DFF /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ED5F617A016471A44E7CD0F8F94E310D /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1A3080B82DF42FFFFFD437DFF326CF8 /* FLAnimatedImage.h in Headers */ = {isa = PBXBuildFile; fileRef = EA83FCB685EE8214409AEC269F92908E /* FLAnimatedImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C147436958BEECECFFFAD34D5FCEA389 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84436DD11BA1F755D696CA33E8F27C41 /* Foundation.framework */; };
+		C9741695AF77E9D32E1B998FFF2E7A5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84436DD11BA1F755D696CA33E8F27C41 /* Foundation.framework */; };
+		DC0F784D40327B7B4A88E538805F55E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84436DD11BA1F755D696CA33E8F27C41 /* Foundation.framework */; };
+		E0AD24740B7D04AB2F02B1DC267DA80E /* FLAnimatedImage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F200B58244691F94E3DF5CBA12AC1210 /* FLAnimatedImage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FDC9D7825220BF3C2EC9EB114145F807 /* FLAnimatedImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = E024FDDBC019C32D55BE47DB76E6DA59 /* FLAnimatedImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE07F31F32C7E99F963BA8DE006012A1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658A30D3F38DE7BA59BD3E59E693B69F /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3AE7DD7A65F0665927B1994D010E3407 /* PBXContainerItemProxy */ = {
+		4ACFD8D9C686EADD99105F759ED6F7D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B9A04D3C9B208813656510FDA8ADAE02;
+			remoteGlobalIDString = 25E0F0AEF3D0FF9A663EBD748DD275FD;
 			remoteInfo = SwiftyJSON;
 		};
-		721E5FC076AE89D540B1C5490E6E603E /* PBXContainerItemProxy */ = {
+		9FAECE330764405108C5906F1E2F8D5F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 82E5FF263A5A17BFA843438B17D4B7A0;
+			remoteGlobalIDString = CB9A4DF76F1319C27C1C701E978A87CC;
 			remoteInfo = FLAnimatedImage;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0248DDCDA392EF74835F901AFD613D8A /* Pods-Draculapp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Draculapp-resources.sh"; sourceTree = "<group>"; };
-		0412ACE36A3FF8EF1E6CB6ECAB29DFF7 /* Pods-Draculapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Draculapp.debug.xcconfig"; sourceTree = "<group>"; };
-		04B4C94D1B2211578DEEA1F7FB873BD1 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
-		0638E1F5626C17EC445D694BA06DE89E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0907AE5ADB67A050FBB38C21800B6CD6 /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
-		1509651E257739300FDDF67AE7FE29D9 /* FLAnimatedImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FLAnimatedImageView.h; path = FLAnimatedImageDemo/FLAnimatedImage/FLAnimatedImageView.h; sourceTree = "<group>"; };
-		1543FE5A96E2A567E0A506144CAB3984 /* FLAnimatedImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FLAnimatedImage-prefix.pch"; sourceTree = "<group>"; };
-		19F09F88436905C04B7A9AC74AB93967 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		1E02B87F5F86202D11D180AF6D83B97D /* Pods_Draculapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Draculapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2497677F8F3F2E07978BF195109542BA /* Pods-Draculapp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Draculapp-dummy.m"; sourceTree = "<group>"; };
-		27F6D30774488B63DF42A4231E7EA158 /* Pods-Draculapp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Draculapp.modulemap"; sourceTree = "<group>"; };
-		2909662A51064BD46031CC8DB3257E66 /* FLAnimatedImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FLAnimatedImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		31F861572AEF58AF8E8738463397C601 /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
-		5E3FCCD5B8BE960DA93BEFE0A0E3A3D4 /* FLAnimatedImage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FLAnimatedImage.xcconfig; sourceTree = "<group>"; };
-		72810E1B962B862D0F6116F14E0427D8 /* FLAnimatedImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FLAnimatedImage.modulemap; sourceTree = "<group>"; };
-		751804728E62882A788AC74B908AD433 /* FLAnimatedImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FLAnimatedImage-dummy.m"; sourceTree = "<group>"; };
-		85E62DA073C367ACFC8C77B0B6180FD1 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
-		9C19FC6E595AE7B2D080DFDE8D3F01AB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
-		A0D3575B7F9DE11C652ED4F55D4D976B /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
-		A152792DD0A9CB2D9A9D53AF6C9E6E7A /* Pods-Draculapp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Draculapp-acknowledgements.markdown"; sourceTree = "<group>"; };
-		AD35F8A78509B38E6F804FF8671D7F57 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BDFD6BDED1543DF5F7EBD546120C5980 /* SwiftyJSON-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SwiftyJSON-Private.xcconfig"; sourceTree = "<group>"; };
-		C5891596C73E23683A215186473F8DEC /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
-		CD5E33C67EEB6B20813D54939D4BA3E9 /* Pods-Draculapp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Draculapp-frameworks.sh"; sourceTree = "<group>"; };
-		D40B7DB93B260E548BC70503B0B1F0F9 /* FLAnimatedImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FLAnimatedImageView.m; path = FLAnimatedImageDemo/FLAnimatedImage/FLAnimatedImageView.m; sourceTree = "<group>"; };
-		D4DA60D7D12185A64757CC98EE3D15E8 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
-		D6AB101706E28FF349F4A1316BA80E83 /* FLAnimatedImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FLAnimatedImage.h; path = FLAnimatedImageDemo/FLAnimatedImage/FLAnimatedImage.h; sourceTree = "<group>"; };
-		DA188EDBE0FFC39D33949A7D1A775866 /* FLAnimatedImage-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "FLAnimatedImage-Private.xcconfig"; sourceTree = "<group>"; };
-		E4EC4B75BAE91861986227C1BE7B931E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		E75B0E8B686D8F1F76B0B5F6B0DD4520 /* Pods-Draculapp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Draculapp-umbrella.h"; sourceTree = "<group>"; };
-		EB242D303B7CD0335A43EAED1DF4CAA4 /* Pods-Draculapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Draculapp.release.xcconfig"; sourceTree = "<group>"; };
-		EB4CB50B42FA0112BD3CB968CB68AC93 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED5DDA69089353EFEDC75CD4976C9908 /* Pods-Draculapp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Draculapp-acknowledgements.plist"; sourceTree = "<group>"; };
-		F176C78BCDD6B9D44A5B9834CF383048 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F18807C934FC65CED4F57CE8066922D0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBBFCDF7F3FEA441B7601B2E3F7498B0 /* FLAnimatedImage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FLAnimatedImage-umbrella.h"; sourceTree = "<group>"; };
-		FE43EB8F2F06559BAE3C5381E976C0EF /* FLAnimatedImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FLAnimatedImage.m; path = FLAnimatedImageDemo/FLAnimatedImage/FLAnimatedImage.m; sourceTree = "<group>"; };
+		09252AB3633592FB0DD25196688A4B18 /* FLAnimatedImage-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "FLAnimatedImage-Private.xcconfig"; sourceTree = "<group>"; };
+		19393EB492EB47763FE4F0F4209E0F99 /* FLAnimatedImage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FLAnimatedImage.xcconfig; sourceTree = "<group>"; };
+		1F3F5B97FDFFAF2B1C5B259846CA3B3C /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
+		1F6F5976A91B060608B5069441A46A2D /* FLAnimatedImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FLAnimatedImage.m; path = FLAnimatedImageDemo/FLAnimatedImage/FLAnimatedImage.m; sourceTree = "<group>"; };
+		30CF8BEEA3D23BD9006628F8CC0A21C4 /* Pods-Draculapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Draculapp.debug.xcconfig"; sourceTree = "<group>"; };
+		30D56D5BF0D39810EA8D8C7CA4E8259E /* FLAnimatedImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FLAnimatedImageView.m; path = FLAnimatedImageDemo/FLAnimatedImage/FLAnimatedImageView.m; sourceTree = "<group>"; };
+		380BE670A41AB8B76E1231C0AFC2AC17 /* Pods-Draculapp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Draculapp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3F40A154E3F4AD6D1E374E98A4C8B60B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		44E01B52C2788B620BD85D6EBE6B3A0B /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
+		566AA1BECE9571212609EA04EEFB6FC6 /* Pods-Draculapp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Draculapp-umbrella.h"; sourceTree = "<group>"; };
+		5A253503AAFF2516F02F3F38F7A35EE1 /* Pods-Draculapp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Draculapp-acknowledgements.plist"; sourceTree = "<group>"; };
+		5DEA9E1C49B52F378F4385450A8BA6AD /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
+		658A30D3F38DE7BA59BD3E59E693B69F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		659BFDBA660AFD70A2B48DBD8F0D5254 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		676E933100BC217D4EA256460A25CDD4 /* Pods-Draculapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Draculapp.release.xcconfig"; sourceTree = "<group>"; };
+		6B7565477846E8AA11C0BE80EB9E6D4D /* FLAnimatedImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FLAnimatedImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71A355EE1A93C3875338DDF031F042F1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7532EF4273C6E1049D6F72E97A6F9F7A /* FLAnimatedImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FLAnimatedImage.modulemap; sourceTree = "<group>"; };
+		824392BC78F87F650E108D4A98804D9B /* FLAnimatedImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FLAnimatedImage-prefix.pch"; sourceTree = "<group>"; };
+		84436DD11BA1F755D696CA33E8F27C41 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		8D8C90D1D981B927F8DCE6B738790577 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		971C41F342727832F7F2FB920587ED50 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C5811A2379B7A12CCF684FF4A540DB0 /* Pods-Draculapp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Draculapp.modulemap"; sourceTree = "<group>"; };
+		A13CE1FC8132586CE9D3C4840043FED7 /* Pods-Draculapp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Draculapp-dummy.m"; sourceTree = "<group>"; };
+		A38BF1F4520C6DCBE833D437232316AB /* Pods-Draculapp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Draculapp-resources.sh"; sourceTree = "<group>"; };
+		AD9FCDAAC740E798CC1CEDEC063B9E2E /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
+		AED0932D76417E8F631283D1D5E7799D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B01CF81F66A7990B4AE7EF32FD888A4F /* SwiftyJSON-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SwiftyJSON-Private.xcconfig"; sourceTree = "<group>"; };
+		BD96A15A2A0CCE36B7183A6DF8E146C9 /* Pods_Draculapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Draculapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C04869D1024EEBF6B8505448CFAEABB9 /* FLAnimatedImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FLAnimatedImage-dummy.m"; sourceTree = "<group>"; };
+		C7B6E8C20A9E643F38A1843BDFAA998C /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
+		C88113A79685B4EFEE7BAD12896829F7 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		DCA2B7837AF6D4F386B2E9C7FC2A7C73 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E024FDDBC019C32D55BE47DB76E6DA59 /* FLAnimatedImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FLAnimatedImageView.h; path = FLAnimatedImageDemo/FLAnimatedImage/FLAnimatedImageView.h; sourceTree = "<group>"; };
+		EA83FCB685EE8214409AEC269F92908E /* FLAnimatedImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FLAnimatedImage.h; path = FLAnimatedImageDemo/FLAnimatedImage/FLAnimatedImage.h; sourceTree = "<group>"; };
+		ED5F617A016471A44E7CD0F8F94E310D /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
+		F200B58244691F94E3DF5CBA12AC1210 /* FLAnimatedImage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FLAnimatedImage-umbrella.h"; sourceTree = "<group>"; };
+		F71508F85DF7DFA17C8357EF5D2E059B /* Pods-Draculapp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Draculapp-frameworks.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A5FE96CFFE2FABD2DEDB0BD1F4E5D50F /* Frameworks */ = {
+		49C4E850D1EE22FD66067A524DB6BDF8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8391DF7D65BB21F3844E1623A7361812 /* Foundation.framework in Frameworks */,
+				C147436958BEECECFFFAD34D5FCEA389 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CBEEDA6A29AD33FB9CFD183DA7A8F5B4 /* Frameworks */ = {
+		5014D32859EF3202A8D226A70C397AE7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3769B9433B301E32A9DC200E73038AF3 /* Foundation.framework in Frameworks */,
+				5CF3A511E53A9417AF372BEDACBFF522 /* CoreGraphics.framework in Frameworks */,
+				DC0F784D40327B7B4A88E538805F55E7 /* Foundation.framework in Frameworks */,
+				239E0548CCF8869903906D0A34B87569 /* ImageIO.framework in Frameworks */,
+				FE07F31F32C7E99F963BA8DE006012A1 /* MobileCoreServices.framework in Frameworks */,
+				761AB58333CE07B135D7F6FAB1493498 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CFA8F27CB73E317FEF61C76343699AF0 /* Frameworks */ = {
+		523C8B0FB5679E4539129DDC4A00AFB6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A58FEF08C3BD66B27B5651120704466D /* CoreGraphics.framework in Frameworks */,
-				133176A97E18A4302D27F983CA543990 /* Foundation.framework in Frameworks */,
-				70F8926A681C8FC492ED22BA88978D20 /* ImageIO.framework in Frameworks */,
-				3F9B13C4C72668E4EA17C9121B3653BA /* MobileCoreServices.framework in Frameworks */,
-				A8CA309DD48413347497B7C21B316D88 /* QuartzCore.framework in Frameworks */,
+				C9741695AF77E9D32E1B998FFF2E7A5B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		20B56609144CE204DFA8221F742B2D76 /* Frameworks */ = {
+		2F414954F87ED957BE121A1660094A49 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5C6CCCB651748D5C7261128E71C2F33C /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		2905435632744989193144ED04751C49 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				F18807C934FC65CED4F57CE8066922D0 /* Info.plist */,
-				C5891596C73E23683A215186473F8DEC /* SwiftyJSON.modulemap */,
-				0907AE5ADB67A050FBB38C21800B6CD6 /* SwiftyJSON.xcconfig */,
-				BDFD6BDED1543DF5F7EBD546120C5980 /* SwiftyJSON-Private.xcconfig */,
-				A0D3575B7F9DE11C652ED4F55D4D976B /* SwiftyJSON-dummy.m */,
-				D4DA60D7D12185A64757CC98EE3D15E8 /* SwiftyJSON-prefix.pch */,
-				85E62DA073C367ACFC8C77B0B6180FD1 /* SwiftyJSON-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftyJSON";
-			sourceTree = "<group>";
-		};
-		3A49F6557AC55BAF3C8605C0FC29D6C7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				77107F63797AF193821B3B080AC22D04 /* FLAnimatedImage */,
-				6D372B4DBACA9102437A370AFB61BA99 /* SwiftyJSON */,
+				49DEC75656AEA94A28942DC247E4BC54 /* FLAnimatedImage */,
+				52B8067962688F147CEBAB5CA48E06F7 /* SwiftyJSON */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		5C6CCCB651748D5C7261128E71C2F33C /* iOS */ = {
+		49DEC75656AEA94A28942DC247E4BC54 /* FLAnimatedImage */ = {
 			isa = PBXGroup;
 			children = (
-				AD35F8A78509B38E6F804FF8671D7F57 /* CoreGraphics.framework */,
-				E4EC4B75BAE91861986227C1BE7B931E /* Foundation.framework */,
-				04B4C94D1B2211578DEEA1F7FB873BD1 /* ImageIO.framework */,
-				9C19FC6E595AE7B2D080DFDE8D3F01AB /* MobileCoreServices.framework */,
-				19F09F88436905C04B7A9AC74AB93967 /* QuartzCore.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		6D372B4DBACA9102437A370AFB61BA99 /* SwiftyJSON */ = {
-			isa = PBXGroup;
-			children = (
-				31F861572AEF58AF8E8738463397C601 /* SwiftyJSON.swift */,
-				2905435632744989193144ED04751C49 /* Support Files */,
-			);
-			path = SwiftyJSON;
-			sourceTree = "<group>";
-		};
-		77107F63797AF193821B3B080AC22D04 /* FLAnimatedImage */ = {
-			isa = PBXGroup;
-			children = (
-				D6AB101706E28FF349F4A1316BA80E83 /* FLAnimatedImage.h */,
-				FE43EB8F2F06559BAE3C5381E976C0EF /* FLAnimatedImage.m */,
-				1509651E257739300FDDF67AE7FE29D9 /* FLAnimatedImageView.h */,
-				D40B7DB93B260E548BC70503B0B1F0F9 /* FLAnimatedImageView.m */,
-				F9B3840D4C842056841B8BA52E99D091 /* Support Files */,
+				EA83FCB685EE8214409AEC269F92908E /* FLAnimatedImage.h */,
+				1F6F5976A91B060608B5069441A46A2D /* FLAnimatedImage.m */,
+				E024FDDBC019C32D55BE47DB76E6DA59 /* FLAnimatedImageView.h */,
+				30D56D5BF0D39810EA8D8C7CA4E8259E /* FLAnimatedImageView.m */,
+				4B7E7A09A38B5E2A8033D38CD0D0141E /* Support Files */,
 			);
 			path = FLAnimatedImage;
 			sourceTree = "<group>";
 		};
-		7DB346D0F39D3F0E887471402A8071AB = {
+		4B7E7A09A38B5E2A8033D38CD0D0141E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				20B56609144CE204DFA8221F742B2D76 /* Frameworks */,
-				3A49F6557AC55BAF3C8605C0FC29D6C7 /* Pods */,
-				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
-				D025604FFDA2E613ECF6B3925520FC13 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2909662A51064BD46031CC8DB3257E66 /* FLAnimatedImage.framework */,
-				1E02B87F5F86202D11D180AF6D83B97D /* Pods_Draculapp.framework */,
-				EB4CB50B42FA0112BD3CB968CB68AC93 /* SwiftyJSON.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		D025604FFDA2E613ECF6B3925520FC13 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				F98CA71E7B1CF917DECD8702767260DC /* Pods-Draculapp */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		F98CA71E7B1CF917DECD8702767260DC /* Pods-Draculapp */ = {
-			isa = PBXGroup;
-			children = (
-				0638E1F5626C17EC445D694BA06DE89E /* Info.plist */,
-				27F6D30774488B63DF42A4231E7EA158 /* Pods-Draculapp.modulemap */,
-				A152792DD0A9CB2D9A9D53AF6C9E6E7A /* Pods-Draculapp-acknowledgements.markdown */,
-				ED5DDA69089353EFEDC75CD4976C9908 /* Pods-Draculapp-acknowledgements.plist */,
-				2497677F8F3F2E07978BF195109542BA /* Pods-Draculapp-dummy.m */,
-				CD5E33C67EEB6B20813D54939D4BA3E9 /* Pods-Draculapp-frameworks.sh */,
-				0248DDCDA392EF74835F901AFD613D8A /* Pods-Draculapp-resources.sh */,
-				E75B0E8B686D8F1F76B0B5F6B0DD4520 /* Pods-Draculapp-umbrella.h */,
-				0412ACE36A3FF8EF1E6CB6ECAB29DFF7 /* Pods-Draculapp.debug.xcconfig */,
-				EB242D303B7CD0335A43EAED1DF4CAA4 /* Pods-Draculapp.release.xcconfig */,
-			);
-			name = "Pods-Draculapp";
-			path = "Target Support Files/Pods-Draculapp";
-			sourceTree = "<group>";
-		};
-		F9B3840D4C842056841B8BA52E99D091 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				72810E1B962B862D0F6116F14E0427D8 /* FLAnimatedImage.modulemap */,
-				5E3FCCD5B8BE960DA93BEFE0A0E3A3D4 /* FLAnimatedImage.xcconfig */,
-				DA188EDBE0FFC39D33949A7D1A775866 /* FLAnimatedImage-Private.xcconfig */,
-				751804728E62882A788AC74B908AD433 /* FLAnimatedImage-dummy.m */,
-				1543FE5A96E2A567E0A506144CAB3984 /* FLAnimatedImage-prefix.pch */,
-				FBBFCDF7F3FEA441B7601B2E3F7498B0 /* FLAnimatedImage-umbrella.h */,
-				F176C78BCDD6B9D44A5B9834CF383048 /* Info.plist */,
+				7532EF4273C6E1049D6F72E97A6F9F7A /* FLAnimatedImage.modulemap */,
+				19393EB492EB47763FE4F0F4209E0F99 /* FLAnimatedImage.xcconfig */,
+				09252AB3633592FB0DD25196688A4B18 /* FLAnimatedImage-Private.xcconfig */,
+				C04869D1024EEBF6B8505448CFAEABB9 /* FLAnimatedImage-dummy.m */,
+				824392BC78F87F650E108D4A98804D9B /* FLAnimatedImage-prefix.pch */,
+				F200B58244691F94E3DF5CBA12AC1210 /* FLAnimatedImage-umbrella.h */,
+				DCA2B7837AF6D4F386B2E9C7FC2A7C73 /* Info.plist */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/FLAnimatedImage";
 			sourceTree = "<group>";
 		};
+		52B8067962688F147CEBAB5CA48E06F7 /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				5DEA9E1C49B52F378F4385450A8BA6AD /* SwiftyJSON.swift */,
+				86441DB82AC7835A834CE2E875C690CB /* Support Files */,
+			);
+			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		5E1F3384B1B39575144FEBFCF3210CCC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D29526F7A46BE1E52CC03A03EA372EBA /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				C88113A79685B4EFEE7BAD12896829F7 /* Podfile */,
+				5E1F3384B1B39575144FEBFCF3210CCC /* Frameworks */,
+				2F414954F87ED957BE121A1660094A49 /* Pods */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				848A6CE8DA3504A266A17F635DC3683A /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		848A6CE8DA3504A266A17F635DC3683A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				88B6D3A4609E4A5391FF5A25E4DBAD73 /* Pods-Draculapp */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		86441DB82AC7835A834CE2E875C690CB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				71A355EE1A93C3875338DDF031F042F1 /* Info.plist */,
+				44E01B52C2788B620BD85D6EBE6B3A0B /* SwiftyJSON.modulemap */,
+				C7B6E8C20A9E643F38A1843BDFAA998C /* SwiftyJSON.xcconfig */,
+				B01CF81F66A7990B4AE7EF32FD888A4F /* SwiftyJSON-Private.xcconfig */,
+				8D8C90D1D981B927F8DCE6B738790577 /* SwiftyJSON-dummy.m */,
+				AD9FCDAAC740E798CC1CEDEC063B9E2E /* SwiftyJSON-prefix.pch */,
+				ED5F617A016471A44E7CD0F8F94E310D /* SwiftyJSON-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyJSON";
+			sourceTree = "<group>";
+		};
+		88B6D3A4609E4A5391FF5A25E4DBAD73 /* Pods-Draculapp */ = {
+			isa = PBXGroup;
+			children = (
+				AED0932D76417E8F631283D1D5E7799D /* Info.plist */,
+				9C5811A2379B7A12CCF684FF4A540DB0 /* Pods-Draculapp.modulemap */,
+				380BE670A41AB8B76E1231C0AFC2AC17 /* Pods-Draculapp-acknowledgements.markdown */,
+				5A253503AAFF2516F02F3F38F7A35EE1 /* Pods-Draculapp-acknowledgements.plist */,
+				A13CE1FC8132586CE9D3C4840043FED7 /* Pods-Draculapp-dummy.m */,
+				F71508F85DF7DFA17C8357EF5D2E059B /* Pods-Draculapp-frameworks.sh */,
+				A38BF1F4520C6DCBE833D437232316AB /* Pods-Draculapp-resources.sh */,
+				566AA1BECE9571212609EA04EEFB6FC6 /* Pods-Draculapp-umbrella.h */,
+				30CF8BEEA3D23BD9006628F8CC0A21C4 /* Pods-Draculapp.debug.xcconfig */,
+				676E933100BC217D4EA256460A25CDD4 /* Pods-Draculapp.release.xcconfig */,
+			);
+			name = "Pods-Draculapp";
+			path = "Target Support Files/Pods-Draculapp";
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6B7565477846E8AA11C0BE80EB9E6D4D /* FLAnimatedImage.framework */,
+				BD96A15A2A0CCE36B7183A6DF8E146C9 /* Pods_Draculapp.framework */,
+				971C41F342727832F7F2FB920587ED50 /* SwiftyJSON.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D29526F7A46BE1E52CC03A03EA372EBA /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3F40A154E3F4AD6D1E374E98A4C8B60B /* CoreGraphics.framework */,
+				84436DD11BA1F755D696CA33E8F27C41 /* Foundation.framework */,
+				1F3F5B97FDFFAF2B1C5B259846CA3B3C /* ImageIO.framework */,
+				658A30D3F38DE7BA59BD3E59E693B69F /* MobileCoreServices.framework */,
+				659BFDBA660AFD70A2B48DBD8F0D5254 /* QuartzCore.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		7908E6DEFA6BA112905A524E852683A9 /* Headers */ = {
+		9E7783E4FC32D7B2AE911F04B45A5FDA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E6CB8AEE7DC322F2048004E3FCBFB12 /* Pods-Draculapp-umbrella.h in Headers */,
+				942CC81DA01D9716656BAF6E81759DFF /* SwiftyJSON-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BE8F609FD9A244777DB6C3B5C55E822E /* Headers */ = {
+		A314D68E837224EDEC7313C47E580816 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23F5940A08DB5F0B129F9DFF7CCC3452 /* SwiftyJSON-umbrella.h in Headers */,
+				7DFFE2C69C4B510FA751E7DCA15A2018 /* Pods-Draculapp-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C62D792A4197269B965044D980771C54 /* Headers */ = {
+		ADA7196592568A1C5A7F4989D7EE2B6E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BD35DC0FC79E8EA8FE0FA98122683D1 /* FLAnimatedImage-umbrella.h in Headers */,
-				D88ADB652C9B3BC49836A053BB0A34F2 /* FLAnimatedImage.h in Headers */,
-				5C85343EB258E76978D6C243647DA66B /* FLAnimatedImageView.h in Headers */,
+				E0AD24740B7D04AB2F02B1DC267DA80E /* FLAnimatedImage-umbrella.h in Headers */,
+				A1A3080B82DF42FFFFFD437DFF326CF8 /* FLAnimatedImage.h in Headers */,
+				FDC9D7825220BF3C2EC9EB114145F807 /* FLAnimatedImageView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6B6F2C7BD85CC6591C9342E2C9B2BF58 /* Pods-Draculapp */ = {
+		25E0F0AEF3D0FF9A663EBD748DD275FD /* SwiftyJSON */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 78D6BA1D42C977CF08DBE04960332F7F /* Build configuration list for PBXNativeTarget "Pods-Draculapp" */;
+			buildConfigurationList = E4326CE85E6B98F768B064CEAC749807 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
 			buildPhases = (
-				31BA5CE93FCA1F83D516A8A30082E338 /* Sources */,
-				A5FE96CFFE2FABD2DEDB0BD1F4E5D50F /* Frameworks */,
-				7908E6DEFA6BA112905A524E852683A9 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D377E52877E26EC8907CF5CEBA61E2F9 /* PBXTargetDependency */,
-				991E751727A92FC6B1574EAAFF41B8C7 /* PBXTargetDependency */,
-			);
-			name = "Pods-Draculapp";
-			productName = "Pods-Draculapp";
-			productReference = 1E02B87F5F86202D11D180AF6D83B97D /* Pods_Draculapp.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		82E5FF263A5A17BFA843438B17D4B7A0 /* FLAnimatedImage */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E9BD3ECFFAA856B0DA1A0CB0BF4C345A /* Build configuration list for PBXNativeTarget "FLAnimatedImage" */;
-			buildPhases = (
-				E8A3DCA1589B328F15F74F82D5712652 /* Sources */,
-				CFA8F27CB73E317FEF61C76343699AF0 /* Frameworks */,
-				C62D792A4197269B965044D980771C54 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = FLAnimatedImage;
-			productName = FLAnimatedImage;
-			productReference = 2909662A51064BD46031CC8DB3257E66 /* FLAnimatedImage.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		B9A04D3C9B208813656510FDA8ADAE02 /* SwiftyJSON */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6AF45366202C75BFCB13738AB00EC1DF /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
-			buildPhases = (
-				857F4306B6C6D8D06B3382A44BD3CD69 /* Sources */,
-				CBEEDA6A29AD33FB9CFD183DA7A8F5B4 /* Frameworks */,
-				BE8F609FD9A244777DB6C3B5C55E822E /* Headers */,
+				12BB822B37543A10B088D74F68B4587A /* Sources */,
+				523C8B0FB5679E4539129DDC4A00AFB6 /* Frameworks */,
+				9E7783E4FC32D7B2AE911F04B45A5FDA /* Headers */,
 			);
 			buildRules = (
 			);
@@ -326,7 +290,43 @@
 			);
 			name = SwiftyJSON;
 			productName = SwiftyJSON;
-			productReference = EB4CB50B42FA0112BD3CB968CB68AC93 /* SwiftyJSON.framework */;
+			productReference = 971C41F342727832F7F2FB920587ED50 /* SwiftyJSON.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CB9A4DF76F1319C27C1C701E978A87CC /* FLAnimatedImage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9185C0AA27C98BF62821829148068E0 /* Build configuration list for PBXNativeTarget "FLAnimatedImage" */;
+			buildPhases = (
+				A74200AB4B64CA74EEE7CF14F45EB1A3 /* Sources */,
+				5014D32859EF3202A8D226A70C397AE7 /* Frameworks */,
+				ADA7196592568A1C5A7F4989D7EE2B6E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FLAnimatedImage;
+			productName = FLAnimatedImage;
+			productReference = 6B7565477846E8AA11C0BE80EB9E6D4D /* FLAnimatedImage.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E2388FD6F9F35A98CF667CF98CDBA7F0 /* Pods-Draculapp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E353787E7DACBC5DED61CFE05BD4B604 /* Build configuration list for PBXNativeTarget "Pods-Draculapp" */;
+			buildPhases = (
+				8268836195B51CB73203B4284A59276A /* Sources */,
+				49C4E850D1EE22FD66067A524DB6BDF8 /* Frameworks */,
+				A314D68E837224EDEC7313C47E580816 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56D07FC5964F300F3E149BEA2B8F3E8E /* PBXTargetDependency */,
+				79D043EBE19852BCA20B18A92FC68583 /* PBXTargetDependency */,
+			);
+			name = "Pods-Draculapp";
+			productName = "Pods-Draculapp";
+			productReference = BD96A15A2A0CCE36B7183A6DF8E146C9 /* Pods_Draculapp.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -350,201 +350,60 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				82E5FF263A5A17BFA843438B17D4B7A0 /* FLAnimatedImage */,
-				6B6F2C7BD85CC6591C9342E2C9B2BF58 /* Pods-Draculapp */,
-				B9A04D3C9B208813656510FDA8ADAE02 /* SwiftyJSON */,
+				CB9A4DF76F1319C27C1C701E978A87CC /* FLAnimatedImage */,
+				E2388FD6F9F35A98CF667CF98CDBA7F0 /* Pods-Draculapp */,
+				25E0F0AEF3D0FF9A663EBD748DD275FD /* SwiftyJSON */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		31BA5CE93FCA1F83D516A8A30082E338 /* Sources */ = {
+		12BB822B37543A10B088D74F68B4587A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14A582D73E1BAD8A33B9832D81D80300 /* Pods-Draculapp-dummy.m in Sources */,
+				77EB4E6F04B589C1B68F2C3B479D3451 /* SwiftyJSON-dummy.m in Sources */,
+				6BAC85686327276B997C758C6F908266 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		857F4306B6C6D8D06B3382A44BD3CD69 /* Sources */ = {
+		8268836195B51CB73203B4284A59276A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90EF20BB8DC0A183A97CEE5D4BE375EE /* SwiftyJSON-dummy.m in Sources */,
-				39A8A7DB3537BDC61EF618B1737C1EB5 /* SwiftyJSON.swift in Sources */,
+				84742BC65C4AE1BAFD660DAF3BFE7F99 /* Pods-Draculapp-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E8A3DCA1589B328F15F74F82D5712652 /* Sources */ = {
+		A74200AB4B64CA74EEE7CF14F45EB1A3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E2F4FFFD5C11EF49724D6E6C89E71CD /* FLAnimatedImage-dummy.m in Sources */,
-				F7FC948CAE145D1CDB286F47905BFEC6 /* FLAnimatedImage.m in Sources */,
-				CABE79FE7938178BFD5483029CD2F4DB /* FLAnimatedImageView.m in Sources */,
+				619FD289E517B71CED654BD5159582A9 /* FLAnimatedImage-dummy.m in Sources */,
+				65092C5EBF8A81D70F8FE883B9DDD849 /* FLAnimatedImage.m in Sources */,
+				825C3661B983AE5D4AD099BEA706297D /* FLAnimatedImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		991E751727A92FC6B1574EAAFF41B8C7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftyJSON;
-			target = B9A04D3C9B208813656510FDA8ADAE02 /* SwiftyJSON */;
-			targetProxy = 3AE7DD7A65F0665927B1994D010E3407 /* PBXContainerItemProxy */;
-		};
-		D377E52877E26EC8907CF5CEBA61E2F9 /* PBXTargetDependency */ = {
+		56D07FC5964F300F3E149BEA2B8F3E8E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FLAnimatedImage;
-			target = 82E5FF263A5A17BFA843438B17D4B7A0 /* FLAnimatedImage */;
-			targetProxy = 721E5FC076AE89D540B1C5490E6E603E /* PBXContainerItemProxy */;
+			target = CB9A4DF76F1319C27C1C701E978A87CC /* FLAnimatedImage */;
+			targetProxy = 9FAECE330764405108C5906F1E2F8D5F /* PBXContainerItemProxy */;
+		};
+		79D043EBE19852BCA20B18A92FC68583 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyJSON;
+			target = 25E0F0AEF3D0FF9A663EBD748DD275FD /* SwiftyJSON */;
+			targetProxy = 4ACFD8D9C686EADD99105F759ED6F7D3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0B467278A8D4094DE833171E10E6E12F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDFD6BDED1543DF5F7EBD546120C5980 /* SwiftyJSON-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2.2.1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 2;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SwiftyJSON;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		72B31FB4A22E6D58FB51B2774BB71419 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDFD6BDED1543DF5F7EBD546120C5980 /* SwiftyJSON-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2.2.1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 2;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SwiftyJSON;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		73C589FBB0889BC20A4AE9E7328BE6A4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA188EDBE0FFC39D33949A7D1A775866 /* FLAnimatedImage-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1.0.8;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FLAnimatedImage/FLAnimatedImage-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FLAnimatedImage/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FLAnimatedImage/FLAnimatedImage.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = FLAnimatedImage;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		7877C76D394B7A3F10B7381CAA808725 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB242D303B7CD0335A43EAED1DF4CAA4 /* Pods-Draculapp.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Draculapp/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-Draculapp/Pods-Draculapp.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_Draculapp;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8742B44C31F612488436A85052BEE5B5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0412ACE36A3FF8EF1E6CB6ECAB29DFF7 /* Pods-Draculapp.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Draculapp/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-Draculapp/Pods-Draculapp.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_Draculapp;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
+		0C812A8B084AB655D058D5DC45F0D458 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -583,15 +442,99 @@
 			};
 			name = Debug;
 		};
-		F4F11A4B27E2FCE4C73722B711D7CA04 /* Debug */ = {
+		2662B3EA5E32CC42661264A47262103B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA188EDBE0FFC39D33949A7D1A775866 /* FLAnimatedImage-Private.xcconfig */;
+			baseConfigurationReference = 09252AB3633592FB0DD25196688A4B18 /* FLAnimatedImage-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1.0.8;
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FLAnimatedImage/FLAnimatedImage-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FLAnimatedImage/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FLAnimatedImage/FLAnimatedImage.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FLAnimatedImage;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3C4943B20132861719611C50ABE0A0BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30CF8BEEA3D23BD9006628F8CC0A21C4 /* Pods-Draculapp.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Draculapp/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Draculapp/Pods-Draculapp.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Draculapp;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4077F72D1E9F7B980D396A6C4237A4FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B01CF81F66A7990B4AE7EF32FD888A4F /* SwiftyJSON-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		43B25E9C585E787CC2904C81E3A26BC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09252AB3633592FB0DD25196688A4B18 /* FLAnimatedImage-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/FLAnimatedImage/FLAnimatedImage-prefix.pch";
@@ -610,7 +553,7 @@
 			};
 			name = Debug;
 		};
-		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
+		7C84345D7EEBBBB2BFF18E13BB3BA6A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -644,41 +587,98 @@
 			};
 			name = Release;
 		};
+		EEBF7CC00E45778B2D70021C2747946A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 676E933100BC217D4EA256460A25CDD4 /* Pods-Draculapp.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Draculapp/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Draculapp/Pods-Draculapp.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Draculapp;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FAEE8844254E5AFEDC3B01854944A618 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B01CF81F66A7990B4AE7EF32FD888A4F /* SwiftyJSON-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
-				FB45FFD90572718D82AB9092B750F0CA /* Release */,
+				0C812A8B084AB655D058D5DC45F0D458 /* Debug */,
+				7C84345D7EEBBBB2BFF18E13BB3BA6A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6AF45366202C75BFCB13738AB00EC1DF /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
+		B9185C0AA27C98BF62821829148068E0 /* Build configuration list for PBXNativeTarget "FLAnimatedImage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				72B31FB4A22E6D58FB51B2774BB71419 /* Debug */,
-				0B467278A8D4094DE833171E10E6E12F /* Release */,
+				43B25E9C585E787CC2904C81E3A26BC1 /* Debug */,
+				2662B3EA5E32CC42661264A47262103B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		78D6BA1D42C977CF08DBE04960332F7F /* Build configuration list for PBXNativeTarget "Pods-Draculapp" */ = {
+		E353787E7DACBC5DED61CFE05BD4B604 /* Build configuration list for PBXNativeTarget "Pods-Draculapp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8742B44C31F612488436A85052BEE5B5 /* Debug */,
-				7877C76D394B7A3F10B7381CAA808725 /* Release */,
+				3C4943B20132861719611C50ABE0A0BF /* Debug */,
+				EEBF7CC00E45778B2D70021C2747946A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E9BD3ECFFAA856B0DA1A0CB0BF4C345A /* Build configuration list for PBXNativeTarget "FLAnimatedImage" */ = {
+		E4326CE85E6B98F768B064CEAC749807 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F4F11A4B27E2FCE4C73722B711D7CA04 /* Debug */,
-				73C589FBB0889BC20A4AE9E7328BE6A4 /* Release */,
+				FAEE8844254E5AFEDC3B01854944A618 /* Debug */,
+				4077F72D1E9F7B980D396A6C4237A4FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

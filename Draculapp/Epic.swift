@@ -19,8 +19,8 @@ class Epic {
         var first = components[0]
         var last = ""
     
-        if count(components[1]) > 1 {
-            var last = components[1]
+        if count(components) >= 1 {
+            last = components[1]
         }
         
         let request = NSMutableURLRequest(URL: NSURL(string: "\(baseurl)/Patient?family=\(last)&given=\(first)")!)
