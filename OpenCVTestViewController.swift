@@ -18,46 +18,47 @@ class OpenCVTestViewController: UIViewController {
     var processedImage:UIImage?
     var imageView:UIImageView?
     var imageDisplayed: ImageDisplayed = .Processed
+    var live: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let bg = UIImageView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height))
-        bg.image = UIImage(named: "bg")
         self.view.addSubview(bg)
         
         var delegate: Navigation?
         
-        print("\nNormal 1")
-        var image = UIImage(named: "Normal_1")
-        Wrapper.processImage(image!)
-        print("\nNormal2")
-        image = UIImage(named: "Normal_2")
-        Wrapper.processImage(image!)
-        print("\nNormal3")
-        image = UIImage(named: "Normal_3")
-        Wrapper.processImage(image!)
-        print("\nNormal4")
-        image = UIImage(named: "Normal_4")
-        Wrapper.processImage(image!)
-        print("\nHereditary Elliptocytosis 1")
-        image = UIImage(named: "Hereditary_elliptocytosis")
-        Wrapper.processImage(image!)
-        print("\nHereditary Elliptocytosis 2")
-        image = UIImage(named: "Hereditary_elliptocytosis2")
-        Wrapper.processImage(image!)
-        print("\nSickle Cell 1")
-        image = UIImage(named: "SickleCell_1")
-        Wrapper.processImage(image!)
-        print("\nSickle Cell 2")
-        image = UIImage(named: "SickleCell_2")
-        Wrapper.processImage(image!)
-        print("\nHemolytic Anemia")
-        image = UIImage(named: "Hemolytic Anemia")
-        Wrapper.processImage(image!)
-        print("\nHigh RWD")
-        image = UIImage(named: "High RWD")
-        Wrapper.processImage(image!)
+//        print("\nNormal 1")
+//        var image = UIImage(named: "Normal_1")
+//        Wrapper.processImage(image!, live: live)
+//        print("\nNormal2")
+//        image = UIImage(named: "Normal_2")
+//        Wrapper.processImage(image!, live: live)
+//        print("\nNormal3")
+//        image = UIImage(named: "Normal_3")
+//        Wrapper.processImage(image!, live: live)
+//        print("\nNormal4")
+//        image = UIImage(named: "Normal_4")
+//        Wrapper.processImage(image!, live: live)
+//        print("\nHereditary Elliptocytosis 1")
+//        image = UIImage(named: "Hereditary_elliptocytosis")
+//        Wrapper.processImage(image!, live: live)
+//        print("\nHereditary Elliptocytosis 2")
+//        image = UIImage(named: "Hereditary_elliptocytosis2")
+//        Wrapper.processImage(image!, live: live)
+//        print("\nSickle Cell 1")
+//        image = UIImage(named: "SickleCell_1")
+//        Wrapper.processImage(image!, live: live)
+//        print("\nSickle Cell 2")
+//        image = UIImage(named: "SickleCell_2")
+//        Wrapper.processImage(image!, live: live)
+//        print("\nHemolytic Anemia")
+//        image = UIImage(named: "Hemolytic Anemia")
+//        Wrapper.processImage(image!, live: live)
+//        print("\nHigh RWD")
+//        image = UIImage(named: "High RWD")
+//        Wrapper.processImage(image!, live: live)
+
         
         let screenSize = UIScreen.mainScreen().bounds.size
         //        let scrollView = UIScrollView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height))
@@ -68,15 +69,16 @@ class OpenCVTestViewController: UIViewController {
         imageView?.contentMode = UIViewContentMode.ScaleAspectFit
         self.view.addSubview(imageView!)
         
-        normalImage = sharedSampleDataModel.lastMicroscopyImage
-        
+//        normalImage = sharedSampleDataModel.lastMicroscopyImage
+        normalImage = UIImage(named: "IMG_3258-ed")
         
         imageView!.contentMode = UIViewContentMode.ScaleAspectFit
         self.view.addSubview(imageView!)
         
         
-        let results = Wrapper.processImage(normalImage)
-        processedImage = results[0] as! UIImage
+        let results = Wrapper.processImage(normalImage, live: true)
+        
+        processedImage = results[0] as? UIImage
         
         let allGood = results[1] as! Int
         let allBad = results[2] as! Int
@@ -125,7 +127,7 @@ class OpenCVTestViewController: UIViewController {
         self.view.addSubview(percentage)
         
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
             self.imageView!.image = self.processedImage
             MBProgressHUD.hideHUDForView(self.view, animated: true)
             normality.text = "Normality: \(allGood)"
