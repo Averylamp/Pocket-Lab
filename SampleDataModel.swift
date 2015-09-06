@@ -18,6 +18,8 @@ class SampleDataModel: NSObject {
 
     var ratiosImage: UIImage?
     
+    var live:Bool?
+
     func addPatient(newSample: Patient) {
         patients.append(newSample)
     }

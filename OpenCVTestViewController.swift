@@ -69,14 +69,14 @@ class OpenCVTestViewController: UIViewController {
         imageView?.contentMode = UIViewContentMode.ScaleAspectFit
         self.view.addSubview(imageView!)
         
-//        normalImage = sharedSampleDataModel.lastMicroscopyImage
-        normalImage = UIImage(named: "IMG_3258-ed")
+        normalImage = sharedSampleDataModel.lastMicroscopyImage
+//        normalImage = UIImage(named: "IMG_3258-ed")
         
         imageView!.contentMode = UIViewContentMode.ScaleAspectFit
         self.view.addSubview(imageView!)
         
         
-        let results = Wrapper.processImage(normalImage, live: true)
+        let results:[AnyObject] = Wrapper.processImage(normalImage, live: sharedSampleDataModel.live!)
         
         processedImage = results[0] as? UIImage
         
@@ -109,22 +109,32 @@ class OpenCVTestViewController: UIViewController {
         hud.labelText = "Analyzing the Image";
         hud.detailsLabelText = "Please give us a minute, we are thinking"
         
-        let normality = UILabel(frame: CGRectMake(30, switchButton.frame.origin.y + switchButton.frame.height, self.view.frame.width - 60, 40))
+        let normality = UILabel(frame: CGRectMake(30, switchButton.frame.origin.y + switchButton.frame.height, self.view.frame.width - 60, 30))
         normality.text = "Normality: "
-        normality.font = UIFont(name: "Panton-Regular", size: 30)
+        normality.font = UIFont(name: "Panton-Regular", size: 22)
         self.view.addSubview(normality)
         
         
-        let abnormality = UILabel(frame: CGRectMake(30, normality.frame.origin.y + normality.frame.height, self.view.frame.width - 60, 40))
+        let abnormality = UILabel(frame: CGRectMake(30, normality.frame.origin.y + normality.frame.height, self.view.frame.width - 60, 30))
         abnormality.text = "Abnormality: "
-        abnormality.font = UIFont(name: "Panton-Regular", size: 30)
+        abnormality.font = UIFont(name: "Panton-Regular", size: 22)
         self.view.addSubview(abnormality)
         
-        
-        let percentage = UILabel(frame: CGRectMake(30, abnormality.frame.origin.y + abnormality.frame.height, self.view.frame.width - 60, 40))
+        let percentage = UILabel(frame: CGRectMake(30, abnormality.frame.origin.y + abnormality.frame.height, self.view.frame.width - 60, 30))
         percentage.text = "Percent:  %"
-        percentage.font = UIFont(name: "Panton-Regular", size: 30)
+        percentage.font = UIFont(name: "Panton-Regular", size: 22)
         self.view.addSubview(percentage)
+        
+        
+        let diagnosis = UILabel(frame: CGRectMake(30, percentage.frame.origin.y + percentage.frame.height, self.view.frame.width - 90, 60))
+        diagnosis.text = "Diagnosis:  "
+        diagnosis.numberOfLines = 0
+        diagnosis.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        diagnosis.font = UIFont(name: "Panton-Regular", size: 18)
+        self.view.addSubview(diagnosis)
+        
+        
+        
         
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
@@ -133,8 +143,21 @@ class OpenCVTestViewController: UIViewController {
             normality.text = "Normality: \(allGood)"
             abnormality.text = "Abnormality: \(allBad)"
             let percent = Double(allGood) / Double(allGood + allBad) * 100
-            percentage.text = "Percent:  \(percent)%"
-            
+            percentage.text = String(format: "Percent:  %.2f%%", percent)
+            switch percent{
+            case 90.5...100:
+                diagnosis.text = "Diagnosis: Everything looks good!!"
+            case 88...90.5:
+                diagnosis.text = "Diagnosis: Some cells are slightly\n malformed. It could be Sickle Cell"
+            case 85.1...87.9:
+                diagnosis.text = "Diagnosis: Cell sizes are abnormal.\n It could be Anemia"                
+            case 50.1...85:
+                diagnosis.text = "Diagnosis: Many cells are abnormal.\n It could be Elliptocytosis"
+            case 0...50:
+                diagnosis.text = "Diagnosis: Cell shapes are very abnormal.\n It could be RDW"
+            default:
+                diagnosis.text = "Diagnosis: Something went wrong"
+            }
             
         }
         

@@ -1,22 +1,23 @@
 //
-//  BloodShapeStartViewController.swift
+//  HemaSamplesViewController.swift
 //  Draculapp
 //
-//  Created by Avery Lamp on 9/5/15.
+//  Created by Antonio Marino on 05/09/15.
 //  Copyright (c) 2015 magicmark. All rights reserved.
 //
 
 import UIKit
 import QuartzCore
+import Foundation
 
-class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
-
+class HemaSamplesViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
+    
     var collectionVC: UICollectionViewController! = nil;
     
     var delegate: Navigation?
     
     override func viewDidLoad() {
-
+        
         super.viewDidLoad()
         
         let bg = UIImageView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height))
@@ -36,17 +37,17 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
         collectionVC.collectionView  = UICollectionView(frame: CGRectMake(20, 20, 480, UIScreen.mainScreen().bounds.height - 40), collectionViewLayout: layout)
         collectionVC.collectionView?.backgroundColor = UIColor.clearColor()
         collectionVC.collectionView?.frame = CGRectMake(20, 60, self.view.frame.width-40, self.view.frame.height-140)
-//        collectionVC.collectionView?.layer.borderColor = UIColor.blackColor().CGColor
-//        collectionVC.collectionView?.layer.borderWidth = 1
+        //collectionVC.collectionView?.layer.borderColor = UIColor.blackColor().CGColor
+        //collectionVC.collectionView?.layer.borderWidth = 1
         collectionVC.collectionView?.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         collectionVC.collectionView?.registerClass(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "Header")
-//        collectionVC.collectionView?.registerClass:UICollectionReusableView.self forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
-//        NSLog(@"%f", self.view.frame.size.width);
-//        NSLog(@"%f", self.view.frame.size.height);
+        //        collectionVC.collectionView?.registerClass:UICollectionReusableView.self forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
+        //        NSLog(@"%f", self.view.frame.size.width);
+        //        NSLog(@"%f", self.view.frame.size.height);
         collectionVC.collectionView?.delegate = self;
         collectionVC.collectionView?.dataSource = self;
         self.view.addSubview(self.collectionVC.collectionView!)
-    
+        
         
         let title = UILabel()
         title.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -85,7 +86,7 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
     func takeOwn(){
         delegate?.goToPage(.LiveCV)
     }
-   
+    
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         let header: UICollectionReusableView = collectionVC.collectionView!.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "Header", forIndexPath: indexPath) as! UICollectionReusableView
         
@@ -100,15 +101,9 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
         
         switch indexPath.section{
         case 0:
-            HeaderLabel.text = "Normal Cells"
+            HeaderLabel.text = "Normal"
         case 1:
-            HeaderLabel.text = "Hereditary Elliptocytosis"
-        case 2:
-            HeaderLabel.text = "Sickle Cell"
-        case 3:
-            HeaderLabel.text = "Hemolytic Anemia"
-        case 4:
-            HeaderLabel.text = "High RDW"
+            HeaderLabel.text = "Leukemia"
         default:
             print("Default")
         }
@@ -123,54 +118,21 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
         imgV.contentMode = UIViewContentMode.ScaleAspectFill
         imgV.clipsToBounds = true
         cell.addSubview(imgV)
-    
+        
         switch indexPath.section{
         case 0:
             switch indexPath.row{
             case 0:
-                imgV.image = UIImage(named: "Normal_1")
-            case 1:
-                imgV.image = UIImage(named: "Normal_2")
-            case 2:
-                imgV.image = UIImage(named: "Normal_3")
-            case 3:
-                imgV.image = UIImage(named: "Normal_4")
+                imgV.image = UIImage(named: "sample2")
             default:
                 print("default")
             }
         case 1:
             switch indexPath.row{
             case 0:
-                imgV.image = UIImage(named: "Hereditary_elliptocytosis")
+                imgV.image = UIImage(named: "sample")
             case 1:
-                imgV.image = UIImage(named: "Hereditary_elliptocytosis2")
-            default:
-                print("default")
-            }
-        case 2:
-            switch indexPath.row{
-            case 0:
-                imgV.image = UIImage(named: "SickleCell_1")
-            case 1:
-                imgV.image = UIImage(named: "SickleCell_2")
-            default:
-                print("default")
-            }
-        case 3:
-            switch indexPath.row{
-            case 0:
-                imgV.image = UIImage(named: "Hemolytic Anemia")
-            case 1:
-                imgV.image = UIImage(named: "SickleCell_2")
-            default:
-                print("default")
-            }
-        case 4:
-            switch indexPath.row{
-            case 0:
-                imgV.image = UIImage(named: "High RWD")
-            case 1:
-                imgV.image = UIImage(named: "SickleCell_2")
+                imgV.image = UIImage(named: "sample5")
             default:
                 print("default")
             }
@@ -179,7 +141,7 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
         }
         
         
-//        UICollectionViewCell *cell = [self.collectionVC.collectionView dequeueReusableCellWithReuseIdentifier:@"MediaCell" forIndexPath:indexPath];
+        //        UICollectionViewCell *cell = [self.collectionVC.collectionView dequeueReusableCellWithReuseIdentifier:@"MediaCell" forIndexPath:indexPath];
         
         //
         return cell;
@@ -188,15 +150,9 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section{
         case 0:
-            return 4
+            return 1
         case 1:
             return 2
-        case 2:
-            return 2
-        case 3:
-            return 1
-        case 4:
-            return 1
         default:
             return 0
         }
@@ -209,80 +165,47 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
         case 0:
             switch indexPath.row{
             case 0:
-                image = UIImage(named: "Normal_1")!
-            case 1:
-                image = UIImage(named: "Normal_2")!
-            case 2:
-                image = UIImage(named: "Normal_3")!
-            case 3:
-                image = UIImage(named: "Normal_4")!
+                image = UIImage(named: "sample2")!
             default:
                 print("default")
             }
         case 1:
             switch indexPath.row{
             case 0:
-                image = UIImage(named: "Hereditary_elliptocytosis")!
+                image = UIImage(named: "sample")!
             case 1:
-                image = UIImage(named: "Hereditary_elliptocytosis2")!
+                image = UIImage(named: "sample5")!
             default:
                 print("default")
             }
-        case 2:
-            switch indexPath.row{
-            case 0:
-                image = UIImage(named: "SickleCell_1")!
-            case 1:
-                image = UIImage(named: "SickleCell_2")!
-            default:
-                print("default")
-            }
-        case 3:
-            switch indexPath.row{
-            case 0:
-                image = UIImage(named: "Hemolytic Anemia")!
-            case 1:
-                image = UIImage(named: "SickleCell_2")!
-            default:
-                print("default")
-            }
-        case 4:
-            switch indexPath.row{
-            case 0:
-                image = UIImage(named: "High RWD")!
-            default:
-                print("default")
-            }
-
         default:
             print("Default")
         }
         
-        sharedSampleDataModel.lastMicroscopyImage = image
-        sharedSampleDataModel.live = false
-
-        delegate?.goToPage(.OpenCV)
+        sharedSampleDataModel.ratiosImage = image
+        
+        delegate?.goToPage(.HaemaCV)
         
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 5
+        return 2
     }
-
-
+    
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
     
-    class func generate(#delegate: Navigation) -> BloodShapeStartViewController {
-        let viewController = BloodShapeStartViewController(nibName: "BloodShapeStartViewController", bundle: NSBundle.mainBundle())
+    
+    class func generate(#delegate: Navigation) -> HemaSamplesViewController {
+        let viewController = HemaSamplesViewController(nibName: "HemaSamplesViewController", bundle: NSBundle.mainBundle())
         viewController.delegate = delegate
         return viewController
     }

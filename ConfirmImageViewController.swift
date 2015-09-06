@@ -14,10 +14,12 @@ protocol ImageConfirm {
 }
 
 class ConfirmImageViewController: UIViewController {
-
+    
     var delegate: ImageConfirm?
     var doCropping = false
     var cropRect: CGRect?
+    
+    //var croppedImage: UIImage?
     
     //Dragging
     var dragging = false
@@ -33,7 +35,7 @@ class ConfirmImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         retake.layer.cornerRadius = 6
         retake.layer.borderWidth = 2
         retake.layer.borderColor = "#28FDFF".CGColor
@@ -42,12 +44,12 @@ class ConfirmImageViewController: UIViewController {
         ok.layer.borderColor = "#28FDFF".CGColor
         
         image.contentMode = UIViewContentMode.ScaleAspectFit
-
         
-
+        
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
     }
@@ -57,13 +59,13 @@ class ConfirmImageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-//    
-//    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-////        dragging = true;
-////        let touch: AnyObject? = touches.anyObject();
-////        start = touch!.locationInView(self.view)
-//    }
-
+    //
+    //    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    ////        dragging = true;
+    ////        let touch: AnyObject? = touches.anyObject();
+    ////        start = touch!.locationInView(self.view)
+    //    }
+    
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         println("TOUCHES BEGAN")
         if !doCropping || touches.count != 1 {
@@ -84,7 +86,7 @@ class ConfirmImageViewController: UIViewController {
         let touch = touches.first as? UITouch
         let end = touch!.locationInView(image)
         path.removeAllPoints()
-
+        
         println("moving")
         shape.opacity = 0.5
         shape.lineWidth = 2
@@ -103,7 +105,7 @@ class ConfirmImageViewController: UIViewController {
         shape.path = path.CGPath
         image.layer.addSublayer(shape)
         
-      
+        
         
         dragging = false
         
@@ -114,22 +116,22 @@ class ConfirmImageViewController: UIViewController {
     }
     
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
-
         
-       // start = nil
+        
+        // start = nil
         //shape.path = nil;
         //image.layer.addSublayer(shape)
     }
-
+    
     
     func crop (bigimage: UIImage, withRect rect: CGRect) -> UIImage {
         let bigImageSnap = image.pb_takeSnapshot()
         
         let imageRef = CGImageCreateWithImageInRect(bigImageSnap.CGImage, rect);
-
+        
         // or use the UIImage wherever you like
         let myImg = UIImage(CGImage: imageRef)
-      
+        
         return myImg!
         
         //image.image = bigImageSnap
@@ -137,7 +139,7 @@ class ConfirmImageViewController: UIViewController {
     }
     
     @IBAction func okay(sender: AnyObject) {
-
+        
         if !doCropping {
             let bigImageSnap = image.pb_takeSnapshot()
             delegate?.imageOk(bigImageSnap.imageRotatedByDegrees(270, flip: false))
@@ -153,7 +155,7 @@ class ConfirmImageViewController: UIViewController {
             shape.path = nil;
             //image.layer.addSublayer(shape)
             //            delegate?.imageOk(image.image!)
-
+            
             
         }
         
@@ -164,12 +166,12 @@ class ConfirmImageViewController: UIViewController {
     }
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

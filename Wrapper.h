@@ -14,7 +14,11 @@
 
 +(NSArray*)processImage:(UIImage*)image live:(BOOL) live;
 +(NSArray*)isolateBlood:(UIImage *)image;
+
++(NSArray*)isolateBloodForSamples:(UIImage *)image;
+
 +(UIImage *)cropImage:(UIImage *)image byRect:(CGRect)rect;
+
 
 
 @end
