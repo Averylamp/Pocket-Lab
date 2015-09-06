@@ -48,9 +48,8 @@
                         <constraint firstItem="eDe-Ge-nxQ" firstAttribute="leading" secondItem="QC0-IL-YNl" secondAttribute="leading" constant="8" id="yN4-Nq-ck6"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EPIC.png" translatesAutoresizingMaskIntoConstraints="NO" id="oLb-3Q-eRi">
+                <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_66" translatesAutoresizingMaskIntoConstraints="NO" id="oLb-3Q-eRi">
                     <rect key="frame" x="41" y="68" width="238" height="103"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="238" id="OZf-Lm-RG4"/>
                         <constraint firstAttribute="height" constant="103" id="gbE-CD-ho2"/>
@@ -111,8 +110,8 @@
         </view>
     </objects>
     <resources>
-        <image name="EPIC.png" width="935" height="360"/>
         <image name="backButtonArrow.png" width="13" height="22"/>
+        <image name="logo_66" width="500" height="188"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
