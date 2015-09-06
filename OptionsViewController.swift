@@ -23,6 +23,8 @@ class OptionsViewController: UIViewController {
     @IBOutlet weak var ratios: UIView!
     @IBOutlet weak var allResults: UIView!
     @IBOutlet weak var cloudSync: UIView!
+    @IBOutlet weak var newPatient: UIView!
+    
     
     var delegate: Navigation?
 
@@ -38,6 +40,7 @@ class OptionsViewController: UIViewController {
         setButtonStyle(ratios)
         setButtonStyle(allResults)
         setButtonStyle(cloudSync)
+        setButtonStyle(newPatient)
         
         self.bgScroll.frame.origin.y = -self.bgScroll.image!.size.height + UIScreen.mainScreen().bounds.height
         startAnimation()

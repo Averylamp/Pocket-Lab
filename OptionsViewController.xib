@@ -12,6 +12,7 @@
                 <outlet property="bgScroll" destination="LmV-gA-JFj" id="Zzb-xa-tkQ"/>
                 <outlet property="cloudSync" destination="XT3-Vq-WAy" id="Cw6-7B-YmP"/>
                 <outlet property="microscopy" destination="Bab-2g-pwk" id="Sgh-Cw-5Ub"/>
+                <outlet property="newPatient" destination="ont-3g-WJe" id="dob-5i-wOU"/>
                 <outlet property="ratios" destination="Xo7-xQ-hsL" id="zAc-mw-uUi"/>
                 <outlet property="spinButton" destination="vSi-3a-tu4" id="rGn-SC-1j4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -135,8 +136,8 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdx-eR-seB">
                             <rect key="frame" x="187" y="187" width="147" height="147"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oD-fl-Z3h">
-                                    <rect key="frame" x="37" y="118" width="72" height="18"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patient Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oD-fl-Z3h">
+                                    <rect key="frame" x="31.5" y="118" width="84.5" height="18"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -212,6 +213,46 @@
                                 </mask>
                             </variation>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ont-3g-WJe">
+                            <rect key="frame" x="187" y="374" width="147" height="147"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Patient" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7i-Tl-ZfM">
+                                    <rect key="frame" x="32" y="118" width="83.5" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newPerson" translatesAutoresizingMaskIntoConstraints="NO" id="cEp-Xn-2RX">
+                                    <rect key="frame" x="20" y="5" width="107" height="107"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="cEp-Xn-2RX" secondAttribute="height" multiplier="1:1" id="Sfc-0N-N9K"/>
+                                        <constraint firstAttribute="height" constant="90" id="WAa-G7-C0X"/>
+                                        <constraint firstAttribute="height" constant="90" id="ZSi-Ji-YGx"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="ZSi-Ji-YGx"/>
+                                            <exclude reference="WAa-G7-C0X"/>
+                                        </mask>
+                                    </variation>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.04218033257" green="0.68235294120000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="cEp-Xn-2RX" firstAttribute="leading" secondItem="ont-3g-WJe" secondAttribute="leading" constant="20" id="9mz-lP-kTj"/>
+                                <constraint firstAttribute="width" secondItem="ont-3g-WJe" secondAttribute="height" multiplier="1:1" id="QeP-bw-cSl"/>
+                                <constraint firstAttribute="centerX" secondItem="D7i-Tl-ZfM" secondAttribute="centerX" id="Qog-ct-dlw"/>
+                                <constraint firstAttribute="bottom" secondItem="D7i-Tl-ZfM" secondAttribute="bottom" constant="11" id="f8f-nU-TT8"/>
+                                <constraint firstAttribute="centerX" secondItem="cEp-Xn-2RX" secondAttribute="centerX" id="pOq-6X-bXH"/>
+                                <constraint firstItem="cEp-Xn-2RX" firstAttribute="top" secondItem="ont-3g-WJe" secondAttribute="top" constant="5" id="roK-UA-WoI"/>
+                                <constraint firstItem="cEp-Xn-2RX" firstAttribute="top" secondItem="ont-3g-WJe" secondAttribute="top" constant="5" id="vVK-GB-rH1"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="roK-UA-WoI"/>
+                                </mask>
+                            </variation>
+                        </view>
                     </subviews>
                     <constraints>
                         <constraint firstItem="gdx-eR-seB" firstAttribute="top" secondItem="Bab-2g-pwk" secondAttribute="bottom" constant="40" id="32Z-Sy-twk"/>
@@ -224,11 +265,16 @@
                         <constraint firstAttribute="trailing" secondItem="gdx-eR-seB" secondAttribute="trailing" id="C0a-eD-NoX"/>
                         <constraint firstItem="XT3-Vq-WAy" firstAttribute="width" secondItem="XT3-Vq-WAy" secondAttribute="height" multiplier="1:1" id="HHH-ds-u99"/>
                         <constraint firstItem="vSi-3a-tu4" firstAttribute="leading" secondItem="943-KE-Cjf" secondAttribute="leading" id="M5z-hy-IHL"/>
+                        <constraint firstItem="ont-3g-WJe" firstAttribute="width" secondItem="ont-3g-WJe" secondAttribute="height" multiplier="1:1" id="P7i-87-01w"/>
                         <constraint firstItem="Xo7-xQ-hsL" firstAttribute="top" secondItem="vSi-3a-tu4" secondAttribute="bottom" constant="40" id="SIb-i5-4tC"/>
                         <constraint firstItem="Xo7-xQ-hsL" firstAttribute="leading" secondItem="943-KE-Cjf" secondAttribute="leading" id="T3g-bO-8rw"/>
+                        <constraint firstItem="ont-3g-WJe" firstAttribute="width" secondItem="ont-3g-WJe" secondAttribute="height" multiplier="1:1" id="Tjs-HO-DCk"/>
                         <constraint firstItem="gdx-eR-seB" firstAttribute="width" secondItem="Bab-2g-pwk" secondAttribute="width" id="WZM-2S-T55"/>
+                        <constraint firstItem="ont-3g-WJe" firstAttribute="width" secondItem="ont-3g-WJe" secondAttribute="height" multiplier="1:1" id="Wgm-ki-Qyr"/>
                         <constraint firstItem="gdx-eR-seB" firstAttribute="width" secondItem="gdx-eR-seB" secondAttribute="height" multiplier="1:1" id="WrP-bt-2Q2"/>
+                        <constraint firstItem="ont-3g-WJe" firstAttribute="top" secondItem="gdx-eR-seB" secondAttribute="bottom" constant="40" id="Zdy-NU-gTt"/>
                         <constraint firstItem="XT3-Vq-WAy" firstAttribute="top" secondItem="Xo7-xQ-hsL" secondAttribute="bottom" constant="40" id="aaI-cn-yUW"/>
+                        <constraint firstItem="ont-3g-WJe" firstAttribute="width" secondItem="ont-3g-WJe" secondAttribute="height" multiplier="1:1" id="eLI-Dd-u15"/>
                         <constraint firstItem="XT3-Vq-WAy" firstAttribute="width" secondItem="Xo7-xQ-hsL" secondAttribute="width" id="ewR-72-Bwg"/>
                         <constraint firstItem="Xo7-xQ-hsL" firstAttribute="width" secondItem="Xo7-xQ-hsL" secondAttribute="height" multiplier="1:1" id="h4v-7Y-akG"/>
                         <constraint firstItem="XT3-Vq-WAy" firstAttribute="width" secondItem="XT3-Vq-WAy" secondAttribute="height" multiplier="1:1" id="hlS-mo-6al"/>
@@ -237,7 +283,9 @@
                         <constraint firstItem="XT3-Vq-WAy" firstAttribute="width" secondItem="XT3-Vq-WAy" secondAttribute="height" multiplier="1:1" id="mT8-F0-ZBj"/>
                         <constraint firstAttribute="width" secondItem="Xo7-xQ-hsL" secondAttribute="width" multiplier="0.5" constant="-20" id="riZ-QB-EzR"/>
                         <constraint firstItem="XT3-Vq-WAy" firstAttribute="leading" secondItem="943-KE-Cjf" secondAttribute="leading" id="rwg-Pc-07g"/>
+                        <constraint firstAttribute="trailing" secondItem="ont-3g-WJe" secondAttribute="trailing" id="uRu-mu-iEz"/>
                         <constraint firstItem="Bab-2g-pwk" firstAttribute="top" secondItem="943-KE-Cjf" secondAttribute="top" id="wT1-45-zXQ"/>
+                        <constraint firstItem="ont-3g-WJe" firstAttribute="width" secondItem="gdx-eR-seB" secondAttribute="width" id="ztR-ep-HeX"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
@@ -275,6 +323,7 @@
         <image name="bg" width="1200" height="2780"/>
         <image name="data" width="512" height="512"/>
         <image name="microscope" width="512" height="512"/>
+        <image name="newPerson" width="512" height="512"/>
         <image name="pl" width="419" height="263"/>
         <image name="ruler" width="512" height="512"/>
         <image name="spin" width="512" height="512"/>
