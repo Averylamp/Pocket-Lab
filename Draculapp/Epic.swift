@@ -41,3 +41,5 @@ class Epic {
     }
     
 }
+
+let sharedEpic = Epic()

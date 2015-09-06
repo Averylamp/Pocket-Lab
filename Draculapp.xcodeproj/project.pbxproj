@@ -107,8 +107,8 @@
 		22F5595A1B9B3EC2008F961C /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		4D1D43971B9BD39A0092D2D5 /* PatientDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientDataViewController.swift; sourceTree = "<group>"; };
 		4D1D43981B9BD39A0092D2D5 /* PatientDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PatientDataViewController.xib; sourceTree = "<group>"; };
-		4D1D439B1B9BD8D30092D2D5 /* Patient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Patient.swift; path = ../Patient.swift; sourceTree = "<group>"; };
-		4D1D439D1B9BDA6B0092D2D5 /* Epic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Epic.swift; sourceTree = "<group>"; };
+		4D1D439B1B9BD8D30092D2D5 /* Patient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		4D1D439D1B9BDA6B0092D2D5 /* Epic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Epic.swift; path = Draculapp/Epic.swift; sourceTree = "<group>"; };
 		4D29985E1B9AFB7600AE37FF /* BloodShapeStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BloodShapeStartViewController.xib; sourceTree = "<group>"; };
 		4D475E7A1B9A72420021B51B /* Draculapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Draculapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D475E7E1B9A72420021B51B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -222,6 +222,8 @@
 		22F559581B9B363E008F961C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4D1D439B1B9BD8D30092D2D5 /* Patient.swift */,
+				4D1D439D1B9BDA6B0092D2D5 /* Epic.swift */,
 				22F559541B9B3626008F961C /* SampleDataModel.swift */,
 				22F559561B9B3638008F961C /* Sample.swift */,
 			);
@@ -261,8 +263,8 @@
 				4D475E7C1B9A72420021B51B /* Draculapp */,
 				4D475EAB1B9A7A120021B51B /* Controllers */,
 				4D475EAA1B9A7A080021B51B /* Views */,
-				BB2C5E5C1B9BAABB00EC60D4 /* Panton */,
 				22F559581B9B363E008F961C /* Models */,
+				BB2C5E5C1B9BAABB00EC60D4 /* Panton */,
 				4D475E951B9A72420021B51B /* DraculappTests */,
 				4D475E7B1B9A72420021B51B /* Products */,
 				BBAD606F1B9AA8A000662186 /* Draculapp-Bridging-Header.h */,
@@ -287,8 +289,6 @@
 				4D475E891B9A72420021B51B /* Images.xcassets */,
 				22EB317F1B9BC4E100A23377 /* Images */,
 				4D475E8B1B9A72420021B51B /* LaunchScreen.xib */,
-				4D1D439B1B9BD8D30092D2D5 /* Patient.swift */,
-				4D1D439D1B9BDA6B0092D2D5 /* Epic.swift */,
 				4D475E811B9A72420021B51B /* Draculapp.xcdatamodeld */,
 				4D475E7D1B9A72420021B51B /* Supporting Files */,
 			);

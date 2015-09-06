@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class PatientSearchViewController: UIViewController {
 
@@ -27,6 +28,11 @@ class PatientSearchViewController: UIViewController {
     
     
     @IBAction func patientSearch() {
+        sharedEpic.getPatientInfo(name: idField.text, callback: { error, data in
+            if let data = data {
+                println(data)
+            }
+        })
         
     }
     
