@@ -53,7 +53,8 @@ extension AppController: Navigation {
         }
         
         if page == .OpenCV {
-            self.setViewControllers([OpenCVTestViewController.generate()], animated: false)
+            self.pushViewController(OpenCVTestViewController.generate(), animated: true)
+//            self.setViewControllers([OpenCVTestViewController.generate()], animated: false)
         }
         
         if page == .SelectRPM {
