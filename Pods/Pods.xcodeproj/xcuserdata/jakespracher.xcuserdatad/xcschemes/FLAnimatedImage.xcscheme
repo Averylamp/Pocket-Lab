@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C3388B1882178D70BC9BF9FE"
-               BuildableName = "libFLAnimatedImage.a"
+               BlueprintIdentifier = "57BB5153B8AD8DA437ADEFDA"
+               BuildableName = "FLAnimatedImage.framework"
                BlueprintName = "FLAnimatedImage"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

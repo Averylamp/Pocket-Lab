@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "96C2340D2423E63167C2E773"
-               BuildableName = "libPods-Draculapp.a"
+               BlueprintIdentifier = "0D0352BEBBE48A4FBF54EBB4"
+               BuildableName = "Pods_Draculapp.framework"
                BlueprintName = "Pods-Draculapp"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

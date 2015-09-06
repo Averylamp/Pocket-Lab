@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01A9266C631BF33A3A0EB3F2 /* libPods-Draculapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE47FDC5CC6C986C2717B28 /* libPods-Draculapp.a */; };
 		22EB31811B9BC4F700A23377 /* backButtonArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22EB31801B9BC4F700A23377 /* backButtonArrow@2x.png */; };
 		22EB31831B9BC50D00A23377 /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22EB31821B9BC50D00A23377 /* more@2x.png */; };
 		22EB318A1B9BDA9700A23377 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB31891B9BDA9700A23377 /* TPKeyboardAvoidingScrollView.m */; };
@@ -47,7 +46,8 @@
 		4DCD6AF41B9B361A00D3F287 /* TakePictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCD6AF21B9B361A00D3F287 /* TakePictureViewController.xib */; };
 		4DCD6AF71B9B467100D3F287 /* ConfirmImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD6AF51B9B467100D3F287 /* ConfirmImageViewController.swift */; };
 		4DCD6AF81B9B467100D3F287 /* ConfirmImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCD6AF61B9B467100D3F287 /* ConfirmImageViewController.xib */; };
-		B75921960FE3B8C0FAFF5665 /* Pods_Draculapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B299B136E07473C7F724181 /* Pods_Draculapp.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		784FDFAAEB4118A39AE71FE4 /* Pods_Draculapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966DA5FD49E7D9768BEB5032 /* Pods_Draculapp.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B75921960FE3B8C0FAFF5665 /* (null) in Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (Weak, ); }; };
 		BB2C5E531B9BAAB500EC60D4 /* Panton-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E4A1B9BAAB500EC60D4 /* Panton-Black.otf */; };
 		BB2C5E541B9BAAB500EC60D4 /* Panton-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E4B1B9BAAB500EC60D4 /* Panton-Bold.otf */; };
 		BB2C5E551B9BAAB500EC60D4 /* Panton-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E4C1B9BAAB500EC60D4 /* Panton-ExtraBold.otf */; };
@@ -134,6 +134,7 @@
 		4DCD6AF51B9B467100D3F287 /* ConfirmImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmImageViewController.swift; sourceTree = "<group>"; };
 		4DCD6AF61B9B467100D3F287 /* ConfirmImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmImageViewController.xib; sourceTree = "<group>"; };
 		87BAFA310A2E08408905D284 /* Pods-Draculapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Draculapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Draculapp/Pods-Draculapp.release.xcconfig"; sourceTree = "<group>"; };
+		966DA5FD49E7D9768BEB5032 /* Pods_Draculapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Draculapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7E991688E3B298324075B /* Pods-Draculapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Draculapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Draculapp/Pods-Draculapp.debug.xcconfig"; sourceTree = "<group>"; };
 		BB2C5E4A1B9BAAB500EC60D4 /* Panton-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-Black.otf"; sourceTree = "<group>"; };
 		BB2C5E4B1B9BAAB500EC60D4 /* Panton-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-Bold.otf"; sourceTree = "<group>"; };
@@ -183,7 +184,8 @@
 				BBAD605C1B9AA82200662186 /* AssetsLibrary.framework in Frameworks */,
 				BBAD60581B9AA81000662186 /* CoreAudio.framework in Frameworks */,
 				BBAD60561B9AA80B00662186 /* CoreVideo.framework in Frameworks */,
-				B75921960FE3B8C0FAFF5665 /* Pods_Draculapp.framework in Frameworks */,
+				B75921960FE3B8C0FAFF5665 /* (null) in Frameworks */,
+				784FDFAAEB4118A39AE71FE4 /* Pods_Draculapp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +359,7 @@
 		8B59A6477B8D32DBCA2DB325 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0B299B136E07473C7F724181 /* Pods_Draculapp.framework */,
+				966DA5FD49E7D9768BEB5032 /* Pods_Draculapp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
