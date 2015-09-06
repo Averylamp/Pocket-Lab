@@ -58,6 +58,10 @@
 		BB2C5E5A1B9BAAB500EC60D4 /* Panton-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E511B9BAAB500EC60D4 /* Panton-SemiBold.otf */; };
 		BB2C5E5B1B9BAAB500EC60D4 /* Panton-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E521B9BAAB500EC60D4 /* Panton-Thin.otf */; };
 		BB46AA431B9AF63400AC765B /* BloodShapeStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB46AA421B9AF63400AC765B /* BloodShapeStartViewController.swift */; };
+		BB8A90531B9C471C00C30BC1 /* HaemaCVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8A90521B9C471C00C30BC1 /* HaemaCVViewController.swift */; };
+		BB8A90551B9C475F00C30BC1 /* HaemaCVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8A90541B9C475F00C30BC1 /* HaemaCVViewController.xib */; };
+		BB8A90581B9C47A900C30BC1 /* HemaSamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8A90561B9C47A900C30BC1 /* HemaSamplesViewController.swift */; };
+		BB8A90591B9C47A900C30BC1 /* HemaSamplesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8A90571B9C47A900C30BC1 /* HemaSamplesViewController.xib */; };
 		BBAD60561B9AA80B00662186 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD60551B9AA80B00662186 /* CoreVideo.framework */; };
 		BBAD60581B9AA81000662186 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD60571B9AA81000662186 /* CoreAudio.framework */; };
 		BBAD605A1B9AA81900662186 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD60591B9AA81900662186 /* CoreMedia.framework */; };
@@ -146,6 +150,10 @@
 		BB2C5E511B9BAAB500EC60D4 /* Panton-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-SemiBold.otf"; sourceTree = "<group>"; };
 		BB2C5E521B9BAAB500EC60D4 /* Panton-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-Thin.otf"; sourceTree = "<group>"; };
 		BB46AA421B9AF63400AC765B /* BloodShapeStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodShapeStartViewController.swift; sourceTree = "<group>"; };
+		BB8A90521B9C471C00C30BC1 /* HaemaCVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HaemaCVViewController.swift; sourceTree = "<group>"; };
+		BB8A90541B9C475F00C30BC1 /* HaemaCVViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HaemaCVViewController.xib; sourceTree = "<group>"; };
+		BB8A90561B9C47A900C30BC1 /* HemaSamplesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HemaSamplesViewController.swift; sourceTree = "<group>"; };
+		BB8A90571B9C47A900C30BC1 /* HemaSamplesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HemaSamplesViewController.xib; sourceTree = "<group>"; };
 		BBAD60551B9AA80B00662186 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		BBAD60571B9AA81000662186 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		BBAD60591B9AA81900662186 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -341,6 +349,10 @@
 		4D475EAB1B9A7A120021B51B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BB8A90521B9C471C00C30BC1 /* HaemaCVViewController.swift */,
+				BB8A90541B9C475F00C30BC1 /* HaemaCVViewController.xib */,
+				BB8A90561B9C47A900C30BC1 /* HemaSamplesViewController.swift */,
+				BB8A90571B9C47A900C30BC1 /* HemaSamplesViewController.xib */,
 				4D475EB11B9A90370021B51B /* OptionsViewController.swift */,
 				BB46AA421B9AF63400AC765B /* BloodShapeStartViewController.swift */,
 				BBAD60741B9AC8E400662186 /* OpenCVTestViewController.swift */,
@@ -466,6 +478,7 @@
 			files = (
 				BB2C5E561B9BAAB500EC60D4 /* Panton-ExtraLight.otf in Resources */,
 				BB2C5E571B9BAAB500EC60D4 /* Panton-Heavy.otf in Resources */,
+				BB8A90551B9C475F00C30BC1 /* HaemaCVViewController.xib in Resources */,
 				BB2C5E541B9BAAB500EC60D4 /* Panton-Bold.otf in Resources */,
 				4DCD6AF41B9B361A00D3F287 /* TakePictureViewController.xib in Resources */,
 				BB2C5E5A1B9BAAB500EC60D4 /* Panton-SemiBold.otf in Resources */,
@@ -485,6 +498,7 @@
 				22EB318C1B9BDB6F00A23377 /* logo_66.jpg in Resources */,
 				4D1D439A1B9BD39A0092D2D5 /* PatientDataViewController.xib in Resources */,
 				4D475EB81B9AA6E40021B51B /* OpenCVTestViewController.xib in Resources */,
+				BB8A90591B9C47A900C30BC1 /* HemaSamplesViewController.xib in Resources */,
 				22EB31811B9BC4F700A23377 /* backButtonArrow@2x.png in Resources */,
 				22EB31831B9BC50D00A23377 /* more@2x.png in Resources */,
 				BB2C5E5B1B9BAAB500EC60D4 /* Panton-Thin.otf in Resources */,
@@ -558,10 +572,12 @@
 				4D475E831B9A72420021B51B /* Draculapp.xcdatamodeld in Sources */,
 				4D475EA81B9A7A010021B51B /* StartViewController.swift in Sources */,
 				4D475EB31B9A90370021B51B /* OptionsViewController.swift in Sources */,
+				BB8A90531B9C471C00C30BC1 /* HaemaCVViewController.swift in Sources */,
 				22EB318A1B9BDA9700A23377 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				22EB318F1B9BE0C100A23377 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				22EB31961B9BE1F500A23377 /* PatientSearchViewController.swift in Sources */,
 				4DCD6AEF1B9B02A200D3F287 /* HaematocritViewController.swift in Sources */,
+				BB8A90581B9C47A900C30BC1 /* HemaSamplesViewController.swift in Sources */,
 				BBAD60751B9AC8E400662186 /* OpenCVTestViewController.swift in Sources */,
 				4DCD6AF71B9B467100D3F287 /* ConfirmImageViewController.swift in Sources */,
 				4D475E801B9A72420021B51B /* AppDelegate.swift in Sources */,

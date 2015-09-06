@@ -15,6 +15,7 @@
 using std::vector;
 using namespace cv;
 
+static UIImage *resultingImage = nil;
 
 @implementation Wrapper
 static UIImage* cvMatToUIImage(const cv::Mat& m) {
@@ -42,13 +43,13 @@ static void cvUIImageToMat(const UIImage* image, cv::Mat& m) {
     CGContextRelease(contextRef);
     //    CGColorSpaceRelease(colorSpace);
 }
+
 +(NSArray*)processImage:(UIImage*)image live:(BOOL) live{
     cv::Mat img;
     cv::Mat resultImg;
     cvUIImageToMat(image, img);
     cvUIImageToMat(image, resultImg);
 //    cv::cvtColor(img, img, cv::COLOR_BGR2HSV);
-    cv::Mat sharpImg;
 
     
    
@@ -117,16 +118,12 @@ static void cvUIImageToMat(const UIImage* image, cv::Mat& m) {
         cv::cvtColor(img, img, COLOR_BGR2GRAY);
         cv::Canny(img, img, 100, 210);
     }else{
+        cv::cvtColor(img, img, COLOR_BGR2GRAY);
+
         cv::Canny(img, img, 50, 150);
     }
     
-//    UIImage *result = cvMatToUIImage(img);
-//    img.release();
-//    resultImg.release();
-//    return [[NSArray alloc]initWithObjects:result,[NSNumber numberWithInt:0],[NSNumber numberWithInt:0], nil];
-
-    
-    
+   
     vector<vector<cv::Point> > contours;
 
     cv::findContours( img, contours, RETR_TREE, CHAIN_APPROX_SIMPLE);
@@ -135,22 +132,19 @@ static void cvUIImageToMat(const UIImage* image, cv::Mat& m) {
         cv::drawContours(img, contours, i, cv::Scalar(arc4random() % 255,arc4random() % 255,arc4random() % 255), -5);
     }
     
-    
-
-    
     /// Draw contours
     double allRadiiMean = 0.0;
     int allGood = 0;
     int allBad = 0;
-    int distrib[25];
-    for (int z=0; z<25; z++) {
-        distrib[z] = 0;
-    }
+//    int distrib[25];
+//    for (int z=0; z<25; z++) {
+//        distrib[z] = 0;
+//    }
     
     int z = 0;
     for (int i = 0; i < contours.size(); i++){ // for each contour
         if (contours[i].size() > 25) {
-            if (live){
+            if (live == YES){
                 if( contours[i].size() > 70){
                     continue;
                 }
@@ -182,7 +176,7 @@ static void cvUIImageToMat(const UIImage* image, cv::Mat& m) {
             }
             std = std / contours[i].size();
             std = sqrt(std);
-            distrib[(int)std] ++;
+//            distrib[(int)std] ++;
 //            NSLog(@"Standard Deviation: %f", std);
             if(std<5){
                 cv::drawContours(resultImg , contours, i, cv::Scalar(146,222,64), 5);
@@ -201,16 +195,17 @@ static void cvUIImageToMat(const UIImage* image, cv::Mat& m) {
     allRadiiMean = allRadiiMean / contours.size();
     
     NSLog(@"Radii Mean - %f\nGood: %d,\nBad: %d\nPercentage: %f",allRadiiMean,allGood,allBad, allGood /((double)(allGood + allBad)));
-    for (int i=0 ; i<=8; i++) {
-        NSLog(@"Dist %d:  %d", i , distrib[i]);
-    }
+//    for (int i=0 ; i<=8; i++) {
+//        NSLog(@"Dist %d:  %d", i , distrib[i]);
+//    }
     
 //    UIImage *result = cvMatToUIImage(img);
-    UIImage *result = cvMatToUIImage(resultImg);
+    resultingImage = cvMatToUIImage(resultImg);
     img.release();
-    resultImg.release();
-    return @[result,[NSNumber numberWithInt:allGood], [NSNumber numberWithInt:allBad]];
-//    return nil;
+//    resultImg.release();
+    NSArray *returnedArray = [[NSArray alloc]initWithObjects:resultingImage,[NSNumber numberWithInt:allGood], [NSNumber numberWithInt:allBad], nil];
+    return returnedArray;
+
 }
 
 int minBallArea = 900;
@@ -390,4 +385,239 @@ void drawBox(cv::Mat img, cv::Rect roi){
    // return result;
 }
 
+int findBiggestContourByPerimeter(vector<vector<cv::Point>> contours) {
+    unsigned long maxXs = 0;
+    int maxIndex = -1;
+    for (int i = 0; i < contours.size(); i++) {
+        if (contours[i].size() >= maxXs) {
+            maxXs = contours[i].size();
+            maxIndex = i;
+        }
+    }
+    return maxIndex;
+}
+
+
+static void morphOps(cv::Mat img) {
+    cv::Mat erodeElement = getStructuringElement( MORPH_RECT,cv::Size(3,3));
+    //dilate with larger element so make sure object is nicely visible
+    cv::Mat dilateElement = getStructuringElement( MORPH_RECT,cv::Size(8,8));
+    
+    cv::erode(img,img,erodeElement);
+    cv::erode(img,img,erodeElement);
+    
+    cv::dilate(img,img,dilateElement);
+    cv::dilate(img,img,dilateElement);
+}
+
+//+(UIImage*)processImage2:(UIImage *)image{
++(NSArray *)isolateBloodForSamples:(UIImage *)image {
+    cv::Mat img;
+    cv::Mat img2;
+    cv::Mat img3;
+    cv::Mat resultImg;
+    cv::Mat colouredYellowContoursImg;
+    
+    cvUIImageToMat(image, img);
+    cvUIImageToMat(image, img2);
+    cvUIImageToMat(image, img3);
+    cvUIImageToMat(image, resultImg);
+    cvUIImageToMat(image, colouredYellowContoursImg);
+    cv::cvtColor(img, img, cv::COLOR_RGB2HSV);
+    cv::cvtColor(img2, img2, cv::COLOR_RGB2HSV);
+    cv::cvtColor(img3, img3, cv::COLOR_RGB2HSV);
+    cv::cvtColor(colouredYellowContoursImg, colouredYellowContoursImg, cv::COLOR_RGB2HSV);
+    
+    
+    Scalar redHSVmin = Scalar(0,40,0);
+    Scalar redHSVmax = Scalar(50,200,40);
+    
+    Scalar redBlackHSVmin = Scalar(110,0,0);
+    Scalar redBlackHSVmax = Scalar(180,80,80);
+    
+    Scalar yellowHSVmin = Scalar(20,124,123);
+    Scalar yellowHSVmax = Scalar(30,256,256);
+    
+    cv::inRange(img, yellowHSVmin, yellowHSVmax, img);
+    cv::inRange(img2, redHSVmin, redHSVmax, img2);
+    cv::inRange(img3, redBlackHSVmin, redBlackHSVmax, img3);
+    cv::inRange(colouredYellowContoursImg, yellowHSVmin, yellowHSVmax, colouredYellowContoursImg);
+    
+    morphOps(img);
+    morphOps(img2);
+    morphOps(img3);
+    morphOps(colouredYellowContoursImg);
+    
+    cv::Canny(img, img, 50, 150);
+    cv::Canny(img2, img2, 50, 150);
+    cv::Canny(img3, img3, 50, 150);
+    //cv::Canny(colouredYellowContoursImg, colouredYellowContoursImg, 50, 150);
+    //UIImage *result = cvMatToUIImage(img);
+    
+    vector<vector<cv::Point>> contours;
+    vector<vector<cv::Point>> contours2;
+    vector<vector<cv::Point>> contours3;
+    vector<vector<cv::Point>> contours4;
+    cv::findContours(img, contours, RETR_TREE, CHAIN_APPROX_SIMPLE);
+    cv::findContours(img2, contours2, RETR_TREE, CHAIN_APPROX_SIMPLE);
+    cv::findContours(img3, contours3, RETR_TREE, CHAIN_APPROX_SIMPLE);
+    //cv::findContours(colouredYellowContoursImg, contours4, RETR_TREE, CHAIN_APPROX_SIMPLE);
+    
+    //cv::inRange(colouredYellowContoursImg, Scalar(0,0,0), Scalar(0,0,0), colouredYellowContoursImg);
+    
+    // merge red contours
+    vector<vector<cv::Point>> redContours;
+    redContours.reserve( contours2.size() + contours3.size() ); // preallocate memory
+    redContours.insert( redContours.end(), contours2.begin(), contours2.end() );
+    redContours.insert( redContours.end(), contours3.begin(), contours3.end() );
+    
+    for (int i = 0; i < contours4.size(); i++){ // for each contour
+        //cv::drawContours(colouredYellowContoursImg , contours4, i, cv::Scalar(i+1,i+1,i+1), -1);
+    }
+    //UIImage *result = cvMatToUIImage(colouredYellowContoursImg);
+    
+    //cv::Mat colouredYellowContourGBR;
+    //cv::cvtColor(colouredYellowContoursImg, colouredYellowContourGBR, cv::COLOR_HSV2BGR);
+    
+    // for each red contour, find the center and if there is a yellow contour above it.
+    /*
+     for (int i = 0; i < redContours.size(); i++) {
+     
+     cv::Point2d center;
+     cv::Point2d left; left.x = 99999999; left.y = 0;
+     cv::Point2d right; right.x = 0; right.y = 0;
+     cv::Point2d top; top.x = 0; top.y = 99999999;
+     cv::Point2d bottom; bottom.x = 0; bottom.y = 0;
+     for (int j = 0; j < redContours[i].size(); j++) {
+     if (redContours[i][j].x < left.x) left = redContours[i][j];
+     if (redContours[i][j].y < top.y) top = redContours[i][j];
+     if (redContours[i][j].x > right.x) right = redContours[i][j];
+     if (redContours[i][j].y > bottom.y) bottom = redContours[i][j];
+     }
+     center.x = (right.x + left.x) / 2;
+     center.y = (top.y + bottom.y) / 2;
+     
+     // go up with the center checking for a yellow contour
+     //vector<cv::Point> yellowContour;
+     int y = center.y;
+     while (y > 0) {
+     Vec3b pixels = colouredYellowContoursImg.at<Vec3b>(center.x, y);
+     //double[] pixelsGBR = colouredYellowContoursImg.at(center.x, y);
+     if (pixels.val[0] > 0) {
+     //yellowContour.reserve(contours[pixels[0]-1].size());
+     //yellowContour.insert(yellowContour.end(), contours[pixels[0]-1].begin(), contours[pixels[0]-1].end());
+     NSLog(@"%d", pixels.val[0]-1);
+     //cv::drawContours(resultImg, contours4, pixels.val[0]-1, cv::Scalar(arc4random()%255,arc4random()%255,arc4random()%255), 2);
+     cv::drawContours(resultImg, redContours, i, cv::Scalar(arc4random()%255,arc4random()%255,arc4random()%255), 2);
+     
+     break;
+     }
+     y--;
+     }
+     
+     }
+     */
+    
+    // FUCK IT SHIP IT
+    //int* response = findBiggestContour(contours, colouredYellowContoursImg);
+    //int maxContour_id = response[0];
+    int maxContour_idYellow = findBiggestContourByPerimeter(contours);
+    int maxContour_idRed = findBiggestContourByPerimeter(redContours);
+    
+    double plasmaPercentage, redBloodPercentage, whiteBloodPercentage;
+    if (maxContour_idYellow != -1 && maxContour_idRed != -1) {
+        
+        cv::Rect rcYellow = cv::boundingRect(contours[maxContour_idYellow]);
+        cv::Rect rcRed = cv::boundingRect(redContours[maxContour_idRed]);
+        
+        cv::Point p1 = cv::Point(rcYellow.x + rcYellow.width/2, rcYellow.y + rcYellow.height);
+        cv::Point p2 = cv::Point(rcYellow.x + rcYellow.width/2, rcYellow.y);
+        
+        //cv::Point q1 = cv::Point(rc.x + rc.width/2, rc.y + rc.height);
+        //cv::Point q2 = cv::Point(rc.x + rc.width/2, 325);
+        cv::Point q1 = cv::Point(rcRed.x + rcRed.width/2, rcRed.y + rcRed.height);
+        cv::Point q2 = cv::Point(rcRed.x + rcRed.width/2, rcRed.y);
+        
+        cv::Point z1 = p1;
+        cv::Point z2 = q2;
+        
+        cv::arrowedLine(resultImg, p1, p2, cvScalar(0, 0, 255), 6);
+        cv::arrowedLine(resultImg, p2, p1, cvScalar(0, 0, 255), 6);
+        
+        cv::arrowedLine(resultImg, q1, q2, cvScalar(100, 100, 0), 6);
+        cv::arrowedLine(resultImg, q2, q1, cvScalar(100, 100, 0), 6);
+        
+        cv::arrowedLine(resultImg, z1, z2, cvScalar(0, 100, 100), 6);
+        cv::arrowedLine(resultImg, z2, z1, cvScalar(0, 100, 100), 6);
+        
+        
+        // Calculate total blood height
+        //int totalHeight = 325 - rc.y;
+        //int totalHeight = rcRed.y + rcYellow.y + (z2.y - z1.y);
+        //std::cout << "totalHeight " << totalHeight << "\n";
+        
+        int plasmaHeight = rcYellow.height;
+        std::cout << "plasmaHeight " << plasmaHeight << "\n";
+        
+        //int redBloodHeight = totalHeight - plasmaHeight;
+        int redBloodHeight = rcRed.height;
+        int whiteBloodHeight = z2.y - z1.y;
+        
+        int totalHeight = plasmaHeight + redBloodHeight + whiteBloodHeight;
+        
+        plasmaPercentage = ((double)plasmaHeight / totalHeight) * 100;
+        redBloodPercentage = ((double)redBloodHeight / totalHeight) * 100;
+        whiteBloodPercentage = (double)whiteBloodHeight / totalHeight * 100;
+        //redBloodPercentage = 100 - plasmaPercentage;
+        
+        std::cout << "plasmaPercentage " << plasmaPercentage << "\n";
+        
+        char buffer1 [10];
+        char buffer2 [20];
+        char buffer3 [20];
+        
+        int n = std::sprintf(buffer1, "%.2f%%", plasmaPercentage);
+        int n1 = std::sprintf(buffer2, "%.2f%%", redBloodPercentage);
+        int n2 = std::sprintf(buffer3, "%.2f%%", whiteBloodPercentage);
+        
+        cv::putText(resultImg, buffer1, cv::Point(rcYellow.x + rcYellow.width / 2 + 15, rcYellow.y + rcYellow.height/2 + 10), cv::FONT_HERSHEY_DUPLEX, 1.0, cvScalar(0, 0, 255));
+        
+        cv::putText(resultImg, buffer2, cv::Point(rcRed.x + rcRed.width / 2 + 15, rcRed.y + rcRed.height/2 + 10), cv::FONT_HERSHEY_DUPLEX, 1.0, cvScalar(100, 100, 0));
+        
+        cv::putText(resultImg, buffer3, cv::Point(rcRed.x + rcRed.width / 2 + 15, rcRed.y + rcRed.height/2 - 70), cv::FONT_HERSHEY_DUPLEX, 1.0, cvScalar(0, 100, 100));
+        
+        //cv::putText(resultImg, buffer2, cv::Point(rc.x + rc.width / 2 + 15, 325 - (redBloodHeight/2) - 10), cv::FONT_HERSHEY_DUPLEX, 1.0, cvScalar(100, 100, 0));
+        
+        
+        //        cv::line(origImg, cv::Point(0, 325), cv::Point(500, 325), cvScalar(10));
+        
+        
+    }
+    
+    /*
+     for (int i = 0; i < contours.size(); i++){ // for each contour
+     cv::drawContours(resultImg , contours, i, cv::Scalar(arc4random()%255,arc4random()%255,arc4random()%255), -1);
+     }
+     for (int i = 0; i < redContours.size(); i++){ // for each contour
+     cv::drawContours(resultImg , redContours, i, cv::Scalar(arc4random()%255,arc4random()%255,arc4random()%255), -1);
+     }
+     /*for (int i = 0; i < contours3.size(); i++){ // for each contour
+     if (contours3[i].size() > 20) {
+     cv::drawContours(resultImg, contours3, i, cv::Scalar(arc4random()%255,arc4random()%255,arc4random()%255), 5);
+     }
+     }*/
+    
+    //UIImage *result = cvMatToUIImage(img);
+    UIImage *result = cvMatToUIImage(resultImg);
+    img.release();
+    resultImg.release();
+    //return result;
+    
+    NSNumber *num1 = [NSNumber numberWithDouble:plasmaPercentage];
+    NSNumber *num2 = [NSNumber numberWithDouble:redBloodPercentage];
+    NSNumber *num3 = [NSNumber numberWithDouble:whiteBloodPercentage];
+    NSArray* arr = @[result, num1, num2, num3, [NSNull null]];
+    return arr;
+    
+}
 @end

@@ -19,6 +19,8 @@ enum Page {
     case OpenCV
     case OpenCV2
     case Haematocrit
+    case HaemaSamples
+    case HaemaCV
     case PatientSearch
 }
 
@@ -40,7 +42,7 @@ class AppController: UINavigationController {
         navigationBar.hidden = true
         self.pushViewController(StartViewController.generate(delegate: self), animated: false)
         //pushViewController(HaematocritViewController.generate(delegate: self), animated: false)
-        self.pushViewController(OpenCVTestViewController.generate(), animated: true)
+//        self.pushViewController(OpenCVTestViewController.generate(), animated: true)
         super.viewDidLoad()
     }
 
@@ -68,20 +70,27 @@ extension AppController: Navigation {
         }
         
         if page == .Ratios {
-            self.setViewControllers([TakePictureViewController.generate(delegate: self, next: .Haematocrit)], animated: false)
+            self.setViewControllers([HemaSamplesViewController.generate(delegate: self)], animated: false)
         }
         
         if page == .LiveCV{
-            self.setViewControllers([TakePictureViewController.generate(delegate: self, next: .OpenCV)], animated: false)
+            self.setViewControllers([TakePictureViewController.generate(delegate: self, next: .Haematocrit)], animated: false)
         }
         
         if page == .Haematocrit {
             self.setViewControllers([HaematocritViewController.generate(delegate: self)], animated: false)
         }
+        if page == .HaemaSamples {
+            self.setViewControllers([HemaSamplesViewController.generate(delegate: self)], animated: false)
+        }
         
         if page == .OpenCV2 {
             self.pushViewController(BloodShapeStartViewController.generate(delegate: self), animated: true)
 //            self.setViewControllers([BloodShapeStartViewController.generate(delegate: self)], animated: false)
+        }
+        
+        if page == .HaemaCV {
+            self.pushViewController(HaemaCVViewController.generate(), animated: true)
         }
         
         if page == .PatientSearch {
