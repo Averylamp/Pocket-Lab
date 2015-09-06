@@ -8,11 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol StopWatchDelegate <NSObject>
+- (void)secondElapsed;
+@end
+
 @interface StopWatch :NSObject
     @property ( nonatomic, strong ) NSTimer * displayTimer ;
     @property ( nonatomic ) CFAbsoluteTime startTime ;
+    @property (nonatomic, weak) id <StopWatchDelegate> delegate;
 
 -(void)startTimer;
--(double)getTimeSinceStart;
+-(double)getTimeandReset;
 
 @end

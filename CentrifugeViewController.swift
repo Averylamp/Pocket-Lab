@@ -9,10 +9,11 @@
 import UIKit
 import CoreMotion
 
-class CentrifugeViewController: UIViewController {
+class CentrifugeViewController: UIViewController, StopWatchDelegate {
     
     var delegate: Navigation?
     
+    @IBOutlet var RPMLabel: UILabel!
     var desiredRPM: Double!
     var rpmCircle: CAShapeLayer!
     let motionManager: CMMotionManager = CMMotionManager()
@@ -25,9 +26,9 @@ class CentrifugeViewController: UIViewController {
     var dirChangeThresh = 0.08 // force in G's needed to indicate the phone has changed direction
     
     var timer = StopWatch()
+    
     @IBOutlet var timeLabel: UILabel!
     var totalElapsedTime = 0.0
-    var elapsedMinutes = 0
     var elapsedSeconds = 0
     var initTime: Double!
     
@@ -53,8 +54,20 @@ class CentrifugeViewController: UIViewController {
         hud.labelText = "Begin Spinning Now";
         hud.detailsLabelText = "Averaging accerometer data"
         
+        self.timer.startTimer()
+        timer.delegate = self
         self.startAccelerometerPollingWithInterval(0.008)
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        let screenSize: CGRect = self.view.bounds
+        var newPoint = CGPoint(x: screenSize.width/2 - 35, y: screenSize.height/2)
+        self.rpmCircle.position = newPoint
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+                    self.timer.startTimer()
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,11 +84,11 @@ class CentrifugeViewController: UIViewController {
     }
     
     @IBAction func backPressed() {
-        
+        delegate?.goToPage(.SelectRPM)
     }
     
     @IBAction func donePressed() {
-        
+        delegate?.goToPage(.Options)
     }
     
     // MARK: - Accelerometer Shenanigans
@@ -123,28 +136,33 @@ class CentrifugeViewController: UIViewController {
     
     func directionChanged() {
         // update the elapsed time
-        var cycleTime = self.timer.getTimeSinceStart()
+        var cycleTime = self.timer.getTimeandReset()
         totalElapsedTime = (CFAbsoluteTimeGetCurrent() - initTime)
         
         if avgRPM == 0.0 {
             avgRPM = 1 / (cycleTime * 2)
-            self.timer.startTimer()
         } else {
             avgRPM = 1 / ((self.EMA_Alpha * cycleTime * 2) + (1.0 - EMA_Alpha) * (1 / (avgRPM/60))) // exponential moving average
-            self.timer.startTimer()
         }
         
         avgRPM = 60 * avgRPM // convert cyc/sec -> RPM
 
+        if avgRPM <= 10 {
+            avgRPM = 10
+        } else if avgRPM >= 2 * (desiredRPM - 100) {
+            avgRPM = 2 * (desiredRPM - 100)
+        }
+        
         // Scale from (desired RPM +/- 300) -> +/- (screen height / 2) :
         // OldRange = (OldMax - OldMin)
         // NewRange = (NewMax - NewMin)
         // NewValue = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin
         
         let screenSize: CGRect = self.view.bounds
-        var screenRange = Double(screenSize.height) - 35
+        var screenRange = Double(screenSize.height)
         var rpmRange = desiredRPM * 2
-        var rpmBallPosition = (((self.avgRPM) * screenRange) / rpmRange)
+        var rpmBallPosition = (((self.avgRPM) * screenRange) / rpmRange) - 25
+        
         var newframe = CGFloat(rpmBallPosition)
         
         if(avgRPM > 80 ) { // Move the ball
@@ -155,13 +173,13 @@ class CentrifugeViewController: UIViewController {
                 }
             })
             
-            if newframe > screenSize.height {
-                newframe = screenSize.height - 35
-            } else if newframe < 0 {
-                newframe = 35
+            if newframe > screenSize.height - 50 {
+                newframe = screenSize.height - 50
+            } else if newframe < 25 {
+                newframe = 25
             } else {
                 CATransaction.begin()
-                CATransaction.setAnimationDuration(0.7)
+                CATransaction.setAnimationDuration(0.65)
                 var newPoint = CGPoint(x: screenSize.width/2 - 35, y: newframe )
                 
                 rpmCircle.position = newPoint
@@ -180,5 +198,24 @@ class CentrifugeViewController: UIViewController {
         println("\(totalElapsedTime), \(avgRPM), \(direction), \(newframe)") // print data in csv format
         
     }
+    
+    // MARK: StopWatchDelegate Methods
+    func secondElapsed() {
+        elapsedSeconds++
+        var preMinutes = (elapsedSeconds / 60) / 10 > 0 ? "" : "0"
+        var preSeconds = (elapsedSeconds % 60) / 10 > 0 ? "" : "0"
+        self.timeLabel.text = preMinutes + "\( elapsedSeconds / 60 ):" + preSeconds + "\( elapsedSeconds % 60 )"
+        
+        var printRPM = avgRPM - 100
+        
+        if printRPM <= 10 {
+            printRPM = 10
+        } else if printRPM >= 2 * (desiredRPM - 100) {
+            printRPM = 2 * (desiredRPM - 100)
+        }
+        
+        self.RPMLabel.text = "\(Int(printRPM)) RPM"
+    }
+    
 
 }

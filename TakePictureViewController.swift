@@ -73,7 +73,6 @@ class TakePictureViewController: UIViewController {
     }
     
     func captureNow () {
-        println("dsfdsf")
         var videoConnection: AVCaptureConnection? = nil
         for connection in stillImageOutput!.connections {
             for port in connection.inputPorts! {
@@ -103,6 +102,12 @@ class TakePictureViewController: UIViewController {
         
         if next == .Haematocrit {
             view.addSubview(placeAboveView!)
+        }
+        
+        if next == .OpenCV {
+            preview.doCropping = true
+        } else {
+            preview.doCropping = false
         }
         
         super.viewDidAppear(animated)

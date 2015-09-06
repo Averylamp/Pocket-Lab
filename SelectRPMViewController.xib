@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dI2-7X-4lQ">
-                    <rect key="frame" x="-10" y="52" width="340" height="464"/>
+                    <rect key="frame" x="-10" y="60" width="340" height="464"/>
                     <subviews>
                         <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="bAZ-v8-wqJ">
                             <rect key="frame" x="108" y="92" width="214" height="31"/>
@@ -187,15 +187,47 @@
                         <constraint firstItem="SgT-26-kwu" firstAttribute="leading" secondItem="dI2-7X-4lQ" secondAttribute="leading" constant="20" id="qHJ-wC-2yO"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pOI-9D-HpL">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1f-j6-8o5">
+                            <rect key="frame" x="8" y="30" width="13" height="22"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" image="backButtonArrow.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pocket Centrifuge" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8U-4r-hF4">
+                            <rect key="frame" x="84" y="30" width="153" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.12941176469999999" green="0.18823529410000001" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="h1f-j6-8o5" firstAttribute="leading" secondItem="pOI-9D-HpL" secondAttribute="leading" constant="8" id="3TX-LW-oXC"/>
+                        <constraint firstAttribute="height" constant="60" id="EJV-lv-Icq"/>
+                        <constraint firstItem="o8U-4r-hF4" firstAttribute="top" secondItem="pOI-9D-HpL" secondAttribute="top" constant="30" id="lQo-ig-5FC"/>
+                        <constraint firstAttribute="centerX" secondItem="o8U-4r-hF4" secondAttribute="centerX" constant="-0.5" id="nOC-FR-a7t"/>
+                        <constraint firstItem="h1f-j6-8o5" firstAttribute="top" secondItem="pOI-9D-HpL" secondAttribute="top" constant="30" id="qTO-4C-04z"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.12941176469999999" green="0.18823529410000001" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="pOI-9D-HpL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3Nc-y8-mk1"/>
+                <constraint firstItem="pOI-9D-HpL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6kg-fc-aSQ"/>
+                <constraint firstAttribute="trailing" secondItem="pOI-9D-HpL" secondAttribute="trailing" id="Adw-O9-17p"/>
                 <constraint firstAttribute="centerX" secondItem="dI2-7X-4lQ" secondAttribute="centerX" id="WeU-Ec-8DH"/>
-                <constraint firstAttribute="centerY" secondItem="dI2-7X-4lQ" secondAttribute="centerY" id="rZB-6E-zzz"/>
+                <constraint firstItem="dI2-7X-4lQ" firstAttribute="top" secondItem="pOI-9D-HpL" secondAttribute="bottom" id="cqO-qT-a4F"/>
             </constraints>
-            <point key="canvasLocation" x="325" y="406"/>
+            <point key="canvasLocation" x="209" y="415"/>
         </view>
     </objects>
+    <resources>
+        <image name="backButtonArrow.png" width="13" height="22"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
