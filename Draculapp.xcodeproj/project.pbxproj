@@ -32,6 +32,7 @@
 		4D1D439C1B9BD8D30092D2D5 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1D439B1B9BD8D30092D2D5 /* Patient.swift */; };
 		4D1D439E1B9BDA6B0092D2D5 /* Epic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1D439D1B9BDA6B0092D2D5 /* Epic.swift */; };
 		4D1F1F851B9C465900CB33BB /* Ratios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F1F841B9C465900CB33BB /* Ratios.swift */; };
+		4D1F1F871B9C49C400CB33BB /* MoreEXt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F1F861B9C49C400CB33BB /* MoreEXt.swift */; };
 		4D29985F1B9AFB7600AE37FF /* BloodShapeStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D29985E1B9AFB7600AE37FF /* BloodShapeStartViewController.xib */; };
 		4D475E801B9A72420021B51B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D475E7F1B9A72420021B51B /* AppDelegate.swift */; };
 		4D475E831B9A72420021B51B /* Draculapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D475E811B9A72420021B51B /* Draculapp.xcdatamodeld */; };
@@ -125,6 +126,7 @@
 		4D1D439B1B9BD8D30092D2D5 /* Patient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		4D1D439D1B9BDA6B0092D2D5 /* Epic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Epic.swift; path = Draculapp/Epic.swift; sourceTree = "<group>"; };
 		4D1F1F841B9C465900CB33BB /* Ratios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ratios.swift; sourceTree = "<group>"; };
+		4D1F1F861B9C49C400CB33BB /* MoreEXt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreEXt.swift; sourceTree = "<group>"; };
 		4D29985E1B9AFB7600AE37FF /* BloodShapeStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BloodShapeStartViewController.xib; sourceTree = "<group>"; };
 		4D475E7A1B9A72420021B51B /* Draculapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Draculapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D475E7E1B9A72420021B51B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				BBAD60551B9AA80B00662186 /* CoreVideo.framework */,
 				4D475EA41B9A74410021B51B /* AppController.swift */,
 				4D475EAC1B9A7C560021B51B /* Extensions.swift */,
+				4D1F1F861B9C49C400CB33BB /* MoreEXt.swift */,
 				4D475EAF1B9A7FF50021B51B /* Color.swift */,
 				22F5594D1B9AFE78008F961C /* StopWatch.h */,
 				22F5594E1B9AFE78008F961C /* StopWatch.m */,
@@ -628,6 +631,7 @@
 				4D475EB01B9A7FF50021B51B /* Color.swift in Sources */,
 				22F559551B9B3626008F961C /* SampleDataModel.swift in Sources */,
 				4D1D439C1B9BD8D30092D2D5 /* Patient.swift in Sources */,
+				4D1F1F871B9C49C400CB33BB /* MoreEXt.swift in Sources */,
 				4D1D439E1B9BDA6B0092D2D5 /* Epic.swift in Sources */,
 				22F559511B9AFE8B008F961C /* SelectRPMViewController.swift in Sources */,
 				4D1D43991B9BD39A0092D2D5 /* PatientDataViewController.swift in Sources */,

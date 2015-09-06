@@ -14,13 +14,13 @@ protocol ImageConfirm {
 }
 
 class ConfirmImageViewController: UIViewController {
-
+    
     var delegate: ImageConfirm?
     var doCropping = false
     var cropRect: CGRect?
     
     var croppedImage: UIImage?
-
+    
     //Dragging
     var dragging = false
     var start: CGPoint? = nil;
@@ -35,7 +35,7 @@ class ConfirmImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         retake.layer.cornerRadius = 6
         retake.layer.borderWidth = 2
         retake.layer.borderColor = "#28FDFF".CGColor
@@ -44,12 +44,12 @@ class ConfirmImageViewController: UIViewController {
         ok.layer.borderColor = "#28FDFF".CGColor
         
         image.contentMode = UIViewContentMode.ScaleAspectFit
-
         
-
+        
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         croppedImage = nil;
@@ -60,13 +60,13 @@ class ConfirmImageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-//    
-//    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-////        dragging = true;
-////        let touch: AnyObject? = touches.anyObject();
-////        start = touch!.locationInView(self.view)
-//    }
-
+    //
+    //    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    ////        dragging = true;
+    ////        let touch: AnyObject? = touches.anyObject();
+    ////        start = touch!.locationInView(self.view)
+    //    }
+    
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         println("TOUCHES BEGAN")
         if !doCropping || touches.count != 1 {
@@ -87,7 +87,7 @@ class ConfirmImageViewController: UIViewController {
         let touch = touches.first as? UITouch
         let end = touch!.locationInView(image)
         path.removeAllPoints()
-
+        
         println("moving")
         shape.opacity = 0.5
         shape.lineWidth = 2
@@ -106,56 +106,58 @@ class ConfirmImageViewController: UIViewController {
         shape.path = path.CGPath
         image.layer.addSublayer(shape)
         
-      
+        
         
         dragging = false
         
         let startX = min(end.x, start!.x)
         let startY = min(end.y, start!.y)
         
-        cropRect = CGRect(origin: CGPoint(x: startX, y: startY), size: CGSize(width: abs(dx)*2, height: abs(dy)*2))
-   
+        cropRect = CGRect(x: startX * 2, y: startY * 2, width: abs(dx) * 2, height: abs(dy) * 2)
     }
     
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
-
         
-       // start = nil
+        
+        // start = nil
         //shape.path = nil;
         //image.layer.addSublayer(shape)
     }
-
     
-//    func croppingimage(imageToCrop:UIImage, toRect rect:CGRect) -> UIImage {
-//
-//        //        let randomImg = UIImage(named: "pl")
-////
-////        let ciimg = CIImage(image: self.image.image)
-////        let ciimg = CIImage(image: randomImg)
-////        
-////        let context = CIContext(options: nil)
-////
-////        let cgimg: CGImageRef = context.createCGImage(ciimg, fromRect: ciimg.extent())
-////        
-////        var imageRef:CGImageRef = CGImageCreateWithImageInRect(cgimg, rect)
-////        var cropped:UIImage = UIImage(CGImage:imageRef)!
-////        return cropped
-//    }
+    
+    func crop (bigimage: UIImage, withRect rect: CGRect) -> UIImage {
+        let bigImageSnap = image.pb_takeSnapshot()
+        
+        let imageRef = CGImageCreateWithImageInRect(bigImageSnap.CGImage, rect);
+        
+        // or use the UIImage wherever you like
+        let myImg = UIImage(CGImage: imageRef)
+        
+        return myImg!
+        
+        //image.image = bigImageSnap
+        //return Wrapper.cropImage(bigImageSnap, byRect: rect)
+    }
     
     @IBAction func okay(sender: AnyObject) {
-
+        
         if !doCropping {
-            delegate?.imageOk(image.image!)
+            let bigImageSnap = image.pb_takeSnapshot()
+            delegate?.imageOk(bigImageSnap)
             return;
         }
         
         if cropRect == nil {
             ok.setTitle("Crop!!", forState: .Normal)
         } else {
-            let cropping = CGImageCreateWithImageInRect(image.image?.CGImage, cropRect!)
-            image.image = UIImage(CGImage: cropping)
-            // set image somewhere
-//            delegate?.imageOk(image.image!)
+            
+            image.image = crop(image.image!, withRect: cropRect!)
+            start = nil
+            shape.path = nil;
+            //image.layer.addSublayer(shape)
+            //            delegate?.imageOk(image.image!)
+            
+            
         }
         
     }
@@ -165,12 +167,12 @@ class ConfirmImageViewController: UIViewController {
     }
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

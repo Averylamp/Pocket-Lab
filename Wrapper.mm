@@ -386,6 +386,7 @@ void drawBox(cv::Mat img, cv::Rect roi){
 }
 
 
+
 int findBiggestContourByPerimeter(vector<vector<cv::Point>> contours) {
     unsigned long maxXs = 0;
     int maxIndex = -1;
@@ -619,15 +620,23 @@ static void morphOps(cv::Mat img) {
     NSNumber *num3 = [NSNumber numberWithDouble:whiteBloodPercentage];
     NSArray* arr = @[result, num1, num2, num3, [NSNull null]];
     return arr;
+}
++(UIImage *)cropImage:(UIImage *)image byRect:(CGRect)rect {
+    
+    cv::Mat img;
+    cvUIImageToMat(image, img);
+    
+    std::cout << rect.origin.x << "x\n";
+    std::cout << rect.origin.y << "y\n";
+    std::cout << rect.size.width << "width\n";
+    std::cout << rect.size.height << "height\n";
+    cv::Rect roi = cv::Rect( (int)rect.origin.x, (int)rect.origin.y, (int)rect.size.width, (int)rect.size.height);
+    // Top Left Corner is X,Y
+    cv::Mat cropImg = cv::Mat(img, roi);
+    UIImage *result = cvMatToUIImage(cropImg);
+    cropImg.release();
+    img.release();
+    return result;
     
 }
-
-//+(UIImage *)cropImage:(UIImage *)image byRect:(CGRect)rect {
-//
-//    cv::Rect roi = cv::Rect( (int) rect.origin.x, (int) rect.origin.y, 150,150);
-//    // Top Left Corner is X,Y
-//    cv::Mat cropImg = cv::Mat(img_scene, roi);
-//}
-
-
 @end

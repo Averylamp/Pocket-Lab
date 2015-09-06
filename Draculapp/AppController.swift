@@ -44,6 +44,7 @@ class AppController: UINavigationController {
         self.pushViewController(StartViewController.generate(delegate: self), animated: false)
         //pushViewController(HaematocritViewController.generate(delegate: self), animated: false)
 //        self.pushViewController(OpenCVTestViewController.generate(), animated: true)
+        //self.pushViewController(OpenCVTestViewController.generate(), animated: true)
         super.viewDidLoad()
     }
 
