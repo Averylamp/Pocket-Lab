@@ -20,5 +20,3 @@ class Sample: NSObject {
     }
     
 }
-
-class 

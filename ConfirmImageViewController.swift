@@ -113,8 +113,7 @@ class ConfirmImageViewController: UIViewController {
         let startX = min(end.x, start!.x)
         let startY = min(end.y, start!.y)
         
-        cropRect = CGRect(origin: CGPoint(x: startX, y: startY), size: CGSize(width: abs(dx)*2, height: abs(dy)*2))
-   
+        cropRect = CGRect(x: startX * 2, y: startY * 2, width: abs(dx) * 2, height: abs(dy) * 2)
     }
     
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
@@ -126,36 +125,38 @@ class ConfirmImageViewController: UIViewController {
     }
 
     
-    func croppingimage(imageToCrop:UIImage, toRect rect:CGRect) -> UIImage {
-
-        //        let randomImg = UIImage(named: "pl")
-//
-//        let ciimg = CIImage(image: self.image.image)
-//        let ciimg = CIImage(image: randomImg)
-//        
-//        let context = CIContext(options: nil)
-//
-//        let cgimg: CGImageRef = context.createCGImage(ciimg, fromRect: ciimg.extent())
-//        
-//        var imageRef:CGImageRef = CGImageCreateWithImageInRect(cgimg, rect)
-//        var cropped:UIImage = UIImage(CGImage:imageRef)!
-//        return cropped
+    func crop (bigimage: UIImage, withRect rect: CGRect) -> UIImage {
+        let bigImageSnap = image.pb_takeSnapshot()
+        
+        let imageRef = CGImageCreateWithImageInRect(bigImageSnap.CGImage, rect);
+        // or use the UIImage wherever you like
+        let myImg = UIImage(CGImage: imageRef)
+      
+        return myImg!
+        
+        //image.image = bigImageSnap
+        //return Wrapper.cropImage(bigImageSnap, byRect: rect)
     }
     
     @IBAction func okay(sender: AnyObject) {
 
         if !doCropping {
-            delegate?.imageOk(image.image!)
+            let bigImageSnap = image.pb_takeSnapshot()
+            delegate?.imageOk(bigImageSnap)
             return;
         }
         
         if cropRect == nil {
             ok.setTitle("Crop!!", forState: .Normal)
         } else {
-            let cropping = CGImageCreateWithImageInRect(image.image?.CGImage, cropRect!)
-            image.image = UIImage(CGImage: cropping)
-            // set image somewhere
-//            delegate?.imageOk(image.image!)
+            
+            image.image = crop(image.image!, withRect: cropRect!)
+            start = nil
+            shape.path = nil;
+            //image.layer.addSublayer(shape)
+            //            delegate?.imageOk(image.image!)
+
+            
         }
         
     }
