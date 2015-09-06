@@ -11,8 +11,8 @@ import Foundation
 class Ratios {
     
     
-    var plasmaCount: Int?
-    var redBloodCellCount: Int?
+    var plasmaCount: Double = 45.67
+    var redBloodCellCount: Double = 54.33
     
 }
 
