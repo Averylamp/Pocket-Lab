@@ -10,8 +10,10 @@ import UIKit
 
 class SampleDataModel: NSObject {
     private var samples = [Sample]()
+    
     private var patients = [Patient]()
 
+    
     var lastMicroscopyImage:UIImage?
 
     var ratiosImage: UIImage?

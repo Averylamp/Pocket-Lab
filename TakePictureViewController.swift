@@ -34,12 +34,12 @@ class TakePictureViewController: UIViewController {
         
         callbackQueue = dispatch_queue_create("draculapp", nil)
         captureSession = AVCaptureSession()
-        captureSession?.sessionPreset = AVCaptureSessionPresetMedium
+      
         device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         input = AVCaptureDeviceInput(device: device!, error: nil)
         captureSession!.addInput(input!)
-      //  output = AVCaptureMetadataOutput()
-       // captureSession?.addOutput(output!)
+      
+      
         
         stillImageOutput = AVCaptureStillImageOutput()
         stillImageOutput?.outputSettings = NSDictionary(objectsAndKeys: AVVideoCodecJPEG, AVVideoCodecKey) as [NSObject : AnyObject]
@@ -49,6 +49,8 @@ class TakePictureViewController: UIViewController {
         //output!.metadataObjectTypes = [AVMetadataObjectTypeQRCode] as [AnyObject]!
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
         previewLayer!.videoGravity = AVLayerVideoGravityResizeAspectFill
+        previewLayer!.bounds = UIScreen.mainScreen().bounds
+        captureSession?.sessionPreset = AVCaptureSessionPresetHigh
     }
     
     override func viewDidLoad() {
@@ -88,7 +90,12 @@ class TakePictureViewController: UIViewController {
         println("getting image")
         stillImageOutput?.captureStillImageAsynchronouslyFromConnection(videoConnection) { sampleBuffer, error in
             let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
-            self.preview.image.image = UIImage(data: imageData)
+         //   let tempImage = UIImage(data: imageData)!
+           // println(tempImage.CIImage)
+            //let ciimg = tempImage.CIImage
+            let newCIImg = CIImage(data: imageData)
+            self.preview.image.image = UIImage(CIImage: newCIImg!, scale: 1.0, orientation: .Right)
+
             self.presentViewController(self.preview, animated: true, completion: nil)
             //self.presentViewController(image, animated: true, completion: nil)
         }

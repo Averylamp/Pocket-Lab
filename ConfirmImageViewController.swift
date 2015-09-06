@@ -30,7 +30,9 @@ class ConfirmImageViewController: UIViewController {
     @IBOutlet weak var retake: UIButton!
     
     @IBOutlet weak var ok: UIButton!
+    
     @IBOutlet weak var image: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,7 +43,8 @@ class ConfirmImageViewController: UIViewController {
         ok.layer.borderWidth = 2
         ok.layer.borderColor = "#28FDFF".CGColor
         
-        
+        image.contentMode = UIViewContentMode.ScaleAspectFit
+
         
 
         // Do any additional setup after loading the view.
@@ -71,18 +74,18 @@ class ConfirmImageViewController: UIViewController {
         }
         println("continuing")
         let touch: AnyObject? = touches.first as? UITouch
-        start = touch!.locationInView(self.view)
+        start = touch!.locationInView(image)
         shape.path = nil;
         image.layer.addSublayer(shape)
     }
     
     override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
-        if touches.count != 1 {
+        if !doCropping || touches.count != 1 {
             return ;
         }
         
         let touch = touches.first as? UITouch
-        let end = touch!.locationInView(view)
+        let end = touch!.locationInView(image)
         path.removeAllPoints()
 
         println("moving")
@@ -110,7 +113,7 @@ class ConfirmImageViewController: UIViewController {
         let startX = min(end.x, start!.x)
         let startY = min(end.y, start!.y)
         
-        cropRect = CGRect(origin: CGPoint(x: startX, y: startY), size: CGSize(width: abs(dx), height: abs(dy)))
+        cropRect = CGRect(origin: CGPoint(x: startX, y: startY), size: CGSize(width: abs(dx)*2, height: abs(dy)*2))
    
     }
     
@@ -122,6 +125,23 @@ class ConfirmImageViewController: UIViewController {
         //image.layer.addSublayer(shape)
     }
 
+    
+    func croppingimage(imageToCrop:UIImage, toRect rect:CGRect) -> UIImage {
+
+        //        let randomImg = UIImage(named: "pl")
+//
+//        let ciimg = CIImage(image: self.image.image)
+//        let ciimg = CIImage(image: randomImg)
+//        
+//        let context = CIContext(options: nil)
+//
+//        let cgimg: CGImageRef = context.createCGImage(ciimg, fromRect: ciimg.extent())
+//        
+//        var imageRef:CGImageRef = CGImageCreateWithImageInRect(cgimg, rect)
+//        var cropped:UIImage = UIImage(CGImage:imageRef)!
+//        return cropped
+    }
+    
     @IBAction func okay(sender: AnyObject) {
 
         if !doCropping {

@@ -31,6 +31,7 @@
 		4D1D439A1B9BD39A0092D2D5 /* PatientDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1D43981B9BD39A0092D2D5 /* PatientDataViewController.xib */; };
 		4D1D439C1B9BD8D30092D2D5 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1D439B1B9BD8D30092D2D5 /* Patient.swift */; };
 		4D1D439E1B9BDA6B0092D2D5 /* Epic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1D439D1B9BDA6B0092D2D5 /* Epic.swift */; };
+		4D1F1F851B9C465900CB33BB /* Ratios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F1F841B9C465900CB33BB /* Ratios.swift */; };
 		4D29985F1B9AFB7600AE37FF /* BloodShapeStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D29985E1B9AFB7600AE37FF /* BloodShapeStartViewController.xib */; };
 		4D475E801B9A72420021B51B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D475E7F1B9A72420021B51B /* AppDelegate.swift */; };
 		4D475E831B9A72420021B51B /* Draculapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D475E811B9A72420021B51B /* Draculapp.xcdatamodeld */; };
@@ -119,6 +120,7 @@
 		4D1D43981B9BD39A0092D2D5 /* PatientDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PatientDataViewController.xib; sourceTree = "<group>"; };
 		4D1D439B1B9BD8D30092D2D5 /* Patient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		4D1D439D1B9BDA6B0092D2D5 /* Epic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Epic.swift; path = Draculapp/Epic.swift; sourceTree = "<group>"; };
+		4D1F1F841B9C465900CB33BB /* Ratios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ratios.swift; sourceTree = "<group>"; };
 		4D29985E1B9AFB7600AE37FF /* BloodShapeStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BloodShapeStartViewController.xib; sourceTree = "<group>"; };
 		4D475E7A1B9A72420021B51B /* Draculapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Draculapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D475E7E1B9A72420021B51B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				4D1D439D1B9BDA6B0092D2D5 /* Epic.swift */,
 				22F559541B9B3626008F961C /* SampleDataModel.swift */,
 				22F559561B9B3638008F961C /* Sample.swift */,
+				4D1F1F841B9C465900CB33BB /* Ratios.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				22F559511B9AFE8B008F961C /* SelectRPMViewController.swift in Sources */,
 				4D1D43991B9BD39A0092D2D5 /* PatientDataViewController.swift in Sources */,
 				4DCD6AF31B9B361A00D3F287 /* TakePictureViewController.swift in Sources */,
+				4D1F1F851B9C465900CB33BB /* Ratios.swift in Sources */,
 				22F5594F1B9AFE78008F961C /* StopWatch.m in Sources */,
 				22F559531B9AFE97008F961C /* CentrifugeViewController.swift in Sources */,
 			);
