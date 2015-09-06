@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="backButton" destination="Gt4-5p-bQL" id="bOx-1k-sBH"/>
                 <outlet property="pic2" destination="CJk-ZD-GE8" id="ro6-If-o5o"/>
+                <outlet property="statusLabel" destination="xzP-5f-pBE" id="qDp-KM-bPe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -52,6 +53,27 @@
                         <action selector="backTapped:" destination="-1" eventType="touchUpInside" id="X9a-YJ-vvE"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LEU-yi-jte">
+                    <rect key="frame" x="0.0" y="624" width="375" height="43"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzP-5f-pBE">
+                            <rect key="frame" x="8" y="0.0" width="359" height="43"/>
+                            <string key="text">Your blood levels are within normal ranges.
+You appear to have a negative haematocrit.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="43" id="6gm-ZT-Rkg"/>
+                        <constraint firstItem="xzP-5f-pBE" firstAttribute="top" secondItem="LEU-yi-jte" secondAttribute="top" id="Shu-J9-HJi"/>
+                        <constraint firstItem="xzP-5f-pBE" firstAttribute="leading" secondItem="LEU-yi-jte" secondAttribute="leading" constant="8" id="e1W-rW-Di9"/>
+                        <constraint firstAttribute="bottom" secondItem="xzP-5f-pBE" secondAttribute="bottom" id="gda-Hn-m1w"/>
+                        <constraint firstAttribute="trailing" secondItem="xzP-5f-pBE" secondAttribute="trailing" constant="8" id="qaD-gp-uEc"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -61,11 +83,14 @@
                 <constraint firstAttribute="trailing" secondItem="CJk-ZD-GE8" secondAttribute="trailing" id="DYD-Et-uUQ"/>
                 <constraint firstItem="CJk-ZD-GE8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DdV-Ve-a1U"/>
                 <constraint firstAttribute="trailing" secondItem="CJk-ZD-GE8" secondAttribute="trailing" id="FBD-1k-jUQ"/>
+                <constraint firstAttribute="trailing" secondItem="LEU-yi-jte" secondAttribute="trailing" id="J5d-SQ-iQH"/>
+                <constraint firstAttribute="bottom" secondItem="LEU-yi-jte" secondAttribute="bottom" id="N3y-EV-l8v"/>
                 <constraint firstAttribute="bottom" secondItem="CJk-ZD-GE8" secondAttribute="bottom" id="UGT-gr-aFy"/>
                 <constraint firstItem="Gt4-5p-bQL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="XHu-M2-7AV"/>
                 <constraint firstAttribute="centerX" secondItem="CJk-ZD-GE8" secondAttribute="centerX" id="h7y-Ik-8IV"/>
                 <constraint firstItem="CJk-ZD-GE8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ktH-Y7-2Ug"/>
                 <constraint firstItem="CJk-ZD-GE8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ugb-d3-CYc"/>
+                <constraint firstItem="LEU-yi-jte" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vGy-ha-viO"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <variation key="default">

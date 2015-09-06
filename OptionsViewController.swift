@@ -21,6 +21,11 @@ class OptionsViewController: UIViewController {
     @IBOutlet weak var spinButton: UIView!
     @IBOutlet weak var microscopy: UIView!
     @IBOutlet weak var ratios: UIView!
+    @IBOutlet weak var allResults: UIView!
+    @IBOutlet weak var cloudSync: UIView!
+    @IBOutlet weak var newPatient: UIView!
+    
+    
     var delegate: Navigation?
 
     
@@ -33,12 +38,16 @@ class OptionsViewController: UIViewController {
         setButtonStyle(spinButton)
         setButtonStyle(microscopy)
         setButtonStyle(ratios)
+        setButtonStyle(allResults)
+        setButtonStyle(cloudSync)
+        setButtonStyle(newPatient)
         
         self.bgScroll.frame.origin.y = -self.bgScroll.image!.size.height + UIScreen.mainScreen().bounds.height
         startAnimation()
         
         spinButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "spinTapped:"))
         ratios.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "ratiosTapped:"))
+        microscopy.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "microscopyTapped:"))
         
         super.viewDidLoad()
 
@@ -51,6 +60,10 @@ class OptionsViewController: UIViewController {
 
     func ratiosTapped(recognizer: UITapGestureRecognizer) {
         delegate?.goToPage(.Ratios)
+    }
+    
+    func microscopyTapped(recognizer: UITapGestureRecognizer) {
+        delegate?.goToPage(.OpenCV2)
     }
     
     func setButtonStyle(button: UIView) {
@@ -94,12 +107,7 @@ class OptionsViewController: UIViewController {
     }
     
 
-    
-    @IBAction func opencvpush(sender: AnyObject) {
-        delegate?.goToPage(.OpenCV2)
-        
-    }
-    
+
     override func viewWillDisappear(animated: Bool) {
         self.animationFlag = .Stop
         super.viewWillDisappear(animated)

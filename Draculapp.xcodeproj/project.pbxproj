@@ -18,6 +18,8 @@
 		22F559551B9B3626008F961C /* SampleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F559541B9B3626008F961C /* SampleDataModel.swift */; };
 		22F559571B9B3638008F961C /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F559561B9B3638008F961C /* Sample.swift */; };
 		22F5595B1B9B3EC2008F961C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F5595A1B9B3EC2008F961C /* MBProgressHUD.m */; };
+		4D1D43991B9BD39A0092D2D5 /* PatientDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1D43971B9BD39A0092D2D5 /* PatientDataViewController.swift */; };
+		4D1D439A1B9BD39A0092D2D5 /* PatientDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1D43981B9BD39A0092D2D5 /* PatientDataViewController.xib */; };
 		4D29985F1B9AFB7600AE37FF /* BloodShapeStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D29985E1B9AFB7600AE37FF /* BloodShapeStartViewController.xib */; };
 		4D475E801B9A72420021B51B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D475E7F1B9A72420021B51B /* AppDelegate.swift */; };
 		4D475E831B9A72420021B51B /* Draculapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D475E811B9A72420021B51B /* Draculapp.xcdatamodeld */; };
@@ -38,6 +40,15 @@
 		4DCD6AF41B9B361A00D3F287 /* TakePictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCD6AF21B9B361A00D3F287 /* TakePictureViewController.xib */; };
 		4DCD6AF71B9B467100D3F287 /* ConfirmImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD6AF51B9B467100D3F287 /* ConfirmImageViewController.swift */; };
 		4DCD6AF81B9B467100D3F287 /* ConfirmImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCD6AF61B9B467100D3F287 /* ConfirmImageViewController.xib */; };
+		BB2C5E531B9BAAB500EC60D4 /* Panton-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E4A1B9BAAB500EC60D4 /* Panton-Black.otf */; };
+		BB2C5E541B9BAAB500EC60D4 /* Panton-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E4B1B9BAAB500EC60D4 /* Panton-Bold.otf */; };
+		BB2C5E551B9BAAB500EC60D4 /* Panton-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E4C1B9BAAB500EC60D4 /* Panton-ExtraBold.otf */; };
+		BB2C5E561B9BAAB500EC60D4 /* Panton-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E4D1B9BAAB500EC60D4 /* Panton-ExtraLight.otf */; };
+		BB2C5E571B9BAAB500EC60D4 /* Panton-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E4E1B9BAAB500EC60D4 /* Panton-Heavy.otf */; };
+		BB2C5E581B9BAAB500EC60D4 /* Panton-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E4F1B9BAAB500EC60D4 /* Panton-Light.otf */; };
+		BB2C5E591B9BAAB500EC60D4 /* Panton-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E501B9BAAB500EC60D4 /* Panton-Regular.otf */; };
+		BB2C5E5A1B9BAAB500EC60D4 /* Panton-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E511B9BAAB500EC60D4 /* Panton-SemiBold.otf */; };
+		BB2C5E5B1B9BAAB500EC60D4 /* Panton-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E521B9BAAB500EC60D4 /* Panton-Thin.otf */; };
 		BB46AA431B9AF63400AC765B /* BloodShapeStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB46AA421B9AF63400AC765B /* BloodShapeStartViewController.swift */; };
 		BBAD60561B9AA80B00662186 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD60551B9AA80B00662186 /* CoreVideo.framework */; };
 		BBAD60581B9AA81000662186 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAD60571B9AA81000662186 /* CoreAudio.framework */; };
@@ -79,6 +90,8 @@
 		22F559561B9B3638008F961C /* Sample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 		22F559591B9B3EC2008F961C /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		22F5595A1B9B3EC2008F961C /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		4D1D43971B9BD39A0092D2D5 /* PatientDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientDataViewController.swift; sourceTree = "<group>"; };
+		4D1D43981B9BD39A0092D2D5 /* PatientDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PatientDataViewController.xib; sourceTree = "<group>"; };
 		4D29985E1B9AFB7600AE37FF /* BloodShapeStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BloodShapeStartViewController.xib; sourceTree = "<group>"; };
 		4D475E7A1B9A72420021B51B /* Draculapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Draculapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D475E7E1B9A72420021B51B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,6 +119,15 @@
 		5AE47FDC5CC6C986C2717B28 /* libPods-Draculapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Draculapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BAFA310A2E08408905D284 /* Pods-Draculapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Draculapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Draculapp/Pods-Draculapp.release.xcconfig"; sourceTree = "<group>"; };
 		B3E7E991688E3B298324075B /* Pods-Draculapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Draculapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Draculapp/Pods-Draculapp.debug.xcconfig"; sourceTree = "<group>"; };
+		BB2C5E4A1B9BAAB500EC60D4 /* Panton-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-Black.otf"; sourceTree = "<group>"; };
+		BB2C5E4B1B9BAAB500EC60D4 /* Panton-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-Bold.otf"; sourceTree = "<group>"; };
+		BB2C5E4C1B9BAAB500EC60D4 /* Panton-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-ExtraBold.otf"; sourceTree = "<group>"; };
+		BB2C5E4D1B9BAAB500EC60D4 /* Panton-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-ExtraLight.otf"; sourceTree = "<group>"; };
+		BB2C5E4E1B9BAAB500EC60D4 /* Panton-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-Heavy.otf"; sourceTree = "<group>"; };
+		BB2C5E4F1B9BAAB500EC60D4 /* Panton-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-Light.otf"; sourceTree = "<group>"; };
+		BB2C5E501B9BAAB500EC60D4 /* Panton-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-Regular.otf"; sourceTree = "<group>"; };
+		BB2C5E511B9BAAB500EC60D4 /* Panton-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-SemiBold.otf"; sourceTree = "<group>"; };
+		BB2C5E521B9BAAB500EC60D4 /* Panton-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-Thin.otf"; sourceTree = "<group>"; };
 		BB46AA421B9AF63400AC765B /* BloodShapeStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodShapeStartViewController.swift; sourceTree = "<group>"; };
 		BBAD60551B9AA80B00662186 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		BBAD60571B9AA81000662186 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
@@ -216,6 +238,7 @@
 				4D475E7C1B9A72420021B51B /* Draculapp */,
 				4D475EAB1B9A7A120021B51B /* Controllers */,
 				4D475EAA1B9A7A080021B51B /* Views */,
+				BB2C5E5C1B9BAABB00EC60D4 /* Panton */,
 				22F559581B9B363E008F961C /* Models */,
 				4D475E951B9A72420021B51B /* DraculappTests */,
 				4D475E7B1B9A72420021B51B /* Products */,
@@ -278,6 +301,7 @@
 				4DCD6AF21B9B361A00D3F287 /* TakePictureViewController.xib */,
 				4DCD6AF61B9B467100D3F287 /* ConfirmImageViewController.xib */,
 				4DCD6AEE1B9B02A200D3F287 /* HaematocritViewController.xib */,
+				4D1D43981B9BD39A0092D2D5 /* PatientDataViewController.xib */,
 				4D475EB61B9AA6E40021B51B /* OpenCVTestViewController.xib */,
 				4D475EB21B9A90370021B51B /* OptionsViewController.xib */,
 				4D475EA71B9A7A010021B51B /* StartViewController.xib */,
@@ -294,6 +318,7 @@
 				4D475EB11B9A90370021B51B /* OptionsViewController.swift */,
 				BB46AA421B9AF63400AC765B /* BloodShapeStartViewController.swift */,
 				BBAD60741B9AC8E400662186 /* OpenCVTestViewController.swift */,
+				4D1D43971B9BD39A0092D2D5 /* PatientDataViewController.swift */,
 				4D475EA61B9A7A010021B51B /* StartViewController.swift */,
 				4DCD6AED1B9B02A200D3F287 /* HaematocritViewController.swift */,
 				4DCD6AF51B9B467100D3F287 /* ConfirmImageViewController.swift */,
@@ -310,6 +335,22 @@
 				5AE47FDC5CC6C986C2717B28 /* libPods-Draculapp.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB2C5E5C1B9BAABB00EC60D4 /* Panton */ = {
+			isa = PBXGroup;
+			children = (
+				BB2C5E4A1B9BAAB500EC60D4 /* Panton-Black.otf */,
+				BB2C5E4B1B9BAAB500EC60D4 /* Panton-Bold.otf */,
+				BB2C5E4C1B9BAAB500EC60D4 /* Panton-ExtraBold.otf */,
+				BB2C5E4D1B9BAAB500EC60D4 /* Panton-ExtraLight.otf */,
+				BB2C5E4E1B9BAAB500EC60D4 /* Panton-Heavy.otf */,
+				BB2C5E4F1B9BAAB500EC60D4 /* Panton-Light.otf */,
+				BB2C5E501B9BAAB500EC60D4 /* Panton-Regular.otf */,
+				BB2C5E511B9BAAB500EC60D4 /* Panton-SemiBold.otf */,
+				BB2C5E521B9BAAB500EC60D4 /* Panton-Thin.otf */,
+			);
+			name = Panton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,7 +436,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB2C5E561B9BAAB500EC60D4 /* Panton-ExtraLight.otf in Resources */,
+				BB2C5E571B9BAAB500EC60D4 /* Panton-Heavy.otf in Resources */,
+				BB2C5E541B9BAAB500EC60D4 /* Panton-Bold.otf in Resources */,
 				4DCD6AF41B9B361A00D3F287 /* TakePictureViewController.xib in Resources */,
+				BB2C5E5A1B9BAAB500EC60D4 /* Panton-SemiBold.otf in Resources */,
+				BB2C5E531B9BAAB500EC60D4 /* Panton-Black.otf in Resources */,
 				22F5594C1B9AFE50008F961C /* CentrifugeViewController.xib in Resources */,
 				4D475E8D1B9A72420021B51B /* LaunchScreen.xib in Resources */,
 				4D475EB41B9A90370021B51B /* OptionsViewController.xib in Resources */,
@@ -404,7 +450,10 @@
 				4D475EA91B9A7A010021B51B /* StartViewController.xib in Resources */,
 				4D29985F1B9AFB7600AE37FF /* BloodShapeStartViewController.xib in Resources */,
 				4DCD6AF81B9B467100D3F287 /* ConfirmImageViewController.xib in Resources */,
+				BB2C5E551B9BAAB500EC60D4 /* Panton-ExtraBold.otf in Resources */,
+				BB2C5E591B9BAAB500EC60D4 /* Panton-Regular.otf in Resources */,
 				22F5594B1B9AFE50008F961C /* SelectRPMViewController.xib in Resources */,
+				4D1D439A1B9BD39A0092D2D5 /* PatientDataViewController.xib in Resources */,
 				4D475EB81B9AA6E40021B51B /* OpenCVTestViewController.xib in Resources */,
 				22EB31811B9BC4F700A23377 /* backButtonArrow@2x.png in Resources */,
 				22EB31831B9BC50D00A23377 /* more@2x.png in Resources */,
@@ -474,6 +523,7 @@
 				4D475EB01B9A7FF50021B51B /* Color.swift in Sources */,
 				22F559551B9B3626008F961C /* SampleDataModel.swift in Sources */,
 				22F559511B9AFE8B008F961C /* SelectRPMViewController.swift in Sources */,
+				4D1D43991B9BD39A0092D2D5 /* PatientDataViewController.swift in Sources */,
 				4DCD6AF31B9B361A00D3F287 /* TakePictureViewController.swift in Sources */,
 				22F5594F1B9AFE78008F961C /* StopWatch.m in Sources */,
 				22F559531B9AFE97008F961C /* CentrifugeViewController.swift in Sources */,

@@ -66,6 +66,7 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
         
         
         takeOwn.setTitle("Take your own", forState: UIControlState.Normal)
+        takeOwn.addTarget(self, action: "takeOwn", forControlEvents: UIControlEvents.TouchUpInside)
         takeOwn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Light", size: 30)
         takeOwn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         self.view.addSubview(takeOwn)
@@ -79,6 +80,10 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
     override func  viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+    }
+    
+    func takeOwn(){
+        delegate?.goToPage(.LiveCV)
     }
    
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
@@ -100,6 +105,10 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
             HeaderLabel.text = "Hereditary Elliptocytosis"
         case 2:
             HeaderLabel.text = "Sickle Cell"
+        case 3:
+            HeaderLabel.text = "Hemolytic Anemia"
+        case 4:
+            HeaderLabel.text = "High RWD"
         default:
             print("Default")
         }
@@ -124,6 +133,8 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
                 imgV.image = UIImage(named: "Normal_2")
             case 2:
                 imgV.image = UIImage(named: "Normal_3")
+            case 3:
+                imgV.image = UIImage(named: "Normal_4")
             default:
                 print("default")
             }
@@ -145,6 +156,24 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
             default:
                 print("default")
             }
+        case 3:
+            switch indexPath.row{
+            case 0:
+                imgV.image = UIImage(named: "Hemolytic Anemia")
+            case 1:
+                imgV.image = UIImage(named: "SickleCell_2")
+            default:
+                print("default")
+            }
+        case 4:
+            switch indexPath.row{
+            case 0:
+                imgV.image = UIImage(named: "High RWD")
+            case 1:
+                imgV.image = UIImage(named: "SickleCell_2")
+            default:
+                print("default")
+            }
         default:
             print("Default")
         }
@@ -159,11 +188,15 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section{
         case 0:
-            return 3
+            return 4
         case 1:
             return 2
         case 2:
             return 2
+        case 3:
+            return 1
+        case 4:
+            return 1
         default:
             return 0
         }
@@ -181,6 +214,8 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
                 image = UIImage(named: "Normal_2")!
             case 2:
                 image = UIImage(named: "Normal_3")!
+            case 3:
+                image = UIImage(named: "Normal_4")!
             default:
                 print("default")
             }
@@ -202,6 +237,25 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
             default:
                 print("default")
             }
+        case 3:
+            switch indexPath.row{
+            case 0:
+                image = UIImage(named: "Hemolytic Anemia")!
+            case 1:
+                image = UIImage(named: "SickleCell_2")!
+            default:
+                print("default")
+            }
+        case 4:
+            switch indexPath.row{
+            case 0:
+                image = UIImage(named: "High RWD")!
+            case 1:
+                image = UIImage(named: "SickleCell_2")!
+            default:
+                print("default")
+            }
+
         default:
             print("Default")
         }
@@ -213,7 +267,7 @@ class BloodShapeStartViewController: UIViewController,UICollectionViewDataSource
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 3
+        return 5
     }
 
 

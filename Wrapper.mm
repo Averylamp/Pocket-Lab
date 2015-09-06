@@ -42,7 +42,7 @@ static void cvUIImageToMat(const UIImage* image, cv::Mat& m) {
     CGContextRelease(contextRef);
     //    CGColorSpaceRelease(colorSpace);
 }
-+(UIImage*)processImage:(UIImage *)image{
++(NSArray*)processImage:(UIImage *)image{
     cv::Mat img;
     cv::Mat resultImg;
     cvUIImageToMat(image, img);
@@ -112,7 +112,7 @@ static void cvUIImageToMat(const UIImage* image, cv::Mat& m) {
     allRadiiMean = allRadiiMean / contours.size();
     
     NSLog(@"Radii Mean - %f\nGood: %d,\nBad: %d\nPercentage: %f",allRadiiMean,allGood,allBad, allGood /((double)(allGood + allBad)));
-    for (int i=0 ; i<25; i++) {
+    for (int i=0 ; i<=8; i++) {
         NSLog(@"Dist %d:  %d", i , distrib[i]);
     }
     
@@ -120,7 +120,7 @@ static void cvUIImageToMat(const UIImage* image, cv::Mat& m) {
     UIImage *result = cvMatToUIImage(resultImg);
     img.release();
     resultImg.release();
-    return result;
+    return @[result,[NSNumber numberWithInt:allGood], [NSNumber numberWithInt:allBad]];
 }
 
 int minBallArea = 900;
@@ -238,7 +238,7 @@ void drawBox(cv::Mat img, cv::Rect roi){
 
     int* response = findBiggestContour(countours, mask);
     int maxContour_id = response[0];
-    double plasmaPercentage ;
+    double plasmaPercentage, redBloodPercentage;
     if (maxContour_id != -1) {
         
         cv::Rect rc = cv::boundingRect(countours[maxContour_id]);
@@ -267,7 +267,7 @@ void drawBox(cv::Mat img, cv::Rect roi){
         int redBloodHeight = totalHeight - plasmaHeight;
         
         plasmaPercentage = ((double)plasmaHeight / totalHeight) * 100;
-        double redBloodPercentage = 100 - plasmaPercentage;
+        redBloodPercentage = 100 - plasmaPercentage;
 
         std::cout << "plasmaPercentage " << plasmaPercentage << "\n";
 
@@ -293,8 +293,9 @@ void drawBox(cv::Mat img, cv::Rect roi){
     img.release();
     origImg.release();
     imgRedMask.release();
-    NSNumber *num = [NSNumber numberWithDouble:plasmaPercentage];
-    NSArray* arr = @[result, num, [NSNull null]];
+    NSNumber *num1 = [NSNumber numberWithDouble:plasmaPercentage];
+    NSNumber *num2 = [NSNumber numberWithDouble:redBloodPercentage];
+    NSArray* arr = @[result, num1, num2, [NSNull null]];
     return arr;
    // return result;
 }
