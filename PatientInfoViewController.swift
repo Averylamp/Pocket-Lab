@@ -45,6 +45,11 @@ class PatientInfoViewController: UIViewController, UITableViewDataSource, UITabl
         return viewController
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+    }
+    
     @IBAction func backPressed() {
         delegate?.goToPage(.Options)
     }

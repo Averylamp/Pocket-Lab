@@ -88,7 +88,7 @@ extension AppController: Navigation {
         }
         
         if page == .LiveCV {
-            self.setViewControllers([TakePictureViewController.generate(delegate: self, next: .Haematocrit)], animated: false)
+            self.pushViewController(TakePictureViewController.generate(delegate: self, next: .Haematocrit), animated: true)
         }
         
         if page == .Haematocrit {
