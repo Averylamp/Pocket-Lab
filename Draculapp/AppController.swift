@@ -66,11 +66,13 @@ extension AppController: Navigation {
         }
         
         if page == .SelectRPM {
-            self.setViewControllers([SelectRPMViewController.generate(delegate: self)], animated: false)
+            self.pushViewController(SelectRPMViewController.generate(delegate: self), animated: true)
+//            self.setViewControllers([SelectRPMViewController.generate(delegate: self)], animated: false)
         }
         
         if page == .Centrifuge {
-            self.setViewControllers([CentrifugeViewController.generate(delegate: self)], animated: false)
+            self.pushViewController(CentrifugeViewController.generate(delegate: self), animated: true)
+//            self.setViewControllers([CentrifugeViewController.generate(delegate: self)], animated: false)
         }
         
         if page == .Ratios {

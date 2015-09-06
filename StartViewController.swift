@@ -43,7 +43,7 @@ class StartViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
 
         begin.layer.cornerRadius = 6
-        begin.layer.borderWidth = 2
+        begin.layer.borderWidth = 1
         begin.layer.borderColor = "#28FDFF".CGColor
         
         UIView.animateWithDuration(1.5, animations: {
