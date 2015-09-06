@@ -11,6 +11,7 @@ import UIKit
 class SampleDataModel: NSObject {
     private var samples = [Sample]()
    
+    
 
     var lastMicroscopyImage:UIImage?
 
