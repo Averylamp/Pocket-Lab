@@ -18,24 +18,28 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1J-Is-mmq">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBC-wV-fiA">
-                            <rect key="frame" x="8" y="30" width="13" height="22"/>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" image="backButtonArrow.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Search Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izk-rc-jes">
                             <rect key="frame" x="84" y="30" width="153" height="22"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBC-wV-fiA">
+                            <rect key="frame" x="8" y="26" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="ZZ6-U4-IOT"/>
+                                <constraint firstAttribute="height" constant="30" id="y9W-Ta-f2b"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" image="backButtonArrow.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="vBC-wV-fiA" firstAttribute="top" secondItem="z1J-Is-mmq" secondAttribute="top" constant="26" id="1In-fd-Vk1"/>
                         <constraint firstItem="izk-rc-jes" firstAttribute="top" secondItem="z1J-Is-mmq" secondAttribute="top" constant="30" id="3ZK-aq-d4V"/>
-                        <constraint firstItem="vBC-wV-fiA" firstAttribute="top" secondItem="z1J-Is-mmq" secondAttribute="top" constant="30" id="422-pm-YOe"/>
                         <constraint firstAttribute="height" constant="60" id="BwT-wJ-cqH"/>
                         <constraint firstAttribute="centerX" secondItem="izk-rc-jes" secondAttribute="centerX" constant="-0.5" id="TvV-MZ-1Yq"/>
                         <constraint firstItem="vBC-wV-fiA" firstAttribute="leading" secondItem="z1J-Is-mmq" secondAttribute="leading" constant="8" id="zlZ-4q-JIZ"/>

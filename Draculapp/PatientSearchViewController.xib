@@ -18,30 +18,34 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QC0-IL-YNl">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lo2-6f-sOc">
-                            <rect key="frame" x="8" y="30" width="13" height="22"/>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" image="backButtonArrow.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="backPressed" destination="-1" eventType="touchUpInside" id="abL-2r-Jee"/>
-                            </connections>
-                        </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Patient Search" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBG-a4-OoN">
                             <rect key="frame" x="84" y="30" width="153" height="22"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDe-Ge-nxQ">
+                            <rect key="frame" x="8" y="26" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="hM3-R4-bCR"/>
+                                <constraint firstAttribute="height" constant="30" id="z64-ZG-Mwu"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" image="backButtonArrow.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="backPressed" destination="-1" eventType="touchUpInside" id="mXx-18-DCc"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="XBG-a4-OoN" firstAttribute="top" secondItem="QC0-IL-YNl" secondAttribute="top" constant="30" id="Cmy-3W-nZ9"/>
-                        <constraint firstItem="Lo2-6f-sOc" firstAttribute="leading" secondItem="QC0-IL-YNl" secondAttribute="leading" constant="8" id="Wu3-oL-zUB"/>
-                        <constraint firstItem="Lo2-6f-sOc" firstAttribute="top" secondItem="QC0-IL-YNl" secondAttribute="top" constant="30" id="fOx-eR-d8e"/>
+                        <constraint firstItem="eDe-Ge-nxQ" firstAttribute="top" secondItem="QC0-IL-YNl" secondAttribute="top" constant="26" id="JWA-VC-Efs"/>
                         <constraint firstAttribute="height" constant="60" id="gpK-fz-88l"/>
                         <constraint firstAttribute="centerX" secondItem="XBG-a4-OoN" secondAttribute="centerX" constant="-0.5" id="vQg-Jt-4vs"/>
+                        <constraint firstItem="eDe-Ge-nxQ" firstAttribute="leading" secondItem="QC0-IL-YNl" secondAttribute="leading" constant="8" id="yN4-Nq-ck6"/>
                     </constraints>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EPIC.png" translatesAutoresizingMaskIntoConstraints="NO" id="oLb-3Q-eRi">
