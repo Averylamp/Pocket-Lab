@@ -6,28 +6,33 @@
 	<dict>
 		<key>FLAnimatedImage.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-Draculapp.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>08BC1CD85D822DE305BAE95A6F56F07B</key>
+		<key>25E0F0AEF3D0FF9A663EBD748DD275FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>284F9BCF081A1EBC6E8D62B26763208E</key>
+		<key>A95DBF1A8DD22EEA9DCF1CB814445549</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>65F8B86A28D679BABE32C90B5D6D9338</key>
+		<key>E2388FD6F9F35A98CF667CF98CDBA7F0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

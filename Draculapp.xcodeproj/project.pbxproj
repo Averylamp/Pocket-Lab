@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01A9266C631BF33A3A0EB3F2 /* libPods-Draculapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE47FDC5CC6C986C2717B28 /* libPods-Draculapp.a */; };
 		22F5594B1B9AFE50008F961C /* SelectRPMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F559491B9AFE50008F961C /* SelectRPMViewController.xib */; };
 		22F5594C1B9AFE50008F961C /* CentrifugeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F5594A1B9AFE50008F961C /* CentrifugeViewController.xib */; };
 		22F5594F1B9AFE78008F961C /* StopWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F5594E1B9AFE78008F961C /* StopWatch.m */; };
@@ -18,6 +17,8 @@
 		22F5595B1B9B3EC2008F961C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F5595A1B9B3EC2008F961C /* MBProgressHUD.m */; };
 		4D1D43991B9BD39A0092D2D5 /* PatientDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1D43971B9BD39A0092D2D5 /* PatientDataViewController.swift */; };
 		4D1D439A1B9BD39A0092D2D5 /* PatientDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1D43981B9BD39A0092D2D5 /* PatientDataViewController.xib */; };
+		4D1D439C1B9BD8D30092D2D5 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1D439B1B9BD8D30092D2D5 /* Patient.swift */; };
+		4D1D439E1B9BDA6B0092D2D5 /* Epic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1D439D1B9BDA6B0092D2D5 /* Epic.swift */; };
 		4D29985F1B9AFB7600AE37FF /* BloodShapeStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D29985E1B9AFB7600AE37FF /* BloodShapeStartViewController.xib */; };
 		4D475E801B9A72420021B51B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D475E7F1B9A72420021B51B /* AppDelegate.swift */; };
 		4D475E831B9A72420021B51B /* Draculapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D475E811B9A72420021B51B /* Draculapp.xcdatamodeld */; };
@@ -38,6 +39,7 @@
 		4DCD6AF41B9B361A00D3F287 /* TakePictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCD6AF21B9B361A00D3F287 /* TakePictureViewController.xib */; };
 		4DCD6AF71B9B467100D3F287 /* ConfirmImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD6AF51B9B467100D3F287 /* ConfirmImageViewController.swift */; };
 		4DCD6AF81B9B467100D3F287 /* ConfirmImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCD6AF61B9B467100D3F287 /* ConfirmImageViewController.xib */; };
+		B75921960FE3B8C0FAFF5665 /* Pods_Draculapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B299B136E07473C7F724181 /* Pods_Draculapp.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		BB2C5E531B9BAAB500EC60D4 /* Panton-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E4A1B9BAAB500EC60D4 /* Panton-Black.otf */; };
 		BB2C5E541B9BAAB500EC60D4 /* Panton-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E4B1B9BAAB500EC60D4 /* Panton-Bold.otf */; };
 		BB2C5E551B9BAAB500EC60D4 /* Panton-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB2C5E4C1B9BAAB500EC60D4 /* Panton-ExtraBold.otf */; };
@@ -76,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B299B136E07473C7F724181 /* Pods_Draculapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Draculapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F559491B9AFE50008F961C /* SelectRPMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectRPMViewController.xib; sourceTree = "<group>"; };
 		22F5594A1B9AFE50008F961C /* CentrifugeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CentrifugeViewController.xib; sourceTree = "<group>"; };
 		22F5594D1B9AFE78008F961C /* StopWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopWatch.h; sourceTree = "<group>"; };
@@ -88,6 +91,8 @@
 		22F5595A1B9B3EC2008F961C /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		4D1D43971B9BD39A0092D2D5 /* PatientDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientDataViewController.swift; sourceTree = "<group>"; };
 		4D1D43981B9BD39A0092D2D5 /* PatientDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PatientDataViewController.xib; sourceTree = "<group>"; };
+		4D1D439B1B9BD8D30092D2D5 /* Patient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Patient.swift; path = ../Patient.swift; sourceTree = "<group>"; };
+		4D1D439D1B9BDA6B0092D2D5 /* Epic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Epic.swift; sourceTree = "<group>"; };
 		4D29985E1B9AFB7600AE37FF /* BloodShapeStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BloodShapeStartViewController.xib; sourceTree = "<group>"; };
 		4D475E7A1B9A72420021B51B /* Draculapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Draculapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D475E7E1B9A72420021B51B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -112,7 +117,6 @@
 		4DCD6AF21B9B361A00D3F287 /* TakePictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TakePictureViewController.xib; sourceTree = "<group>"; };
 		4DCD6AF51B9B467100D3F287 /* ConfirmImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmImageViewController.swift; sourceTree = "<group>"; };
 		4DCD6AF61B9B467100D3F287 /* ConfirmImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmImageViewController.xib; sourceTree = "<group>"; };
-		5AE47FDC5CC6C986C2717B28 /* libPods-Draculapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Draculapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BAFA310A2E08408905D284 /* Pods-Draculapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Draculapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Draculapp/Pods-Draculapp.release.xcconfig"; sourceTree = "<group>"; };
 		B3E7E991688E3B298324075B /* Pods-Draculapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Draculapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Draculapp/Pods-Draculapp.debug.xcconfig"; sourceTree = "<group>"; };
 		BB2C5E4A1B9BAAB500EC60D4 /* Panton-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-Black.otf"; sourceTree = "<group>"; };
@@ -163,7 +167,7 @@
 				BBAD605C1B9AA82200662186 /* AssetsLibrary.framework in Frameworks */,
 				BBAD60581B9AA81000662186 /* CoreAudio.framework in Frameworks */,
 				BBAD60561B9AA80B00662186 /* CoreVideo.framework in Frameworks */,
-				01A9266C631BF33A3A0EB3F2 /* libPods-Draculapp.a in Frameworks */,
+				B75921960FE3B8C0FAFF5665 /* Pods_Draculapp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +253,8 @@
 				4D475E7F1B9A72420021B51B /* AppDelegate.swift */,
 				4D475E891B9A72420021B51B /* Images.xcassets */,
 				4D475E8B1B9A72420021B51B /* LaunchScreen.xib */,
+				4D1D439B1B9BD8D30092D2D5 /* Patient.swift */,
+				4D1D439D1B9BDA6B0092D2D5 /* Epic.swift */,
 				4D475E811B9A72420021B51B /* Draculapp.xcdatamodeld */,
 				4D475E7D1B9A72420021B51B /* Supporting Files */,
 			);
@@ -317,7 +323,7 @@
 		8B59A6477B8D32DBCA2DB325 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5AE47FDC5CC6C986C2717B28 /* libPods-Draculapp.a */,
+				0B299B136E07473C7F724181 /* Pods_Draculapp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -350,6 +356,7 @@
 				4D475E771B9A72420021B51B /* Frameworks */,
 				4D475E781B9A72420021B51B /* Resources */,
 				30CBDE135819BF8FAFDBC3ED /* Copy Pods Resources */,
+				5BEA00894DECE01E77AD5921 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -470,6 +477,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Draculapp/Pods-Draculapp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5BEA00894DECE01E77AD5921 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Draculapp/Pods-Draculapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F61BB015E55E7FADCD16BDE2 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -507,6 +529,8 @@
 				BB46AA431B9AF63400AC765B /* BloodShapeStartViewController.swift in Sources */,
 				4D475EB01B9A7FF50021B51B /* Color.swift in Sources */,
 				22F559551B9B3626008F961C /* SampleDataModel.swift in Sources */,
+				4D1D439C1B9BD8D30092D2D5 /* Patient.swift in Sources */,
+				4D1D439E1B9BDA6B0092D2D5 /* Epic.swift in Sources */,
 				22F559511B9AFE8B008F961C /* SelectRPMViewController.swift in Sources */,
 				4D1D43991B9BD39A0092D2D5 /* PatientDataViewController.swift in Sources */,
 				4DCD6AF31B9B361A00D3F287 /* TakePictureViewController.swift in Sources */,
