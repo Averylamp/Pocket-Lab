@@ -108,12 +108,14 @@ extension AppController: Navigation {
         }
         
         if page == .PatientSearch {
-            self.setViewControllers([PatientSearchViewController.generate(delegate: self)], animated: false)
+            self.pushViewController(PatientSearchViewController.generate(delegate: self), animated: true)
+//            self.setViewControllers([PatientSearchViewController.generate(delegate: self)], animated: false)
             
         }
         
         if page == .PatientInfo {
-            self.setViewControllers([PatientInfoViewController.generate(delegate: self)], animated: false)
+            self.pushViewController(PatientInfoViewController.generate(delegate: self), animated: true)
+//            self.setViewControllers([PatientInfoViewController.generate(delegate: self)], animated: false)
             
         }
         
