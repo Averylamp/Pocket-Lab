@@ -154,11 +154,14 @@ class ConfirmImageViewController: UIViewController {
             let croppedImage = crop(image.image!, withRect: cropRect!)
             
             image.image = croppedImage
+
+            
             start = nil
             shape.path = nil;
             //image.layer.addSublayer(shape)
             //            delegate?.imageOk(image.image!)
             
+            delegate?.imageOk(croppedImage)
             
         }
         

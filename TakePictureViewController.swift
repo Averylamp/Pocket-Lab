@@ -10,10 +10,14 @@ import UIKit
 import AVFoundation
 import AudioToolbox
 
+
+
 class TakePictureViewController: UIViewController {
 
     let preview = ConfirmImageViewController(nibName: "ConfirmImageViewController", bundle: NSBundle.mainBundle())
     var next: Page?
+    
+    
     
     var placeAboveView: UIImageView?
 
@@ -160,12 +164,16 @@ extension TakePictureViewController: ImageConfirm {
         
         if next == .Haematocrit {
             sharedSampleDataModel.ratiosImage = image
+        } else if next == .OpenCV {
+            sharedSampleDataModel.lastMicroscopyImage = image
+            sharedSampleDataModel.live = true
         }
         
         self.dismissViewControllerAnimated(true) {
             self.delegate?.goToPage(next!)
         }
     }
+    
     func imageRetake() {
         self.dismissViewControllerAnimated(true, completion: nil)
 

@@ -132,7 +132,7 @@
 		4D475E7E1B9A72420021B51B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D475E7F1B9A72420021B51B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D475E821B9A72420021B51B /* Draculapp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Draculapp.xcdatamodel; sourceTree = "<group>"; };
-		4D475E891B9A72420021B51B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4D475E891B9A72420021B51B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Draculapp/Images.xcassets; sourceTree = "<group>"; };
 		4D475E8C1B9A72420021B51B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4D475E921B9A72420021B51B /* DraculappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DraculappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D475E971B9A72420021B51B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -234,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				22EB31A61B9C312300A23377 /* EPIC.png */,
+				4D475E891B9A72420021B51B /* Images.xcassets */,
 				22EB318B1B9BDB6F00A23377 /* logo_66.jpg */,
 				22EB31801B9BC4F700A23377 /* backButtonArrow@2x.png */,
 				22EB31821B9BC50D00A23377 /* more@2x.png */,
@@ -331,7 +332,6 @@
 			isa = PBXGroup;
 			children = (
 				4D475E7F1B9A72420021B51B /* AppDelegate.swift */,
-				4D475E891B9A72420021B51B /* Images.xcassets */,
 				22EB317F1B9BC4E100A23377 /* Images */,
 				4D475E8B1B9A72420021B51B /* LaunchScreen.xib */,
 				4D475E811B9A72420021B51B /* Draculapp.xcdatamodeld */,
