@@ -15,6 +15,7 @@ enum Page {
     case SelectRPM
     case Ratios
     case Microscope
+    case LiveCV
     case OpenCV
     case OpenCV2
     case Haematocrit
@@ -67,6 +68,10 @@ extension AppController: Navigation {
         
         if page == .Ratios {
             self.setViewControllers([TakePictureViewController.generate(delegate: self, next: .Haematocrit)], animated: false)
+        }
+        
+        if page == .LiveCV{
+            self.setViewControllers([TakePictureViewController.generate(delegate: self, next: .OpenCV)], animated: false)
         }
         
         if page == .Haematocrit {

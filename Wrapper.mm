@@ -112,7 +112,7 @@ static void cvUIImageToMat(const UIImage* image, cv::Mat& m) {
     allRadiiMean = allRadiiMean / contours.size();
     
     NSLog(@"Radii Mean - %f\nGood: %d,\nBad: %d\nPercentage: %f",allRadiiMean,allGood,allBad, allGood /((double)(allGood + allBad)));
-    for (int i=0 ; i<25; i++) {
+    for (int i=0 ; i<=8; i++) {
         NSLog(@"Dist %d:  %d", i , distrib[i]);
     }
     
