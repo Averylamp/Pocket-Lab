@@ -52,7 +52,7 @@ class PatientInfoViewController: UIViewController, UITableViewDataSource, UITabl
     // MARK: - TableView DataSource/Delegate Functions
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 9
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -118,7 +118,12 @@ class PatientInfoViewController: UIViewController, UITableViewDataSource, UITabl
             break
         case 7:
             titleLabel.text = "Red Blood Cell Count"
-
+            detailLabel.text = "\(sharedRatios.redBloodCellCount)"
+            break
+        case 8:
+            titleLabel.text = "Plasma Cell Count"
+            detailLabel.text = "\(sharedRatios.plasmaCount)"
+            break
         default:
             break
             
