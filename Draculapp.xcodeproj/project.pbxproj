@@ -10,6 +10,10 @@
 		01A9266C631BF33A3A0EB3F2 /* libPods-Draculapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE47FDC5CC6C986C2717B28 /* libPods-Draculapp.a */; };
 		22EB31811B9BC4F700A23377 /* backButtonArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22EB31801B9BC4F700A23377 /* backButtonArrow@2x.png */; };
 		22EB31831B9BC50D00A23377 /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22EB31821B9BC50D00A23377 /* more@2x.png */; };
+		22EB31861B9BD8EE00A23377 /* PatientSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EB31841B9BD8EE00A23377 /* PatientSearchViewController.swift */; };
+		22EB31871B9BD8EE00A23377 /* PatientSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EB31851B9BD8EE00A23377 /* PatientSearchViewController.xib */; };
+		22EB318A1B9BDA9700A23377 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB31891B9BDA9700A23377 /* TPKeyboardAvoidingScrollView.m */; };
+		22EB318C1B9BDB6F00A23377 /* logo_66.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22EB318B1B9BDB6F00A23377 /* logo_66.jpg */; };
 		22F5594B1B9AFE50008F961C /* SelectRPMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F559491B9AFE50008F961C /* SelectRPMViewController.xib */; };
 		22F5594C1B9AFE50008F961C /* CentrifugeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F5594A1B9AFE50008F961C /* CentrifugeViewController.xib */; };
 		22F5594F1B9AFE78008F961C /* StopWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F5594E1B9AFE78008F961C /* StopWatch.m */; };
@@ -80,6 +84,11 @@
 /* Begin PBXFileReference section */
 		22EB31801B9BC4F700A23377 /* backButtonArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backButtonArrow@2x.png"; sourceTree = "<group>"; };
 		22EB31821B9BC50D00A23377 /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@2x.png"; sourceTree = "<group>"; };
+		22EB31841B9BD8EE00A23377 /* PatientSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientSearchViewController.swift; sourceTree = "<group>"; };
+		22EB31851B9BD8EE00A23377 /* PatientSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PatientSearchViewController.xib; sourceTree = "<group>"; };
+		22EB31881B9BDA9700A23377 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		22EB31891B9BDA9700A23377 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		22EB318B1B9BDB6F00A23377 /* logo_66.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo_66.jpg; sourceTree = "<group>"; };
 		22F559491B9AFE50008F961C /* SelectRPMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectRPMViewController.xib; sourceTree = "<group>"; };
 		22F5594A1B9AFE50008F961C /* CentrifugeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CentrifugeViewController.xib; sourceTree = "<group>"; };
 		22F5594D1B9AFE78008F961C /* StopWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopWatch.h; sourceTree = "<group>"; };
@@ -193,6 +202,7 @@
 		22EB317F1B9BC4E100A23377 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				22EB318B1B9BDB6F00A23377 /* logo_66.jpg */,
 				22EB31801B9BC4F700A23377 /* backButtonArrow@2x.png */,
 				22EB31821B9BC50D00A23377 /* more@2x.png */,
 			);
@@ -235,6 +245,8 @@
 				BBAD60721B9AA8A100662186 /* Wrapper.mm */,
 				22F559591B9B3EC2008F961C /* MBProgressHUD.h */,
 				22F5595A1B9B3EC2008F961C /* MBProgressHUD.m */,
+				22EB31881B9BDA9700A23377 /* TPKeyboardAvoidingScrollView.h */,
+				22EB31891B9BDA9700A23377 /* TPKeyboardAvoidingScrollView.m */,
 				4D475E7C1B9A72420021B51B /* Draculapp */,
 				4D475EAB1B9A7A120021B51B /* Controllers */,
 				4D475EAA1B9A7A080021B51B /* Views */,
@@ -308,6 +320,7 @@
 				4D29985E1B9AFB7600AE37FF /* BloodShapeStartViewController.xib */,
 				22F559491B9AFE50008F961C /* SelectRPMViewController.xib */,
 				22F5594A1B9AFE50008F961C /* CentrifugeViewController.xib */,
+				22EB31851B9BD8EE00A23377 /* PatientSearchViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -325,6 +338,7 @@
 				4DCD6AF11B9B361A00D3F287 /* TakePictureViewController.swift */,
 				22F559501B9AFE8B008F961C /* SelectRPMViewController.swift */,
 				22F559521B9AFE97008F961C /* CentrifugeViewController.swift */,
+				22EB31841B9BD8EE00A23377 /* PatientSearchViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -446,6 +460,7 @@
 				4D475E8D1B9A72420021B51B /* LaunchScreen.xib in Resources */,
 				4D475EB41B9A90370021B51B /* OptionsViewController.xib in Resources */,
 				4DCD6AF01B9B02A200D3F287 /* HaematocritViewController.xib in Resources */,
+				22EB31871B9BD8EE00A23377 /* PatientSearchViewController.xib in Resources */,
 				4D475E8A1B9A72420021B51B /* Images.xcassets in Resources */,
 				4D475EA91B9A7A010021B51B /* StartViewController.xib in Resources */,
 				4D29985F1B9AFB7600AE37FF /* BloodShapeStartViewController.xib in Resources */,
@@ -453,10 +468,13 @@
 				BB2C5E551B9BAAB500EC60D4 /* Panton-ExtraBold.otf in Resources */,
 				BB2C5E591B9BAAB500EC60D4 /* Panton-Regular.otf in Resources */,
 				22F5594B1B9AFE50008F961C /* SelectRPMViewController.xib in Resources */,
+				22EB318C1B9BDB6F00A23377 /* logo_66.jpg in Resources */,
 				4D1D439A1B9BD39A0092D2D5 /* PatientDataViewController.xib in Resources */,
 				4D475EB81B9AA6E40021B51B /* OpenCVTestViewController.xib in Resources */,
 				22EB31811B9BC4F700A23377 /* backButtonArrow@2x.png in Resources */,
 				22EB31831B9BC50D00A23377 /* more@2x.png in Resources */,
+				BB2C5E5B1B9BAAB500EC60D4 /* Panton-Thin.otf in Resources */,
+				BB2C5E581B9BAAB500EC60D4 /* Panton-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,9 +526,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D475EAD1B9A7C560021B51B /* Extensions.swift in Sources */,
+				22EB31861B9BD8EE00A23377 /* PatientSearchViewController.swift in Sources */,
 				4D475E831B9A72420021B51B /* Draculapp.xcdatamodeld in Sources */,
 				4D475EA81B9A7A010021B51B /* StartViewController.swift in Sources */,
 				4D475EB31B9A90370021B51B /* OptionsViewController.swift in Sources */,
+				22EB318A1B9BDA9700A23377 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				4DCD6AEF1B9B02A200D3F287 /* HaematocritViewController.swift in Sources */,
 				BBAD60751B9AC8E400662186 /* OpenCVTestViewController.swift in Sources */,
 				4DCD6AF71B9B467100D3F287 /* ConfirmImageViewController.swift in Sources */,
