@@ -21,7 +21,6 @@ class SelectRPMViewController: UIViewController {
     @IBOutlet var RCFLabel: UILabel!
     
     @IBOutlet var bloodUrineSegment: UISegmentedControl!
-    
     @IBOutlet var startButton: UIButton!
     
     
@@ -29,18 +28,16 @@ class SelectRPMViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         RCFLabel.text = "400";
         RadiusLabel.text = "1"
         RadiusSlider.value = 1
         RPMLabel.text = "600"
         RPMSlider.value = 600
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        self.delegate?.setHiddenNavigationBar(false, animated: true)
+        self.bloodUrineSegment.selectedSegmentIndex = 0
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -107,6 +104,15 @@ class SelectRPMViewController: UIViewController {
     // MARK: - Navigation
 
     @IBAction func centrifugePush(sender: AnyObject) {
+        if rpm == nil || radius == nil || RCF == nil {
+            RCFLabel.text = "400";
+            RadiusLabel.text = "1"
+            RadiusSlider.value = 1
+            RPMLabel.text = "600"
+            RPMSlider.value = 600
+            self.bloodUrineSegment.selectedSegmentIndex = 0
+        }
+        
         var newSample = Sample(fromRPM: Double(rpm), nRadius: Double(radius), nRCF: Double(RCF))
         sharedSampleDataModel.addSample(newSample)
         delegate?.goToPage(.Centrifuge)

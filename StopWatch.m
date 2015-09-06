@@ -8,24 +8,30 @@
 
 #import "StopWatch.h"
 
+
+
 @implementation StopWatch
 
 -(void)dealloc
 {
-    [ self.displayTimer invalidate ] ;
+    [self.displayTimer invalidate];
 }
 
 -(void)startTimer
 {
-    self.startTime = CFAbsoluteTimeGetCurrent() ;
-    self.displayTimer = [ NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector( timerFired: ) userInfo:nil repeats:YES ] ;
+    self.startTime = CFAbsoluteTimeGetCurrent();
+    self.displayTimer = [ NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector( timerFired: ) userInfo:nil repeats:YES ];
 }
 
--(double)getTimeSinceStart {
-    [ self.displayTimer invalidate ] ;
-    self.displayTimer = nil ;
+-(double)getTimeandReset {
+    double returnTime = CFAbsoluteTimeGetCurrent() - self.startTime;
+    self.startTime = CFAbsoluteTimeGetCurrent();
+    return returnTime;
     
-    return CFAbsoluteTimeGetCurrent() - self.startTime ;
+}
+
+-(void)timerFired:(NSTimer *)theTimer {
+    [self.delegate secondElapsed];
 }
 
 @end

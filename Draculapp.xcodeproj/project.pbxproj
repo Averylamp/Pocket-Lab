@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		01A9266C631BF33A3A0EB3F2 /* libPods-Draculapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE47FDC5CC6C986C2717B28 /* libPods-Draculapp.a */; };
+		22EB31811B9BC4F700A23377 /* backButtonArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22EB31801B9BC4F700A23377 /* backButtonArrow@2x.png */; };
+		22EB31831B9BC50D00A23377 /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22EB31821B9BC50D00A23377 /* more@2x.png */; };
 		22F5594B1B9AFE50008F961C /* SelectRPMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F559491B9AFE50008F961C /* SelectRPMViewController.xib */; };
 		22F5594C1B9AFE50008F961C /* CentrifugeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F5594A1B9AFE50008F961C /* CentrifugeViewController.xib */; };
 		22F5594F1B9AFE78008F961C /* StopWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F5594E1B9AFE78008F961C /* StopWatch.m */; };
@@ -65,6 +67,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22EB31801B9BC4F700A23377 /* backButtonArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backButtonArrow@2x.png"; sourceTree = "<group>"; };
+		22EB31821B9BC50D00A23377 /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@2x.png"; sourceTree = "<group>"; };
 		22F559491B9AFE50008F961C /* SelectRPMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectRPMViewController.xib; sourceTree = "<group>"; };
 		22F5594A1B9AFE50008F961C /* CentrifugeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CentrifugeViewController.xib; sourceTree = "<group>"; };
 		22F5594D1B9AFE78008F961C /* StopWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopWatch.h; sourceTree = "<group>"; };
@@ -164,6 +168,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		22EB317F1B9BC4E100A23377 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				22EB31801B9BC4F700A23377 /* backButtonArrow@2x.png */,
+				22EB31821B9BC50D00A23377 /* more@2x.png */,
+			);
+			name = Images;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		22F559581B9B363E008F961C /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +239,7 @@
 			children = (
 				4D475E7F1B9A72420021B51B /* AppDelegate.swift */,
 				4D475E891B9A72420021B51B /* Images.xcassets */,
+				22EB317F1B9BC4E100A23377 /* Images */,
 				4D475E8B1B9A72420021B51B /* LaunchScreen.xib */,
 				4D475E811B9A72420021B51B /* Draculapp.xcdatamodeld */,
 				4D475E7D1B9A72420021B51B /* Supporting Files */,
@@ -391,6 +406,8 @@
 				4DCD6AF81B9B467100D3F287 /* ConfirmImageViewController.xib in Resources */,
 				22F5594B1B9AFE50008F961C /* SelectRPMViewController.xib in Resources */,
 				4D475EB81B9AA6E40021B51B /* OpenCVTestViewController.xib in Resources */,
+				22EB31811B9BC4F700A23377 /* backButtonArrow@2x.png in Resources */,
+				22EB31831B9BC50D00A23377 /* more@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
