@@ -137,7 +137,7 @@ class OpenCVTestViewController: UIViewController {
         
         
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
             self.imageView!.image = self.processedImage
             MBProgressHUD.hideHUDForView(self.view, animated: true)
             normality.text = "Normality: \(allGood)"
